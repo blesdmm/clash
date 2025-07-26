@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  同步任务:
+  api_sync_task:
     runs-on: ubuntu-latest
     steps:
       - name: 调用GitHub官方API同步上游
