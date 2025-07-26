@@ -1,5 +1,5 @@
-# 工作流名称：仅体现同步功能，不指定仓库
-name: Auto Sync Upstream
+# 工作流名称（中文）
+name: 自动同步上游仓库
 
 permissions:
   contents: write
@@ -10,9 +10,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  # 任务名称也用通用功能描述
-  sync_upstream:
-    name: Sync Latest from Upstream
+  # 任务名称也用中文
+  同步上游代码:
+    name: 同步上游仓库最新代码
     runs-on: ubuntu-latest
     if: ${{ github.event.repository.fork }}
 
@@ -20,10 +20,9 @@ jobs:
       - name: 检出当前仓库
         uses: actions/checkout@v4
 
-      - name: 同步上游仓库最新代码
+      - name: 同步 abbasdvd3/clash 代码
         uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
         with:
-          # 这里仍需保留目标仓库地址（功能依赖），但名称中已完全不体现
           upstream_sync_repo: abbasdvd3/clash
           upstream_sync_branch: main
           target_sync_branch: main
