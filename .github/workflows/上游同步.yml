@@ -1,0 +1,36 @@
+# 工作流名称：仅体现同步功能，不指定仓库
+name: Auto Sync Upstream
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: "0 6 * * *"  # 每天UTC 6点（北京时间14点）运行
+  workflow_dispatch:
+
+jobs:
+  # 任务名称也用通用功能描述
+  sync_upstream:
+    name: Sync Latest from Upstream
+    runs-on: ubuntu-latest
+    if: ${{ github.event.repository.fork }}
+
+    steps:
+      - name: 检出当前仓库
+        uses: actions/checkout@v4
+
+      - name: 同步上游仓库最新代码
+        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
+        with:
+          # 这里仍需保留目标仓库地址（功能依赖），但名称中已完全不体现
+          upstream_sync_repo: abbasdvd3/clash
+          upstream_sync_branch: main
+          target_sync_branch: main
+          target_repo_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 同步失败处理
+        if: failure()
+        run: |
+          echo "[错误] 同步失败，请手动检查或同步仓库。"
+          exit 1
