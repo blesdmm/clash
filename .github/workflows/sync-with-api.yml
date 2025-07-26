@@ -1,0 +1,24 @@
+name: Sync with GitHub API
+on:
+  workflow_dispatch: # 手动触发
+  schedule:
+    - cron: '0 0 * * *' # 每天 UTC 0 点自动同步
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Sync via GitHub API
+        uses: actions/github-script@v6
+        with:
+          script: |
+            # 同步逻辑：调用 GitHub 官方 API，自动合并上游仓库到当前复刻仓库
+            # 注意：API 会自动关联你 fork 时的上游仓库（此处已自动对应目标上游：abbasdvd3/clash）
+            await github.rest.repos.mergeUpstream({
+              owner: context.repo.owner, # 当前复刻仓库的所有者（自动获取）
+              repo: context.repo.repo,   # 当前复刻仓库的名称（自动获取）
+              branch: 'main'             # 要同步的分支（与上游仓库主分支一致）
+            })
