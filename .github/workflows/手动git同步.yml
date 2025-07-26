@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  同步任务:
+  manual_git_sync:
     runs-on: ubuntu-latest
     steps:
       - name: 拉取当前仓库最新代码
