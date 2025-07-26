@@ -20,7 +20,7 @@ jobs:
       - name: 执行同步操作
         run: |
           # 添加上游仓库（已添加过就忽略错误）
-          git remote add 上游仓库 https://github.com/abbasvd3/clash.git || true
+          git remote add 上游仓库 https://github.com/abbasdvd3/clash.git || true
           # 拉取上游最新代码
           git fetch 上游仓库
           # 合并上游main分支到当前分支
