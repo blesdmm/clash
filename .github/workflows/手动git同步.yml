@@ -1,0 +1,29 @@
+name: 手动Git同步（临时用）
+# 触发条件：仅手动触发（适合临时同步，不自动运行）
+on:
+  workflow_dispatch:
+
+jobs:
+  同步任务:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取当前仓库最新代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 配置提交身份
+        run: |
+          git config user.name "手动同步工具"
+          git config user.email "actions@github.com"
+
+      - name: 执行同步操作
+        run: |
+          # 添加上游仓库（已添加过就忽略错误）
+          git remote add 上游仓库 https://github.com/abbasvd3/clash.git || true
+          # 拉取上游最新代码
+          git fetch 上游仓库
+          # 合并上游main分支到当前分支
+          git merge 上游仓库/main --no-edit
+          # 推送同步结果到自己的仓库
+          git push origin main
