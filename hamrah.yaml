@@ -166,8 +166,16 @@ dns:
     - https://208.67.222.222/dns-query
     - https://208.67.220.220/dns-query
     - https://9.9.9.9/dns-query
+    - tcp://9.9.9.9
+    - tcp://8.8.8.8
+    - tls://1.1.1.1
+    - tls://223.5.5.5
+    - tls://223.6.6.6
+    - tls://119.29.29.29
+    - tls://1.12.12.12
+    - tcp://120.53.53.53
   fallback-filter:
-    geoip: false
+    geoip: true
     geoip-code: ir
     geosite:
       - social
@@ -185,13 +193,13 @@ dns:
       - +.googleapis.cn
       - +.googleapis.com
 proxy-groups:
-  - name: "PRO"
+  - name: "PROXY"
     type: url-test
     url: "http://www.google.com/generate_204"
 #    exclude-type: "direct|Shadowsocks|Shadowsocksr|vless|trojan|vmess|socks5|http"
 #    include-all: true
     hidden: false
-    interval: 180
+   # interval: 180
     tolerance: 50000
     icon: "https://cdn.jsdelivr.net/gh/MoGuangYu/Surfing@rm/Home/icon/All.svg"
     proxies:
@@ -206,8 +214,8 @@ proxy-groups:
     url: "https://www.google.com/generate_204"
     exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
     interval: 280
-    tolerance: 500
-    exclude-type: "direct|socks5|http|tuc"
+    tolerance: 5000
+    exclude-type: "direct"
     include-all: true
     hidden: false
     icon: "https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/provide/Azadi.jpg"
@@ -217,7 +225,7 @@ proxy-groups:
     url: "https://www.google.com/generate_204"
     exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
     interval: 180
-    exclude-type: "direct|Shadowsocksr|socks5|http"
+    exclude-type: "direct"
     include-all: true
     hidden: false
     icon: "https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png"
@@ -228,8 +236,8 @@ proxy-groups:
     exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
     type: url-test
     interval: 180
-    tolerance: 500
-    exclude-type: "direct|socks5|http"
+    tolerance: 5000
+    exclude-type: "direct"
     include-all: true
     hidden: false
     url: "http://www.google.com/generate_204"
@@ -240,7 +248,7 @@ proxy-groups:
     exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
     type: url-test
     interval: 180
-    tolerance: 500
+    tolerance: 5000
     include-all: true
     hidden: false
     url: "http://www.google.com/generate_204"
@@ -250,9 +258,9 @@ proxy-groups:
     url: "https://www.google.com/generate_204"
     exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
     interval: 180
-    tolerance: 500
+    tolerance: 5000
     include-all: true
-    exclude-type: "direct|Shadowsocks|Shadowsocksr|trojan|socks5|http"
+    exclude-type: "direct"
 #    use:
 #      - "MTN"
     hidden: false
@@ -263,9 +271,9 @@ proxy-groups:
     url: "https://www.google.com/generate_204"
     exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
     interval: 180
-    tolerance: 500
+    tolerance: 5000
     include-all: true
-    exclude-type: "direct|Shadowsocksr|vless|trojan|vmess|socks5|http"
+    exclude-type: "direct"
 #    use:
  #     - "MCI"
     hidden: false
@@ -292,22 +300,6 @@ proxy-groups:
       - DIRECT
       - PASS
     disable-udp: false
-  - name: "PROXY"
-    type: select
-    url: "http://www.google.com/generate_204"
-    hidden: false
-    include-all: true
-    exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
-    icon: "https://cdn.jsdelivr.net/gh/MoGuangYu/Surfing@rm/Home/icon/All.svg"
-    exclude-type: "direct|socks5|http"
-    proxies:
-      - "PRO"
-      - "🎈Auto"
-      - "🎈fallback"
-      - "US"
-      - "Persian Gulf"
-      - "PK"
-      - "DK"
 rule-providers:
 
   LocalAreaNetwork:
@@ -316,7 +308,7 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/LocalAreaNetwork.list
+
   category-ads-all:
     type: http
     url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ads-all.mrs
@@ -329,140 +321,140 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/BanEasyList.list
+    
   BanEasyListChina:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/BanEasyListChina.list
+
   BanEasyPrivacy:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/BanEasyPrivacy.list
+
   UnBan:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/UnBan.list
+
   BanAD:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/BanAD.list
+
   BanProgramAD:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/BanProgramAD.list
+
   GoogleFCM:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/GoogleFCM.list
+
   GoogleCNProxyIP:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCNProxyIP.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/GoogleCNProxyIP.list
+
   GoogleCN:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/GoogleCN.list
+
   YouTube:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/YouTube.list
+
   Google:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/Google.list
+
   AI:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AI.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/AI.list
+
   OpenAi:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/OpenAi.list
+
   Microsoft:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/Microsoft.list
+
   Apple:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/Apple.list
+
   Telegram:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/Telegram.list
+
   ProxyMedia:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/ProxyMedia.list
+
   ProxyGFWlist:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/ProxyGFWlist.list
+
   ChinaDomain:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/ChinaDomain.list
+
   ChinaCompanyIp:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
     format: text
     interval: 3600
-    path: ./ACL4SSR/ACL4SSR/ChinaCompanyIp.list
+
 rules:
   - RULE-SET,LocalAreaNetwork,🎯 Direct
   - RULE-SET,BanAD,🛑 Reject
