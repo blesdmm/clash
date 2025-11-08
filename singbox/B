@@ -12,9 +12,8 @@
         "server": "8.8.8.8"
       },
       {
-        "type": "https",
-        "tag": "local",
-        "server": "223.5.5.5"
+        "type": "local",
+        "tag": "local"
       },
       {
         "type": "fakeip",
