@@ -12,15 +12,6 @@ allow-lan: true
 log-level: debug
 external-controller: "127.0.0.1:9090"
 external-controller-tls: "127.0.0.1:9091"
-external-controller-cors:
-  allow-private-network: true
-  allow-origins:
-  - tauri://localhost
-  - http://tauri.localhost
-  - http://localhost:3000
-  - https://yacd.metacubex.one
-  - https://metacubex.github.io
-  - https://board.zash.run.place
 external-ui: ./dashboard
 keep-alive-interval: 30
 find-process-mode: strict
@@ -377,7 +368,7 @@ proxies:
   routing-mark: 1234
 proxy-groups:
   - name: "PROXY"
-    type: "select"
+    type: "url-test"
     url: "https://www.google.com/"
     hidden: false
     interval: 15
@@ -387,34 +378,31 @@ proxy-groups:
     exclude-type: "direct|Shadowsocks|Shadowsocksr|vless|trojan|vmess|socks5|http"
     icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Final.png"
     proxies:
-      - "A"
-      - "B"
-      - "C"
-      - "D"
-      - "E"
-      - "F"
-      - "G"
-      - "M"
+      - "🎈Auto"
+      - "🎈fallback"
+      - "🇺🇸US🇺🇸"
 
   - name: "🎈Auto"
     type: "url-test"
     url: "https://www.google.com/"
     exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
+    filter: "^(?=.*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)).*$"
     interval: 200
- #   tolerance: 50000
+    tolerance: 50000
     exclude-type: "direct|http|socks5"
     include-all-providers: true
-    hidden: false
+    hidden: true
     icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png"
 
   - name: "🎈fallback"
     type: "fallback"
     url: "https://www.google.com/"
+    filter: "^(?=.*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)).*$"
     exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
     interval: 100
     exclude-type: "direct|http|socks5"
     include-all-providers: true
-    hidden: false
+    hidden: true
     icon: "https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png"
 
   - name: "🇺🇸US🇺🇸"
@@ -423,115 +411,19 @@ proxy-groups:
     type: "url-test"
     icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io/main/docs/assets/icons/flags/us.svg"
     interval: 200
-#    tolerance: 5000
+    tolerance: 5000
     exclude-type: "direct|http|socks5"
     include-all-providers: true
-    hidden: false
+    hidden: true
     url: "http://www.google.com/"
     
-  - name: "A"
-    type: "url-test"
-    url: "https://www.google.com/"
-    exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
-    interval: 200
- #   tolerance: 50000
-    exclude-type: "Shadowsocks|socks5|http|trojan|vmess|direct|IRAN|hysteria2h|ysteria2|vless"
-    include-all-providers: true
-    hidden: false
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Google_Search.png"
-
-  - name: "B"
-    type: "url-test"
-    url: "https://www.google.com/"
-    exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
-    interval: 200
- #   tolerance: 50000
-    exclude-type: "Shadowsocksr|socks5|http|trojan|vmess|direct|IRAN|hysteria2h|ysteria2|vless"
-    include-all-providers: true
-    hidden: false
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Netflix.png"
-
-  - name: "C"
-    exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
-    type: "url-test"
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/YouTube.png"
-    interval: 200
-#    tolerance: 5000
-    exclude-type: "Shadowsocks|Shadowsocksr|socks5|http|vmess|direct|IRAN|hysteria2h|ysteria2|vless"
-    include-all-providers: true
-    hidden: false
-    url: "http://www.google.com/"
-    
-  - name: "D"
-    type: "url-test"
-    url: "https://www.google.com/"
-    exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
-    interval: 200
- #   tolerance: 50000
-    exclude-type: "Shadowsocks|Shadowsocksr|socks5|http|trojan|direct|IRAN|hysteria2h|ysteria2|vless"
-    include-all-providers: true
-    hidden: false
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Twitter.png"
-
-  - name: "E"
-    type: "url-test"
-    url: "https://www.google.com/"
-    exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
-    interval: 200
- #   tolerance: 50000
-    exclude-type: "Shadowsocks|Shadowsocksr|socks5|http|trojan|vmess|direct|IRAN|hysteria2h|ysteria2"
-    include-all-providers: true
-    hidden: false
-    icon: "https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png"
-
-  - name: "F"
-    exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
-    type: "url-test"
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Auto.png"
-    interval: 200
-#    tolerance: 5000
-    exclude-type: "Shadowsocks|Shadowsocksr|socks5|http|trojan|vmess|direct|IRAN|vless"
-    include-all-providers: true
-    hidden: false
-    url: "http://www.google.com/"
-    
-  - name: "G"
-    type: "url-test"
-    url: "https://www.google.com/"
-    exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
-    interval: 200
- #   tolerance: 50000
-    exclude-type: "Shadowsocks|Shadowsocksr|trojan|vmess|direct|IRAN|hysteria2h|ysteria2|vless"
-    include-all-providers: true
-    hidden: false
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/US.png"
-
-  - name: "M"
-    type: "url-test"
-    url: "https://www.google.com/"
-    exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
-    interval: 200
- #   tolerance: 50000
-    exclude-type: "Shadowsocks|Shadowsocksr|socks5|http|trojan|vmess|direct|IRAN|hysteria2h|ysteria2|vless"
-#    include-all-providers: true
-#    include-all-proxies: true
-    hidden: false
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/HK.png"
-    proxies:
-      - "A"
-      - "B"
-      - "C"
-      - "D"
-      - "E"
-      - "F"
-      - "G"
   - name: "🎯 Direct"
     type: "select"
     icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io/main/docs/assets/icons/fish.svg"
     proxies:
       - "IRAN"
       - "PROXY"
-      - "PASS"
+      - "🎈fallback"
     
   - name: "🛑 Reject"
     type: "select"
@@ -539,7 +431,7 @@ proxy-groups:
     proxies:
       - "REJECT"
       - "DIRECT"
-      - "PASS"
+      - "PROXY"
       
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 Direct
