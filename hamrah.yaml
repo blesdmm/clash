@@ -606,7 +606,7 @@ proxy-groups:
 
   - name: "🇺🇸US🇺🇸"
     filter: "^(?=.*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)).*$"
-    exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
+    exclude-filter: "HK|Hong|TW|Tai|Taiwan|🇯🇵|日本|川日|东京|大阪|泉日|埼玉|JP|Japan|🇸🇬|新加坡|狮|SG|Singapore|回国|校园|游戏|🇰🇷|韩国|韓|首尔|KR|Korea|回国|校园|游戏|🇦🇹|timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅|AT|GER|🇩🇪🇱🇻|🇩🇪"
     type: "url-test"
     icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io/main/docs/assets/icons/flags/us.svg"
     interval: 300
@@ -705,9 +705,15 @@ rule-providers:
     url: "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Clash.yaml"
     interval: 86400
 rules :
-  - DOMAIN-SUFFIX,createporn.com,🇺🇸US🇺🇸
-  - DOMAIN-KEYWORD,createporn,🇺🇸US🇺🇸
-  - DOMAIN,createporn,🇺🇸US🇺🇸
+  - DOMAIN-KEYWORD,soft98.ir,redir-in
+  - DOMAIN,soft98,redir-in
+  - DOMAIN-SUFFIX,soft98.ir,redir-in
+  - DOMAIN-KEYWORD,dl2soft98.82.ir,redir-in
+  - DOMAIN,dl2soft98.82,redir-in
+  - DOMAIN-SUFFIX,dl2soft98.82.ir,redir-in
+  - DOMAIN-SUFFIX,createporn.com,PROXY
+  - DOMAIN-KEYWORD,createporn,PROXY
+  - DOMAIN,createporn,PROXY
   - DOMAIN,ad.com,REJECT
   - PROCESS-NAME,com.sec.location.nsflp2,REJECT,no-resolve
   - PROCESS-NAME,com.samsung.android.location,REJECT,no-resolve
