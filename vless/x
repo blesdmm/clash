@@ -1,497 +1,285 @@
-
 proxies:
-  - {"name":"XX_1","type":"vmess","server":"47.250.45.234","port":43063,"cipher":"auto","uuid":"47.250.45.234:43063?encryption=&path=%2Farki%3Fed%3D2048&type=ws#%F0%9F%87%B2%F0%9F%87%BEMY-47.250.45.234-5663\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_2","type":"vmess","server":"47.250.45.234","port":8613,"cipher":"auto","uuid":"47.250.45.234:8613?encryption=&path=%2Farki%3Fed%3D2048&type=ws#%F0%9F%87%B2%F0%9F%87%BEMY-47.250.45.234-5663\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_3","type":"vmess","server":"82.198.246.97","port":180,"cipher":"auto","uuid":"82.198.246.97:180?encryption=&type=#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":""}
-  - {"name":"XX_4","type":"hysteria2","server":"206.71.158.40","port":35000,"password":"b4bd0613-ff7c-4f2f-954d-185915e6ddad","sni":"api.kermanshahi.org","skip-cert-verify":true,"obfs-password":"@JavidnamanIran-Javid-SHAH-KingRezaPahlavi"}
-  - {"name":"XX_5","type":"hysteria2","server":"206.71.158.41","port":35000,"password":"b4bd0613-ff7c-4f2f-954d-185915e6ddad","sni":"api.kermanshahi.org","skip-cert-verify":true,"obfs-password":"@JavidnamanIran-Javid-SHAH-KingRezaPahlavi"}
-  - {"name":"XX_6","type":"hysteria2","server":"77.90.41.197","port":35000,"password":"b4bd0613-ff7c-4f2f-954d-185915e6ddad","sni":"api.kermanshahi.org","skip-cert-verify":true,"obfs-password":"@JavidnamanIran-Javid-SHAH-KingRezaPahlavi"}
-  - {"name":"XX_7","type":"hysteria2","server":"206.71.158.23","port":45000,"password":"Telegram--%3E%40Ln2Ray","sni":"gavazn.55994421.xyz","skip-cert-verify":true,"obfs-password":"Telegram-->@Ln2Ray"}
-  - {"name":"XX_8","type":"hysteria2","server":"gavazn.lnmarketplace.net","port":45000,"password":"Telegram--%3E%40Ln2Ray","sni":"gavazn.55994421.xyz","skip-cert-verify":true,"obfs-password":"Telegram-->@Ln2Ray"}
-  - {"name":"XX_9","type":"hysteria2","server":"206.71.158.37","port":35000,"password":"Yet-Another-Public-Config-1","sni":"YAPC-1.afshin.ir","skip-cert-verify":true,"obfs-password":"Yet-Another-Public-Config-1"}
-  - {"name":"XX_10","type":"hysteria2","server":"dir.cybsecguru.com","port":35000,"password":"b4bd0613-ff7c-4f2f-954d-185915e6ddad","sni":"api.kermanshahi.org","skip-cert-verify":true,"obfs-password":"@JavidnamanIran-Javid-SHAH-KingRezaPahlavi"}
-  - {"name":"XX_11","type":"ss","server":"176.126.83.158","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_12","type":"ss","server":"45.159.250.190","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_13","type":"ss","server":"138.186.142.80","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_14","type":"ss","server":"138.186.143.32","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_15","type":"hysteria2","server":"206.71.158.37","port":36300,"password":"Yet-Another-Public-Config-1","sni":"YAPC-1.afshin.ir","skip-cert-verify":true,"obfs-password":"Yet-Another-Public-Config-1"}
-  - {"name":"XX_16","type":"hysteria2","server":"206.71.158.37","port":36400,"password":"Yet-Another-Public-Config-1","sni":"YAPC-1.afshin.ir","skip-cert-verify":true,"obfs-password":"Yet-Another-Public-Config-1"}
-  - {"name":"XX_17","type":"hysteria2","server":"206.71.158.37","port":35200,"password":"Yet-Another-Public-Config-1","sni":"YAPC-1.afshin.ir","skip-cert-verify":true,"obfs-password":"Yet-Another-Public-Config-1"}
-  - {"name":"XX_18","type":"vless","server":"185.36.145.127","port":6060,"uuid":"bd80ec19-d764-4826-a607-d42bb1b3bc48","tls":true,"servername":"pmo.smnsoft.com","client-fingerprint":"chrome"}
-  - {"name":"XX_19","type":"ss","server":"185.47.255.213","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_20","type":"ss","server":"37.235.56.69","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_21","type":"ss","server":"95.174.68.33","port":443,"password":"YzH4id7ZEyKpfy39F2YcOmzCsBklGwh8","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_22","type":"ss","server":"147.45.235.63","port":49115,"password":"yYLiE0LOsr0CwIjbiCSLy2","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_23","type":"ss","server":"82.38.31.202","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_24","type":"ss","server":"82.38.31.190","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_25","type":"vless","server":"fr.nextseesion.ir","port":35789,"uuid":"be72cd92-92d2-4543-9bef-1673fcd03b45","tls":false}
-  - {"name":"XX_26","type":"vless","server":"51.250.28.39","port":443,"udp":true,"uuid":"4a6de183-2ad3-456c-b420-feeac81f6257","tls":true,"servername":"cloudflare.com","flow":"xtls-rprx-vision","network":"grpc","reality-opts":{"public-key":"FCg2XiFJrpH-2XlELSSSyEC7zkeW29HOgp4rfrqXEAI","short-id":"123abc"},"client-fingerprint":"chrome"}
-  - {"name":"XX_27","type":"ss","server":"82.38.31.208","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_28","type":"ss","server":"82.38.31.214","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_29","type":"ss","server":"45.87.175.177","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_30","type":"ss","server":"119.59.127.129","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_31","type":"ss","server":"82.38.31.176","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_32","type":"vless","server":"194.182.79.240","port":22734,"uuid":"36cc13fe-1bc0-462d-a8f6-9830c943966a","tls":false,"network":"grpc"}
-  - {"name":"XX_33","type":"ss","server":"82.38.31.205","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_34","type":"vless","server":"37.120.186.241","port":80,"uuid":"53fff6cc-b4ec-43e8-ade5-e0c42972fc33","tls":false,"servername":"cdn.ir","network":"ws","ws-opts":{"path":"/news"}}
-  - {"name":"XX_35","type":"ss","server":"46.183.217.204","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_36","type":"ss","server":"138.186.142.81","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_37","type":"ss","server":"23.95.76.59","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_38","type":"ss","server":"45.154.204.7","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_39","type":"ss","server":"156.38.168.58","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_40","type":"ss","server":"45.87.175.193","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_41","type":"ss","server":"173.234.29.2","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_42","type":"ss","server":"45.87.175.158","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_43","type":"ss","server":"185.237.185.89","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_44","type":"ss","server":"62.100.205.100","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_45","type":"ss","server":"109.201.152.181","port":443,"password":"shadowsocks","cipher":"aes-128-cfb"}
-  - {"name":"XX_46","type":"ss","server":"71.19.148.143","port":443,"password":"p78naCf2EfOlRSLTX0wFVx","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_47","type":"ss","server":"109.61.39.28","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_48","type":"ss","server":"38.54.57.90","port":989,"password":"f8f7aCzcPKbsF8p3","cipher":"aes-256-cfb"}
-  - {"name":"XX_49","type":"ss","server":"103.186.154.26","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_50","type":"ss","server":"107.151.182.253","port":8080,"password":"14fFPrbezE3HDZzsMOr6","cipher":"rc4-md5"}
-  - {"name":"XX_51","type":"ss","server":"141.98.4.67","port":52952,"password":"LMSNh21TrXjR2ok25Q2nE8ENT2zoBmPvka3RCCUAHZELCnWoekVjvaf89qwcRkdbxEfep2bc2aUtmnxqvF1ayQRez1JHjULj","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_52","type":"ss","server":"154.90.62.168","port":989,"password":"f8f7aCzcPKbsF8p3","cipher":"aes-256-cfb"}
-  - {"name":"XX_53","type":"ss","server":"154.90.63.177","port":989,"password":"f8f7aCzcPKbsF8p3","cipher":"aes-256-cfb"}
-  - {"name":"XX_54","type":"ss","server":"154.223.16.212","port":989,"password":"f8f7aCzcPKbsF8p3","cipher":"aes-256-cfb"}
-  - {"name":"XX_55","type":"ss","server":"154.223.20.79","port":989,"password":"f8f7aCzcPKbsF8p3","cipher":"aes-256-cfb"}
-  - {"name":"XX_56","type":"ss","server":"134.209.147.198","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_57","type":"ss","server":"192.71.166.100","port":989,"password":"f8f7aCzcPKbsF8p3","cipher":"aes-256-cfb"}
-  - {"name":"XX_58","type":"ss","server":"192.71.244.150","port":989,"password":"f8f7aCzcPKbsF8p3","cipher":"aes-256-cfb"}
-  - {"name":"XX_59","type":"ss","server":"185.153.197.5","port":989,"password":"f8f7aCzcPKbsF8p3","cipher":"aes-256-cfb"}
-  - {"name":"XX_60","type":"ss","server":"103.106.228.247","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_61","type":"ss","server":"154.223.20.79","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_62","type":"ss","server":"176.123.5.253","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_63","type":"ss","server":"203.23.128.92","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_64","type":"ss","server":"38.54.31.230","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_65","type":"ss","server":"38.54.4.87","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_66","type":"ss","server":"38.54.57.90","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_67","type":"ss","server":"45.82.252.109","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_68","type":"ss","server":"91.148.135.31","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_69","type":"ss","server":"102.207.216.176","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_70","type":"ss","server":"171.22.254.129","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_71","type":"ss","server":"188.214.157.30","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_72","type":"ss","server":"38.54.59.107","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_73","type":"ss","server":"185.47.254.87","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_74","type":"ss","server":"103.141.221.200","port":8388,"password":"asd123456","cipher":"chacha20-ietf"}
-  - {"name":"XX_75","type":"ss","server":"138.186.143.32","port":989,"password":"f8f7aCzcPKbsF8p3","cipher":"aes-256-cfb"}
-  - {"name":"XX_76","type":"ss","server":"103.186.154.74","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_77","type":"ss","server":"218.237.185.230","port":4652,"password":"qwerREWQ@@","cipher":"aes-256-cfb"}
-  - {"name":"XX_78","type":"ss","server":"103.186.155.28","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_79","type":"ss","server":"46.183.184.60","port":989,"password":"f8f7aCzcPKbsF8p3","cipher":"aes-256-cfb"}
-  - {"name":"XX_80","type":"ss","server":"147.78.1.230","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_81","type":"ss","server":"45.87.175.187","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_82","type":"ss","server":"217.30.10.18","port":9060,"password":"ueLXVkvh4hckhErQ","cipher":"aes-256-cfb"}
-  - {"name":"XX_83","type":"ss","server":"134.209.147.198","port":989,"password":"f8f7aCzcPKbsF8p3","cipher":"aes-256-cfb"}
-  - {"name":"XX_84","type":"ss","server":"pupas-shirting-unsung.freesocks.work","port":443,"password":"p78naCf2EfOlRSLTX0wFVx","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_85","type":"ss","server":"exchange.gameaurela.click","port":52952,"password":"LMSNh21TrXjR2ok25Q2nE8ENT2zoBmPvka3RCCUAHZELCnWoekVjvaf89qwcRkdbxEfep2bc2aUtmnxqvF1ayQRez1JHjULj","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_86","type":"ss","server":"5.188.36.93","port":31348,"password":"nYRhTCZdQLExK6ewVHgHS2mlv4FCysKyeyTTfhRdEgdeeRN0","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_87","type":"ss","server":"23.95.76.147","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_88","type":"ss","server":"217.30.10.18","port":9019,"password":"GA9KzeEgvfxNrgmM","cipher":"aes-256-cfb"}
-  - {"name":"XX_89","type":"ss","server":"103.186.154.42","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_90","type":"ss","server":"103.186.154.72","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_91","type":"ss","server":"103.186.154.146","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_92","type":"ss","server":"103.186.154.77","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_93","type":"ss","server":"103.186.154.166","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_94","type":"ss","server":"103.186.154.150","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_95","type":"ss","server":"103.186.154.162","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_96","type":"ss","server":"167.160.90.178","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_97","type":"ss","server":"171.22.254.17","port":989,"password":"f8f7aCzcPKbsF8p3","cipher":"aes-256-cfb"}
-  - {"name":"XX_98","type":"ss","server":"89.46.239.231","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_99","type":"ss","server":"171.22.254.17","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_100","type":"ss","server":"185.255.123.110","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_101","type":"ss","server":"192.71.244.150","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_102","type":"ss","server":"promo18v.bystrivpn.ru","port":443,"password":"dAHM1pm8ag7KdlrUylQi6t","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_103","type":"ss","server":"switcher-nick-croquet.freesocks.work","port":443,"password":"RFK38Cg7APneSB5cWDcpbm","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_104","type":"ss","server":"promo19v.bystrivpn.ru","port":443,"password":"SwTShXYSQd404FISs8NFeJ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_105","type":"ss","server":"217.30.10.18","port":9011,"password":"M3t2ZEQcMGRWBjRa","cipher":"aes-256-cfb"}
-  - {"name":"XX_106","type":"ss","server":"217.30.10.18","port":9041,"password":"U6qnYRhfyDmn8sgn","cipher":"aes-256-cfb"}
-  - {"name":"XX_107","type":"ss","server":"217.30.10.18","port":9079,"password":"TPqX8edgbAURcAMb","cipher":"aes-256-cfb"}
-  - {"name":"XX_108","type":"ss","server":"103.186.154.33","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_109","type":"ss","server":"217.30.10.18","port":9027,"password":"EXN3S3eQpjE7EJu8","cipher":"aes-256-cfb"}
-  - {"name":"XX_110","type":"ss","server":"217.30.10.18","port":9094,"password":"rpgbNnU9rDDU4aWZ","cipher":"aes-256-cfb"}
-  - {"name":"XX_111","type":"ss","server":"217.30.10.18","port":9031,"password":"BwcAUZk8hUFAkDGN","cipher":"aes-256-cfb"}
-  - {"name":"XX_112","type":"ss","server":"217.30.10.18","port":9037,"password":"TN2YqghxeFDKZfLU","cipher":"aes-256-cfb"}
-  - {"name":"XX_113","type":"ss","server":"217.30.10.18","port":9088,"password":"f8npKgNzdkss2ytn","cipher":"aes-256-cfb"}
-  - {"name":"XX_114","type":"ss","server":"217.30.10.18","port":9038,"password":"gYCYXfkUQEs2TaJQ","cipher":"aes-256-cfb"}
-  - {"name":"XX_115","type":"ss","server":"217.30.10.18","port":9059,"password":"9XwYyZsK8SNzQDtY","cipher":"aes-256-cfb"}
-  - {"name":"XX_116","type":"ss","server":"217.30.10.18","port":9001,"password":"UkXRsXvR6buDMG2Y","cipher":"aes-256-cfb"}
-  - {"name":"XX_117","type":"ss","server":"217.30.10.18","port":9042,"password":"S7KwUu7yBy58S3Ga","cipher":"aes-256-cfb"}
-  - {"name":"XX_118","type":"ss","server":"217.30.10.18","port":9020,"password":"BNmAXXxAHYpTRdzu","cipher":"aes-256-cfb"}
-  - {"name":"XX_119","type":"ss","server":"217.30.10.18","port":9093,"password":"wfLC2y7rzZyCmuyt","cipher":"aes-256-cfb"}
-  - {"name":"XX_120","type":"ss","server":"217.30.10.18","port":9005,"password":"ZET59LF6DvCC8KVt","cipher":"aes-256-cfb"}
-  - {"name":"XX_121","type":"ss","server":"217.30.10.18","port":9025,"password":"XPtzA9sCug3SPR4c","cipher":"aes-256-cfb"}
-  - {"name":"XX_122","type":"ss","server":"217.30.10.18","port":9045,"password":"Lp27rqyJq72bZsqX","cipher":"aes-256-cfb"}
-  - {"name":"XX_123","type":"ss","server":"217.30.10.18","port":9040,"password":"p9z5BVADH2YFs3MN","cipher":"aes-256-cfb"}
-  - {"name":"XX_124","type":"ss","server":"38.60.247.151","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_125","type":"ss","server":"14.18.106.88","port":6100,"password":"123","cipher":"aes-256-gcm"}
-  - {"name":"XX_126","type":"ss","server":"38.180.195.193","port":443,"password":"SwTShXYSQd404FISs8NFeJ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_127","type":"ss","server":"185.255.123.166","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_128","type":"ss","server":"imap.roomyinmita.name","port":40565,"password":"akvJQzZCaTdisSyuSy3aRmyvKC53X1d3PaAsb9xU8n5TY9hSB1DK5e6SPm921igHcRsCTCvf1pWufTJ5Li8PiiQG4vYdyyM7","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_129","type":"ss","server":"154.205.150.157","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_130","type":"ss","server":"103.186.154.219","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_131","type":"ss","server":"103.186.154.240","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_132","type":"ss","server":"103.186.154.28","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_133","type":"ss","server":"103.186.155.139","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_134","type":"ss","server":"103.186.155.204","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_135","type":"ss","server":"103.186.154.79","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_136","type":"ss","server":"103.186.155.62","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_137","type":"ss","server":"103.186.155.24","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_138","type":"ss","server":"103.186.155.8","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_139","type":"ss","server":"103.186.155.232","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_140","type":"ss","server":"103.186.154.165","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_141","type":"ss","server":"103.186.154.183","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_142","type":"ss","server":"103.186.155.231","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_143","type":"ss","server":"103.186.155.44","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_144","type":"ss","server":"103.186.155.68","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_145","type":"ss","server":"103.186.154.244","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_146","type":"ss","server":"103.186.155.110","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_147","type":"ss","server":"103.186.154.56","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_148","type":"ss","server":"103.186.155.240","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_149","type":"ss","server":"103.186.154.43","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_150","type":"ss","server":"103.186.155.154","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_151","type":"ss","server":"103.186.154.223","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_152","type":"ss","server":"103.186.155.233","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_153","type":"ss","server":"103.186.154.245","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_154","type":"ss","server":"103.186.155.153","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_155","type":"ss","server":"103.186.155.53","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_156","type":"ss","server":"103.186.154.247","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_157","type":"ss","server":"103.186.155.102","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_158","type":"ss","server":"103.186.155.17","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_159","type":"ss","server":"103.186.155.225","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_160","type":"ss","server":"103.186.155.230","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_161","type":"ss","server":"103.186.155.206","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_162","type":"ss","server":"103.186.154.29","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_163","type":"ss","server":"103.186.155.113","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_164","type":"ss","server":"103.186.155.83","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_165","type":"ss","server":"103.186.154.224","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_166","type":"ss","server":"103.186.155.103","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_167","type":"ss","server":"103.186.155.221","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_168","type":"ss","server":"103.186.155.49","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_169","type":"ss","server":"103.186.154.189","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_170","type":"ss","server":"103.186.154.209","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_171","type":"ss","server":"103.186.154.4","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_172","type":"ss","server":"103.186.155.57","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_173","type":"ss","server":"103.186.155.129","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_174","type":"ss","server":"103.186.154.246","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_175","type":"ss","server":"103.186.155.207","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_176","type":"ss","server":"103.186.155.235","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_177","type":"ss","server":"103.186.155.54","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_178","type":"ss","server":"103.186.154.198","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_179","type":"ss","server":"103.186.154.32","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_180","type":"ss","server":"103.186.154.75","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_181","type":"ss","server":"103.186.154.221","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_182","type":"ss","server":"103.186.155.128","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_183","type":"ss","server":"103.186.155.82","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_184","type":"ss","server":"103.186.155.34","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_185","type":"ss","server":"103.186.155.135","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_186","type":"ss","server":"103.186.155.58","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_187","type":"ss","server":"103.186.155.69","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_188","type":"ss","server":"103.186.154.155","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_189","type":"ss","server":"103.186.155.127","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_190","type":"ss","server":"103.186.155.12","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_191","type":"ss","server":"103.186.154.147","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_192","type":"ss","server":"103.186.154.210","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_193","type":"ss","server":"103.186.154.51","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_194","type":"ss","server":"103.186.154.253","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_195","type":"ss","server":"103.186.154.140","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_196","type":"ss","server":"103.186.155.18","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_197","type":"ss","server":"103.186.155.45","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_198","type":"ss","server":"103.186.155.56","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_199","type":"ss","server":"103.186.155.147","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_200","type":"ss","server":"103.186.155.214","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_201","type":"ss","server":"103.186.155.46","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_202","type":"ss","server":"103.186.154.250","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_203","type":"ss","server":"103.186.154.184","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_204","type":"ss","server":"103.186.155.63","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_205","type":"ss","server":"103.186.154.21","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_206","type":"ss","server":"103.186.155.31","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_207","type":"ss","server":"103.186.155.59","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_208","type":"ss","server":"103.186.154.66","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_209","type":"ss","server":"103.186.154.11","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_210","type":"ss","server":"103.186.154.248","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_211","type":"ss","server":"103.186.154.23","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_212","type":"ss","server":"103.186.154.35","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_213","type":"ss","server":"103.186.154.24","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_214","type":"ss","server":"103.186.154.31","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_215","type":"ss","server":"103.186.155.20","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_216","type":"ss","server":"103.186.155.23","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_217","type":"ss","server":"103.186.154.38","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_218","type":"ss","server":"103.186.155.22","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_219","type":"ss","server":"103.186.154.19","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_220","type":"ss","server":"103.186.154.37","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_221","type":"ss","server":"103.186.154.18","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_222","type":"ss","server":"103.186.154.27","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_223","type":"ss","server":"103.186.154.20","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_224","type":"ss","server":"103.186.154.30","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_225","type":"ss","server":"103.186.155.21","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_226","type":"ss","server":"103.186.155.19","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_227","type":"ss","server":"103.186.154.36","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_228","type":"ss","server":"103.186.154.22","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_229","type":"ss","server":"103.186.155.133","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_230","type":"ss","server":"103.186.154.25","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_231","type":"ss","server":"103.186.155.25","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_232","type":"ss","server":"103.186.154.34","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_233","type":"ss","server":"103.186.155.78","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_234","type":"ss","server":"103.186.155.125","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_235","type":"ss","server":"103.186.155.39","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_236","type":"ss","server":"103.186.155.116","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_237","type":"ss","server":"103.186.154.50","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_238","type":"ss","server":"103.186.155.81","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_239","type":"ss","server":"103.186.154.202","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_240","type":"ss","server":"103.186.154.161","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_241","type":"ss","server":"103.186.154.41","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_242","type":"ss","server":"103.186.154.80","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_243","type":"ss","server":"103.186.154.197","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_244","type":"ss","server":"103.186.154.227","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_245","type":"ss","server":"103.186.154.254","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_246","type":"ss","server":"103.186.155.238","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_247","type":"ss","server":"103.186.154.199","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_248","type":"ss","server":"103.186.154.176","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_249","type":"ss","server":"103.186.154.141","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_250","type":"ss","server":"103.186.154.206","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_251","type":"ss","server":"103.186.155.36","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_252","type":"ss","server":"103.186.154.226","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_253","type":"ss","server":"103.186.155.146","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_254","type":"ss","server":"103.186.155.5","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_255","type":"ss","server":"103.186.155.64","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_256","type":"ss","server":"103.186.154.214","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_257","type":"ss","server":"103.186.154.63","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_258","type":"ss","server":"103.186.155.205","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_259","type":"ss","server":"103.186.154.15","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_260","type":"ss","server":"103.186.155.211","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_261","type":"ss","server":"103.186.154.225","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_262","type":"ss","server":"103.186.155.4","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_263","type":"ss","server":"103.186.155.101","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_264","type":"ss","server":"103.186.154.60","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_265","type":"ss","server":"103.186.154.239","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_266","type":"ss","server":"103.186.155.79","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_267","type":"ss","server":"103.186.155.40","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_268","type":"ss","server":"103.186.154.58","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_269","type":"ss","server":"103.186.155.107","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_270","type":"ss","server":"103.186.154.53","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_271","type":"ss","server":"103.186.154.196","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_272","type":"ss","server":"103.186.154.76","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_273","type":"ss","server":"103.186.155.120","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_274","type":"ss","server":"103.186.155.65","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_275","type":"ss","server":"103.186.154.139","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_276","type":"ss","server":"103.186.154.194","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_277","type":"ss","server":"103.186.154.73","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_278","type":"ss","server":"103.186.154.215","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_279","type":"ss","server":"103.186.155.3","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_280","type":"ss","server":"103.186.155.77","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_281","type":"ss","server":"103.186.154.45","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_282","type":"ss","server":"103.186.154.49","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_283","type":"ss","server":"103.186.154.48","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_284","type":"ss","server":"103.186.154.220","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_285","type":"ss","server":"103.186.155.213","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_286","type":"ss","server":"103.186.155.145","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_287","type":"ss","server":"103.186.154.212","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_288","type":"ss","server":"103.186.154.153","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_289","type":"ss","server":"103.186.155.149","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_290","type":"ss","server":"103.186.154.172","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_291","type":"ss","server":"103.186.154.69","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_292","type":"ss","server":"103.186.155.229","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_293","type":"ss","server":"103.186.154.17","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_294","type":"ss","server":"103.186.154.180","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_295","type":"ss","server":"103.186.155.13","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_296","type":"ss","server":"103.186.154.233","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_297","type":"ss","server":"103.186.155.48","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_298","type":"ss","server":"103.186.154.68","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_299","type":"ss","server":"103.186.154.241","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_300","type":"ss","server":"103.186.154.185","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_301","type":"ss","server":"103.186.154.46","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_302","type":"ss","server":"103.186.155.223","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_303","type":"ss","server":"103.186.154.78","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_304","type":"ss","server":"103.186.155.118","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_305","type":"ss","server":"103.186.155.112","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_306","type":"ss","server":"103.186.155.138","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_307","type":"ss","server":"103.186.155.237","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_308","type":"ss","server":"103.186.154.232","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_309","type":"ss","server":"103.186.154.193","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_310","type":"ss","server":"103.186.154.157","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_311","type":"ss","server":"103.186.155.131","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_312","type":"ss","server":"103.186.154.151","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_313","type":"ss","server":"103.186.154.149","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_314","type":"ss","server":"103.186.155.234","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_315","type":"ss","server":"103.186.154.249","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_316","type":"ss","server":"103.186.155.209","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_317","type":"ss","server":"103.186.154.181","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_318","type":"ss","server":"103.186.154.13","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_319","type":"ss","server":"103.186.154.234","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_320","type":"ss","server":"103.186.155.16","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_321","type":"ss","server":"103.186.155.60","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_322","type":"ss","server":"103.186.155.143","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_323","type":"ss","server":"103.186.155.85","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_324","type":"ss","server":"103.186.154.179","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_325","type":"ss","server":"103.186.154.70","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_326","type":"ss","server":"103.186.154.195","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_327","type":"ss","server":"103.186.155.29","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_328","type":"ss","server":"103.186.154.252","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_329","type":"ss","server":"103.186.154.173","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_330","type":"ss","server":"103.186.154.251","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_331","type":"ss","server":"103.186.155.84","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_332","type":"ss","server":"103.186.154.148","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_333","type":"ss","server":"103.186.155.215","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_334","type":"ss","server":"103.186.155.218","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_335","type":"ss","server":"103.186.155.38","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_336","type":"ss","server":"103.186.155.202","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_337","type":"ss","server":"103.186.154.39","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_338","type":"ss","server":"103.186.154.145","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_339","type":"ss","server":"103.186.154.229","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_340","type":"ss","server":"103.186.155.55","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_341","type":"ss","server":"103.186.154.163","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_342","type":"ss","server":"103.186.154.178","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_343","type":"ss","server":"103.186.155.220","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_344","type":"ss","server":"103.186.155.42","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_345","type":"ss","server":"103.186.154.175","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_346","type":"ss","server":"103.186.154.164","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_347","type":"ss","server":"103.186.155.224","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_348","type":"ss","server":"103.186.155.226","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_349","type":"ss","server":"103.186.155.156","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_350","type":"ss","server":"103.186.154.144","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_351","type":"ss","server":"103.186.155.137","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_352","type":"ss","server":"103.186.154.159","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_353","type":"ss","server":"103.186.154.205","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_354","type":"ss","server":"103.186.155.126","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_355","type":"ss","server":"103.186.154.231","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_356","type":"ss","server":"103.186.155.67","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_357","type":"ss","server":"103.186.154.170","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_358","type":"ss","server":"103.186.155.37","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_359","type":"ss","server":"103.186.155.183","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_360","type":"ss","server":"103.186.155.122","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_361","type":"ss","server":"103.186.155.66","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_362","type":"ss","server":"103.186.154.204","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_363","type":"ss","server":"103.186.155.71","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_364","type":"ss","server":"103.186.154.47","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_365","type":"ss","server":"103.186.155.43","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_366","type":"ss","server":"103.186.154.237","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_367","type":"ss","server":"103.186.155.33","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_368","type":"ss","server":"103.186.155.111","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_369","type":"ss","server":"103.186.154.201","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_370","type":"ss","server":"103.186.154.230","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_371","type":"ss","server":"103.186.154.208","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_372","type":"ss","server":"103.186.154.182","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_373","type":"ss","server":"103.186.155.47","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_374","type":"ss","server":"103.186.155.9","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_375","type":"ss","server":"103.186.154.61","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_376","type":"ss","server":"103.186.155.51","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_377","type":"ss","server":"103.186.155.121","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_378","type":"ss","server":"103.186.154.44","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_379","type":"ss","server":"103.186.154.186","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_380","type":"ss","server":"103.186.155.61","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_381","type":"ss","server":"103.186.154.57","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_382","type":"ss","server":"103.186.154.9","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_383","type":"ss","server":"103.186.155.80","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_384","type":"ss","server":"103.186.154.174","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_385","type":"ss","server":"103.186.154.203","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_386","type":"ss","server":"103.186.154.64","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_387","type":"ss","server":"103.186.155.144","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_388","type":"ss","server":"103.186.154.59","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_389","type":"ss","server":"103.186.155.15","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_390","type":"ss","server":"103.186.154.16","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_391","type":"ss","server":"103.186.155.117","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_392","type":"ss","server":"103.186.155.203","port":38388,"password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","cipher":"aes-256-cfb"}
-  - {"name":"XX_393","type":"ss","server":"82.38.31.199","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"XX_394","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJRQDQ1Ljg3LjE3NS4xNTg6ODA4MA==","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_395","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJRQDgyLjM4LjMxLjIxODo4MDgw","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_396","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJRQDE1MS4yNDIuMjUxLjE1Mjo4MDgw","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_397","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJRQDgyLjM4LjMxLjE4Nzo4MDgw","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_398","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvNW9zWmcyNjl2NXpIcFlqcjF4WTlzQDE1MS4yNDIuMjUxLjEzNzo4MDgw","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_399","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJRQDE1MS4yNDIuMjUxLjE0Mjo4MDgw","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_400","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0YTJyZml4b3BoZGpmZmE4S1ZBNEFhQDE1MS4yNDIuMjUxLjE0NDo4MDgw","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_401","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJRQDgyLjM4LjMxLjIwMjo4MDgw","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_402","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1QDQ1Ljg3LjE3NS4xODc6ODA4MA==","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_403","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJRQDgyLjM4LjMxLjE3OTo4MDgw","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_404","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJRQDgyLjM4LjMxLjE5OTo4MDgw","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_405","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJRQDgyLjM4LjMxLjIxNDo4MDgw","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_406","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJRQDgyLjM4LjMxLjIwNTo4MDgw","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_407","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUA0Ni4xODMuMjE3LjIwNDo5OTA=","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_408","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp5WUxpRTBMT3NyMEN3SWpiaUNTTHkyQDE0Ny40NS4yMzUuNjM6NDkxMTU=","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_409","type":"vmess","server":"57.129.25.25","port":443,"cipher":"auto","uuid":"57.129.25.25:443?encryption=&host=f.khilei.com&path=%2Flinkvws&security=tls&sni=f.khilei.com&type=ws#v2cross.com\r","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/linkvws","headers":{"host":"f.khilei.com"}}}
-  - {"name":"XX_410","type":"vmess","server":"57.129.24.125","port":443,"cipher":"auto","uuid":"57.129.24.125:443?encryption=&host=aveiror.com&path=%2Flinkvws&security=tls&sni=aveiror.com&type=ws#v2cross.com\r","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/linkvws","headers":{"host":"aveiror.com"}}}
-  - {"name":"XX_411","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUA4OS40Ni4yMzkuMjMxOjk5MA==","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_412","type":"vmess","server":"cpanel.navar1.ir","port":100,"cipher":"auto","uuid":"cpanel.navar1.ir:100?encryption=&type=#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":""}
-  - {"name":"XX_413","type":"vmess","server":"57.129.25.22","port":443,"cipher":"auto","uuid":"57.129.25.22:443?encryption=&host=wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc&path=%2Flinkvws&security=tls&sni=wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc&type=ws#v2cross.com\r","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/linkvws","headers":{"host":"wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc"}}}
-  - {"name":"XX_414","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUA0NS4xNTkuMjUwLjE5MDo5OTA=","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_415","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUAxNzMuMjM0LjI5LjI6OTkw","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_416","type":"vmess","server":"47.242.20.123","port":41026,"cipher":"auto","uuid":"47.242.20.123:41026?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_417","type":"vmess","server":"47.242.238.231","port":13723,"cipher":"auto","uuid":"47.242.238.231:13723?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_418","type":"vmess","server":"47.243.51.237","port":52801,"cipher":"auto","uuid":"47.243.51.237:52801?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_419","type":"vmess","server":"47.243.212.142","port":12832,"cipher":"auto","uuid":"47.243.212.142:12832?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_420","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUAxODguMjE0LjE1Ny4zMDo5OTA=","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_421","type":"vmess","server":"47.243.12.217","port":65096,"cipher":"auto","uuid":"47.243.12.217:65096?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_422","type":"vmess","server":"47.243.12.217","port":28405,"cipher":"auto","uuid":"47.243.12.217:28405?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_423","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpuWVJoVENaZFFMRXhLNmV3VkhnSFMybWx2NEZDeXNLeWV5VFRmaFJkRWdkZWVSTjBANS4xODguMzYuOTM6MzEzNDg=","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_424","type":"vmess","server":"47.242.239.78","port":55855,"cipher":"auto","uuid":"47.242.239.78:55855?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_425","type":"vmess","server":"47.243.209.146","port":29333,"cipher":"auto","uuid":"47.243.209.146:29333?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_426","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpwNzhuYUNmMkVmT2xSU0xUWDB3RlZ4QDcxLjE5LjE0OC4xNDM6NDQz","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_427","type":"vmess","server":"47.242.239.78","port":4210,"cipher":"auto","uuid":"47.242.239.78:4210?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_428","type":"vmess","server":"47.242.125.104","port":58424,"cipher":"auto","uuid":"47.242.125.104:58424?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_429","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo4NjAzOWI3MS1iYTgyLTRjYTgtODM4ZS04NzA4NmFlNjY2ZGVAMTA3LjE3NS44Ny4yMDc6MTAwMTE=","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_430","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpRQ1hEeHVEbFRUTUQ3anRnSFVqSW9qQDE1MS4yNDIuMjUxLjE0Nzo4MDgw","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_431","type":"vmess","server":"47.243.153.104","port":2447,"cipher":"auto","uuid":"47.243.153.104:2447?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_432","type":"vmess","server":"47.243.51.237","port":27165,"cipher":"auto","uuid":"47.243.51.237:27165?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_433","type":"vmess","server":"47.242.239.78","port":48714,"cipher":"auto","uuid":"47.242.239.78:48714?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_434","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUA5MS4xNDguMTM1LjMxOjk5MA==","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_435","type":"vmess","server":"47.243.60.22","port":17727,"cipher":"auto","uuid":"47.243.60.22:17727?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_436","type":"vmess","server":"47.242.125.104","port":22739,"cipher":"auto","uuid":"47.242.125.104:22739?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_437","type":"vmess","server":"47.242.238.231","port":47843,"cipher":"auto","uuid":"47.242.238.231:47843?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_438","type":"vmess","server":"47.243.209.146","port":13786,"cipher":"auto","uuid":"47.243.209.146:13786?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_439","type":"vmess","server":"47.243.213.247","port":53860,"cipher":"auto","uuid":"47.243.213.247:53860?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_440","type":"vmess","server":"47.242.162.235","port":10806,"cipher":"auto","uuid":"47.242.162.235:10806?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_441","type":"vmess","server":"47.243.12.217","port":57526,"cipher":"auto","uuid":"47.243.12.217:57526?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_442","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpZekg0aWQ3WkV5S3BmeTM5RjJZY09tekNzQmtsR3doOEA5NS4xNzQuNjguMzM6NDQz","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_443","type":"ss","server":"YWVzLTI1Ni1nY206OEpDc1Bzc2ZnUzh0aVJ3aU1saEFSZz09QDE1LjIwNC4yNDcuNDk6MTIwMDA=","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_444","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAzQDEzNC4yMDkuMTQ3LjE5ODo5OTA=","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_445","type":"vmess","server":"47.242.125.104","port":36294,"cipher":"auto","uuid":"47.242.125.104:36294?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_446","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUAxMDkuNjEuMzkuMjg6OTkw","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_447","type":"vmess","server":"47.243.241.93","port":45349,"cipher":"auto","uuid":"47.243.241.93:45349?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_448","type":"vmess","server":"38.14.99.179","port":59807,"cipher":"auto","uuid":"38.14.99.179:59807?encryption=&type=#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":""}
-  - {"name":"XX_449","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpwNzhuYUNmMkVmT2xSU0xUWDB3RlZ4QHB1cGFzLXNoaXJ0aW5nLXVuc3VuZy5mcmVlc29ja3Mud29yazo0NDM=","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_450","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpSRkszOENnN0FQbmVTQjVjV0RjcGJtQHN3aXRjaGVyLW5pY2stY3JvcXVldC5mcmVlc29ja3Mud29yazo0NDM=","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_451","type":"vmess","server":"38.92.10.226","port":45979,"cipher":"auto","uuid":"38.92.10.226:45979?encryption=&path=%2Ftest&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/test"}}
-  - {"name":"XX_452","type":"vmess","server":"15.235.50.172","port":443,"cipher":"auto","uuid":"15.235.50.172:443?encryption=&host=baradiha.com&path=%2Flinkvws&security=tls&sni=baradiha.com&type=ws#v2cross.com\r","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/linkvws","headers":{"host":"baradiha.com"}}}
-  - {"name":"XX_453","type":"vmess","server":"47.243.153.104","port":22878,"cipher":"auto","uuid":"47.243.153.104:22878?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_454","type":"vmess","server":"23.162.200.227","port":443,"cipher":"auto","uuid":"23.162.200.227:443?encryption=&path=%2Flinkvws&security=tls&type=ws#v2cross.com\r","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/linkvws"}}
-  - {"name":"XX_455","type":"vmess","server":"47.243.153.104","port":46524,"cipher":"auto","uuid":"47.243.153.104:46524?encryption=&path=%2Farki%3Fed%3D2048&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_456","type":"vmess","server":"15.235.83.228","port":443,"cipher":"auto","uuid":"15.235.83.228:443?encryption=&host=wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc&path=%2Flinkvws&security=tls&sni=wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc&type=ws#v2cross.com\r","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/linkvws","headers":{"host":"wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc"}}}
-  - {"name":"XX_457","type":"trojan","server":"58.152.18.95","port":443,"udp":true,"password":"BxceQaOe","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"XX_458","type":"vmess","server":"8.217.176.108","port":4728,"cipher":"auto","uuid":"8.217.176.108:4728?encryption=&path=%2F&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/"}}
-  - {"name":"XX_459","type":"trojan","server":"47.242.225.242","port":443,"udp":true,"password":"92690597d6298061459918a371e8d77d","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"XX_460","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUA0NS4xNTQuMjA0Ljc6OTkw","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_461","type":"vmess","server":"107.173.31.37","port":443,"cipher":"auto","uuid":"107.173.31.37:443?encryption=&host=proxy.gelindejia.asia&path=%2Fvideo&security=tls&sni=proxy.gelindejia.asia&type=ws#v2cross.com\r","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/video","headers":{"host":"proxy.gelindejia.asia"}}}
-  - {"name":"XX_462","type":"trojan","server":"219.79.165.186","port":443,"udp":true,"password":"BxceQaOe","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"XX_463","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUAyMy45NS43Ni41OTo5OTA=","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_464","type":"trojan","server":"58.152.18.192","port":443,"udp":true,"password":"79314e99f0a473fe86efc7827942ad00","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"XX_465","type":"vmess","server":"103.127.218.91","port":54693,"cipher":"auto","uuid":"103.127.218.91:54693?encryption=&path=%2F1cef03ad&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/1cef03ad"}}
-  - {"name":"XX_466","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUAxODUuOTMuMTczLjYwOjk5MA==","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_467","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUAxMzguMTg2LjE0Mi44MTo5OTA=","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_468","type":"trojan","server":"52.195.176.26","port":2145,"udp":true,"password":"BxceQaOe","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"XX_469","type":"vmess","server":"v10.hdacd.com","port":30807,"cipher":"auto","uuid":"v10.hdacd.com:30807?encryption=&type=#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":""}
-  - {"name":"XX_470","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1QDQ1Ljg3LjE3NS4xOTM6ODA4MA==","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_471","type":"vmess","server":"73d73acd-sv2sg0-t7bo2t-1psmw.hk3.p5pv.com","port":80,"cipher":"auto","uuid":"73d73acd-sv2sg0-t7bo2t-1psmw.hk3.p5pv.com:80?encryption=&host=73d73acd-sv2sg0-t7bo2t-1psmw.hk3.p5pv.com&path=%2F&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"73d73acd-sv2sg0-t7bo2t-1psmw.hk3.p5pv.com"}}}
-  - {"name":"XX_472","type":"vmess","server":"8.217.176.108","port":3721,"cipher":"auto","uuid":"8.217.176.108:3721?encryption=&path=%2F&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/"}}
-  - {"name":"XX_473","type":"trojan","server":"112.118.116.66","port":443,"udp":true,"password":"BxceQaOe","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"XX_474","type":"vmess","server":"6de4b9d4-suk9s0-t8ro7t-1ey07.hk3.p5pv.com","port":80,"cipher":"auto","uuid":"6de4b9d4-suk9s0-t8ro7t-1ey07.hk3.p5pv.com:80?encryption=&host=6de4b9d4-suk9s0-t8ro7t-1ey07.hk3.p5pv.com&path=%2F&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"6de4b9d4-suk9s0-t8ro7t-1ey07.hk3.p5pv.com"}}}
-  - {"name":"XX_475","type":"vmess","server":"4bbf82ea-t0bog0-ta64ri-1qzi1.hk3.p5pv.com","port":80,"cipher":"auto","uuid":"4bbf82ea-t0bog0-ta64ri-1qzi1.hk3.p5pv.com:80?encryption=&host=4bbf82ea-t0bog0-ta64ri-1qzi1.hk3.p5pv.com&path=%2F&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"4bbf82ea-t0bog0-ta64ri-1qzi1.hk3.p5pv.com"}}}
-  - {"name":"XX_476","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUAxMzguMTg2LjE0Mi44MDo5OTA=","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_477","type":"vmess","server":"5b2c09e0-suvds0-t2oosc-xm0q.hk3.p5pv.com","port":80,"cipher":"auto","uuid":"5b2c09e0-suvds0-t2oosc-xm0q.hk3.p5pv.com:80?encryption=&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"XX_478","type":"vmess","server":"34013157-sunz40-taz53d-1j0y6.hk3.p5pv.com","port":80,"cipher":"auto","uuid":"34013157-sunz40-taz53d-1j0y6.hk3.p5pv.com:80?encryption=&type=ws#v2cross.com\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"XX_479","type":"vmess","server":"hgtrojan.zabc.net","port":2083,"cipher":"auto","uuid":"hgtrojan.zabc.net:2083?encryption=&host=hgtrojan.zabc.net&path=%2Fe6395c20&security=tls&sni=hgtrojan.zabc.net&type=ws#v2cross.com\r","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/e6395c20","headers":{"host":"hgtrojan.zabc.net"}}}
-  - {"name":"XX_480","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToxUld3WGh3ZkFCNWdBRW96VTRHMlBnQGJlZXN5YXIub3JnOjgwODA=","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_481","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1QDQ1Ljg3LjE3NS4xNzc6ODA4MA==","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_482","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpMTVNOaDIxVHJYalIyb2syNVEybkU4RU5UMnpvQm1QdmthM1JDQ1VBSFpFTENuV29la1ZqdmFmODlxd2NSa2RieEVmZXAyYmMyYVV0bW54cXZGMWF5UVJlejFKSGpVTGpAZXhjaGFuZ2UuZ2FtZWF1cmVsYS5jbGljazo1Mjk1Mg==","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_483","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUAxNTYuMzguMTY4LjU4Ojk5MA==","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_484","type":"vmess","server":"149.30.232.103","port":18393,"cipher":"auto","uuid":"149.30.232.103:18393?encryption=&path=%2Farki%3Fed%3D2048&type=ws#%E7%BE%8E%E5%9B%BD_1030238\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_485","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUAxNTQuNzAuMjA3Ljk3Ojk5MA==","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_486","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUAxMDIuMjA3LjIxNi4xNzY6OTkw","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_487","type":"vmess","server":"149.30.232.103","port":15097,"cipher":"auto","uuid":"149.30.232.103:15097?encryption=&path=%2Farki%3Fed%3D2048&type=ws#%E7%BE%8E%E5%9B%BD_1030237\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/arki?ed=2048"}}
-  - {"name":"XX_488","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpkQUhNMXBtOGFnN0tkbHJVeWxRaTZ0QHByb21vMTh2LmJ5c3RyaXZwbi5ydTo0NDM=","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_489","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUAxOTcuMTQwLjI5Ljc2Ojk5MA==","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_490","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5dHFoTWRJclRrZ1E0NlB2aHlBdE1IQDkyLjExMi4xMjYuOTA6NDQz","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_491","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUAzOC41NC41Ny45MDo5OTA=","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_492","type":"vmess","server":"43.162.114.137","port":59674,"cipher":"auto","uuid":"43.162.114.137:59674?encryption=&type=#@V2RAY_VMESS_free%20(130)\r","alterId":0,"tls":false,"skip-cert-verify":true,"network":""}
-  - {"name":"XX_493","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUAzOC41NC4zMS4yMzA6OTkw","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_494","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUAxNTQuMjA1LjE1My4xMDc6OTkw","port":8388,"password":"","cipher":"aes-256-gcm"}
-  - {"name":"XX_495","type":"ss","server":"Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PUAzOC41NC40LjY1Ojk5MA==","port":8388,"password":"","cipher":"aes-256-gcm"}
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.18:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.154.18%3A38388
+ss://YWVzLTI1Ni1jZmI6ZjhmN2FDemNQS2JzRjhwMw@37.143.129.230:989#SS-TCP-NA%20%F0%9F%87%AB%F0%9F%87%AE%20FI-37.143.129.230%3A989
+ss://YWVzLTI1Ni1jZmI6RkFkVXZNSlVxNXZEZ0tFcQ@217.30.10.18:9006#%F0%9F%87%B5%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B1%20PL-217.30.10.18%3A9006
+ss://YWVzLTI1Ni1jZmI6YzNOdEhKNXVqVjJ0R0Rmag@217.30.10.18:9084#%F0%9F%87%B5%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B1%20PL-217.30.10.18%3A9084
+ss://YWVzLTI1Ni1jZmI6ZjhmN2FDemNQS2JzRjhwMw@138.186.143.32:989#SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%AA%20PE-138.186.143.32%3A989
+ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg@68.183.227.4:8080#%F0%9F%87%B8%F0%9F%87%AC%20SS-TCP-NA%20%F0%9F%87%B8%F0%9F%87%AC%20SG-68.183.227.4%3A8080
+ss://YWVzLTI1Ni1jZmI6ZjhmN2FDemNQS2JzRjhwMw@38.54.57.90:989#%F0%9F%87%A7%F0%9F%87%B7%20SS-TCP-NA%20%F0%9F%87%A7%F0%9F%87%B7%20BR-38.54.57.90%3A989
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.22:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.154.22%3A38388
+ss://YWVzLTI1Ni1jZmI6ZjhmN2FDemNQS2JzRjhwMw@38.60.247.151:989#SS-TCP-NA%20%F0%9F%87%A7%F0%9F%87%AC%20BG-38.60.247.151%3A989
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@134.209.147.198:990#%F0%9F%87%AE%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%AE%F0%9F%87%B3%20IN-134.209.147.198%3A990
+ss://YWVzLTEyOC1jZmI6c2hhZG93c29ja3M@109.201.152.181:443#%F0%9F%87%B3%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B3%F0%9F%87%B1%20NL-109.201.152.181%3A443
+ss://YWVzLTI1Ni1jZmI6ZjhmN2FDemNQS2JzRjhwMw@147.78.1.230:989#SS-TCP-NA%20%F0%9F%87%B2%F0%9F%87%BD%20MX-147.78.1.230%3A989
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.32:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.154.32%3A38388
+ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg@68.183.227.236:8080#%F0%9F%87%B8%F0%9F%87%AC%20SS-TCP-NA%20%F0%9F%87%B8%F0%9F%87%AC%20SG-68.183.227.236%3A8080
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.21:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.154.21%3A38388
+ss://YWVzLTI1Ni1jZmI6ZjhmN2FDemNQS2JzRjhwMw@192.71.249.78:989#%F0%9F%87%A7%F0%9F%87%AA%20SS-TCP-NA%20%F0%9F%87%A7%F0%9F%87%AA%20BE-192.71.249.78%3A989
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.155.23:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.155.23%3A38388
+ss://YWVzLTI1Ni1jZmI6ZjYzZ2c4RXJ1RG5Vcm16NA@217.30.10.18:9010#%F0%9F%87%B5%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B1%20PL-217.30.10.18%3A9010
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.155.24:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.155.24%3A38388
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.155.19:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.155.19%3A38388
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.36:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.154.36%3A38388
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.31:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.154.31%3A38388
+ss://YWVzLTI1Ni1jZmI6TTN0MlpFUWNNR1JXQmpSYQ@217.30.10.18:9011#%F0%9F%87%B5%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B1%20PL-217.30.10.18%3A9011
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.29:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.154.29%3A38388
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.155.133:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.155.133%3A38388
+ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg@68.183.235.122:8080#%F0%9F%87%B8%F0%9F%87%AC%20SS-TCP-NA%20%F0%9F%87%B8%F0%9F%87%AC%20SG-68.183.235.122%3A8080
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.35:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.154.35%3A38388
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.38:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.154.38%3A38388
+ss://YWVzLTI1Ni1jZmI6WFB0ekE5c0N1ZzNTUFI0Yw@217.30.10.18:9025#%F0%9F%87%B5%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B1%20PL-217.30.10.18%3A9025
+ss://YWVzLTI1Ni1jZmI6Qk5tQVhYeEFIWXBUUmR6dQ@5.188.181.201:9020#%F0%9F%87%AA%F0%9F%87%B8%20SS-TCP-NA%20%F0%9F%87%AA%F0%9F%87%B8%20ES-5.188.181.201%3A9020
+ss://YWVzLTI1Ni1jZmI6VTZxbllSaGZ5RG1uOHNnbg@217.30.10.18:9041#%F0%9F%87%B5%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B1%20PL-217.30.10.18%3A9041
+ss://YWVzLTI1Ni1jZmI6SmRtUks5Z01FcUZnczhuUA@217.30.10.18:9003#%F0%9F%87%B5%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B1%20PL-217.30.10.18%3A9003
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.155.18:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.155.18%3A38388
+ss://YWVzLTI1Ni1jZmI6OVh3WXlac0s4U056UUR0WQ@217.30.10.18:9059#%F0%9F%87%B5%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B1%20PL-217.30.10.18%3A9059
+ss://YWVzLTI1Ni1jZmI6ZjhmN2FDemNQS2JzRjhwMw@185.231.233.112:989#SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B9%20PT-185.231.233.112%3A989
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.37:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.154.37%3A38388
+ss://YWVzLTI1Ni1jZmI6ZjhmN2FDemNQS2JzRjhwMw@192.71.244.150:989#SS-TCP-NA%20%F0%9F%87%B8%F0%9F%87%AE%20SI-192.71.244.150%3A989
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.24:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.154.24%3A38388
+ss://YWVzLTI1Ni1jZmI6cDl6NUJWQURIMllGczNNTg@217.30.10.18:9040#%F0%9F%87%B5%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B1%20PL-217.30.10.18%3A9040
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.33:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.154.33%3A38388
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.155.20:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.155.20%3A38388
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.155.21:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.155.21%3A38388
+ss://YWVzLTI1Ni1jZmI6VE4yWXFnaHhlRkRLWmZMVQ@217.30.10.18:9037#%F0%9F%87%B5%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B1%20PL-217.30.10.18%3A9037
+ss://YWVzLTI1Ni1jZmI6YTNHRll0MzZTbTgyVnlzOQ@5.188.181.201:9000#%F0%9F%87%AA%F0%9F%87%B8%20SS-TCP-NA%20%F0%9F%87%AA%F0%9F%87%B8%20ES-5.188.181.201%3A9000
+ss://YWVzLTI1Ni1jZmI6cnBnYk5uVTlyRERVNGFXWg@217.30.10.18:9094#%F0%9F%87%B5%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B1%20PL-217.30.10.18%3A9094
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.155.22:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.155.22%3A38388
+ss://YWVzLTI1Ni1jZmI6Y3A4cFJTVUF5TGhUZlZXSA@217.30.10.18:9064#%F0%9F%87%B5%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B1%20PL-217.30.10.18%3A9064
+ss://YWVzLTI1Ni1jZmI6ZjhmN2FDemNQS2JzRjhwMw@154.223.16.212:989#SS-TCP-NA%20%F0%9F%87%A8%F0%9F%87%B4%20CO-154.223.16.212%3A989
+ss://YWVzLTI1Ni1jZmI6ZjhucEtnTnpka3NzMnl0bg@217.30.10.18:9088#%F0%9F%87%B5%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B1%20PL-217.30.10.18%3A9088
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.155.25:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.155.25%3A38388
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.28:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.154.28%3A38388
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.19:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.154.19%3A38388
+ss://YWVzLTI1Ni1jZmI6WkVUNTlMRjZEdkNDOEtWdA@217.30.10.18:9005#%F0%9F%87%B5%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B1%20PL-217.30.10.18%3A9005
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.20:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.154.20%3A38388
+ss://YWVzLTI1Ni1jZmI6QmVqclF2dHU5c3FVZU51Wg@217.30.10.18:9024#%F0%9F%87%B5%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B1%20PL-217.30.10.18%3A9024
+ss://YWVzLTI1Ni1jZmI6ck5CZk51dUFORkNBazdLQg@217.30.10.18:9056#%F0%9F%87%B5%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B1%20PL-217.30.10.18%3A9056
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.27:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.154.27%3A38388
+ss://YWVzLTI1Ni1jZmI6Qk5tQVhYeEFIWXBUUmR6dQ@217.30.10.18:9020#%F0%9F%87%B5%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B1%20PL-217.30.10.18%3A9020
+ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.26:38388#%F0%9F%87%BB%F0%9F%87%B3%20SS-TCP-NA%20%F0%9F%87%BB%F0%9F%87%B3%20VN-103.186.154.26%3A38388
+ss://YWVzLTI1Ni1jZmI6UVdERHZWRTlucE51clFmQQ@217.30.10.18:9026#%F0%9F%87%B5%F0%9F%87%B1%20SS-TCP-NA%20%F0%9F%87%B5%F0%9F%87%B1%20PL-217.30.10.18%3A9026
+trojan://bpb-trojan@www.vpslook.com:443/?type=tcp&security=tls#Telegram%20%3A%20%40vless_vmess%202
+trojan://c8b9db60-2132-11f0-880d-1239d0255272@uk1.test3.net:443/?type=tcp&security=tls#%40hopev2ray%F0%9F%92%96
+trojan://Aimer@154.17.228.203:443/?type=tcp&security=tls#%F0%9F%87%BA%F0%9F%87%B8%20%40Hope_Net-join-us-on-Telegram%2010
+trojan://eB20cwssJIVZ@172.67.202.155:2096/?type=tcp&security=tls&sni=ilna.onetwothree123.ir#%F0%9F%87%A9%F0%9F%87%AA%20TR-HTTPUPGRADE-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-172.67.202.155%3A2096
+trojan://c133fbaf-49b6-478a-9a9f-dbde3839aeb5@146.190.130.23:443/?type=tcp&security=tls&sni=m.ctrip.com#%F0%9F%87%BA%F0%9F%87%B8%20TR-TCP-NA%20%F0%9F%87%BA%F0%9F%87%B8%20US-146.190.130.23%3A443
+trojan://f6a0a650-306e-11ee-b692-1239d0255272@51.158.146.183:443/?type=tcp&security=tls&sni=Speedtest.net#%F0%9F%87%AB%F0%9F%87%B7%20TR-TCP-TLS%20%F0%9F%87%AB%F0%9F%87%B7%20FR-51.158.146.183%3A443
+trojan://bpb-trojan@45.80.110.224:443/?type=tcp&security=tls&sni=bpb.my79801.com#%F0%9F%87%B9%F0%9F%87%B7%20TR-TCP-TLS%20%F0%9F%87%AA%F0%9F%87%AA%20EE-45.80.110.224%3A443
+trojan://4863e1b2-ec2f-4c71-b862-ce533028e57e@185.107.56.55:443/?type=tcp&security=tls&sni=trus.moonfree.top#%F0%9F%87%B3%F0%9F%87%B1%20TR-TCP-TLS%20%F0%9F%87%B3%F0%9F%87%B1%20NL-185.107.56.55%3A443
+trojan://bpb-trojan@108.165.216.155:443/?type=tcp&security=tls&sni=bpb.my79801.com#%F0%9F%87%BA%F0%9F%87%B8%20TR-TCP-TLS%20%F0%9F%87%BA%F0%9F%87%B8%20US-108.165.216.155%3A443
+trojan://bpb-trojan@198.41.211.21:443/?type=tcp&security=tls&sni=bpb.my79801.com#%F0%9F%87%B9%F0%9F%87%B7%20TR-TCP-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-198.41.211.21%3A443
+trojan://4863e1b2-ec2f-4c71-b862-ce533028e57e@74.63.241.26:443/?type=tcp&security=tls&sni=trus.moonfree.top#%F0%9F%87%BA%F0%9F%87%B8%20TR-TCP-TLS%20%F0%9F%87%BA%F0%9F%87%B8%20US-74.63.241.26%3A443
+trojan://6e1b9a65-884f-3aa9-9469-bf6ec0f08610@37.114.62.218:443/?type=tcp&security=tls&sni=45.32.28.232#%F0%9F%87%A9%F0%9F%87%AA%20TR-TCP-TLS%20%F0%9F%87%A9%F0%9F%87%AA%20DE-37.114.62.218%3A443
+trojan://40ea99d6-b2f2-4a00-8f61-c8d8fdaa25b9@172.67.136.117:443/?type=tcp&security=tls&sni=kdlsupport.zendesk.com#%F0%9F%87%B9%F0%9F%87%B7%20TR-TCP-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-172.67.136.117%3A443
+trojan://bpb-trojan@104.18.182.198:443/?type=tcp&security=tls&sni=bpb.my79801.com#%F0%9F%87%B9%F0%9F%87%B7%20TR-TCP-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-104.18.182.198%3A443
+trojan://4863e1b2-ec2f-4c71-b862-ce533028e57e@192.157.56.139:443/?type=tcp&security=tls&sni=trus.moonfree.top#%F0%9F%87%BA%F0%9F%87%B8%20TR-TCP-TLS%20%F0%9F%87%BA%F0%9F%87%B8%20US-192.157.56.139%3A443
+trojan://IQYD1kSiuYJW@172.67.142.21:2087/?type=tcp&security=tls&sni=leader.andishehnegariran.ir#%F0%9F%87%A9%F0%9F%87%AA%20TR-HTTPUPGRADE-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-172.67.142.21%3A2087
+trojan://dVqpmoYvWGuP@104.21.54.208:2087/?type=tcp&security=tls&sni=leader.andishehnegariran.ir#%F0%9F%87%A9%F0%9F%87%AA%20TR-HTTPUPGRADE-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-104.21.54.208%3A2087
+trojan://VW9s45aUKb@104.21.15.33:2087/?type=tcp&security=tls&sni=support.sabapardaziran.ir#%F0%9F%87%B9%F0%9F%87%B7%20TR-GRPC-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-104.21.15.33%3A2087
+trojan://dongtaiwang.com@75.2.18.233:443/?type=tcp&security=tls&sni=trojan2.free4444.xyz#%F0%9F%87%BA%F0%9F%87%B8%20TR-TCP-TLS%20%F0%9F%87%BA%F0%9F%87%B8%20US-75.2.18.233%3A443
+trojan://ZJU29smXwp@172.67.176.206:2053/?type=tcp&security=tls&sni=damn-mci-again-3.danesh-bonyan.Store#%F0%9F%87%B9%F0%9F%87%B7%20TR-TCP-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-172.67.176.206%3A2053
+trojan://52701795-3c3b-46b4-b7cf-c5978b3a4cf2@104.21.47.176:443/?type=tcp&security=tls&sni=hdfyc1.achaemenidempireofpersia.uk#%F0%9F%87%B9%F0%9F%87%B7%20TR-TCP-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-104.21.47.176%3A443
+trojan://0000000@18.238.109.41:443/?type=tcp&security=tls&sni=www.lovelive-anime.jp#%F0%9F%87%BA%F0%9F%87%B8%20TR-TCP-TLS%20%F0%9F%87%BA%F0%9F%87%B8%20US-18.238.109.41%3A443
+trojan://4863e1b2-ec2f-4c71-b862-ce533028e57e@185.107.56.52:443/?type=tcp&security=tls&sni=trus.moonfree.top#%F0%9F%87%B3%F0%9F%87%B1%20TR-TCP-TLS%20%F0%9F%87%B3%F0%9F%87%B1%20NL-185.107.56.52%3A443
+trojan://poTB9j1n12Tq@104.21.54.208:2053/?type=tcp&security=tls&sni=tasnim.andishehnegariran.ir#%F0%9F%87%B9%F0%9F%87%B7%20TR-TCP-NA%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-104.21.54.208%3A2053
+trojan://7778e684-f435-4166-bf9e-0256cb28bf10@15.197.162.184:443/?type=tcp&security=tls&sni=download2hkt.windowsupdate.lol#%F0%9F%87%BA%F0%9F%87%B8%20TR-TCP-NA%20%F0%9F%87%BA%F0%9F%87%B8%20US-15.197.162.184%3A443
+trojan://6X1Ca9dbWv%2540%255E@172.67.202.155:8443/?type=tcp&security=tls&sni=soft.onetwothree123.ir#%F0%9F%87%A9%F0%9F%87%AA%20TR-HTTPUPGRADE-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-172.67.202.155%3A8443
+trojan://40ea99d6-b2f2-4a00-8f61-c8d8fdaa25b9@104.21.38.163:443/?type=tcp&security=tls&sni=kdlsupport.zendesk.com#%F0%9F%87%B9%F0%9F%87%B7%20TR-TCP-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-104.21.38.163%3A443
+trojan://2cba4104747d49d18319e5ade1b93ab5@161.35.34.48:443/?type=tcp&security=tls&sni=yourjobnavigator.online#%F0%9F%87%B9%F0%9F%87%B7%20TR-TCP-TLS%20%F0%9F%87%AC%F0%9F%87%A7%20GB-161.35.34.48%3A443
+trojan://61605c66-6d41-4b9d-a496-b9898f3f95d0@70.32.1.32:443/?type=tcp&security=tls&sni=jp-h1.sshub.xyz#%F0%9F%87%BA%F0%9F%87%B8%20TR-TCP-TLS%20%F0%9F%87%BA%F0%9F%87%B8%20US-70.32.1.32%3A443
+trojan://bpb-trojan@104.18.107.117:443/?type=tcp&security=tls&sni=bpb.my79801.com#%F0%9F%87%B9%F0%9F%87%B7%20TR-TCP-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-104.18.107.117%3A443
+trojan://9498f3a0-2992-11ee-a4c7-1239d0255272@51.159.59.186:443/?type=tcp&security=tls&sni=zula.ir#%F0%9F%87%AB%F0%9F%87%B7%20TR-TCP-TLS%20%F0%9F%87%AB%F0%9F%87%B7%20FR-51.159.59.186%3A443
+trojan://4863e1b2-ec2f-4c71-b862-ce533028e57e@185.107.56.53:443/?type=tcp&security=tls&sni=trus.moonfree.top#%F0%9F%87%B3%F0%9F%87%B1%20TR-TCP-TLS%20%F0%9F%87%B3%F0%9F%87%B1%20NL-185.107.56.53%3A443
+trojan://VW9s45aUKb@172.67.161.74:2087/?type=tcp&security=tls&sni=support.sabapardaziran.ir#%F0%9F%87%B9%F0%9F%87%B7%20TR-GRPC-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-172.67.161.74%3A2087
+trojan://4Tze3Ri*i%2523Fo@104.21.44.185:8443/?type=tcp&security=tls&sni=soft.onetwothree123.ir#%F0%9F%87%A9%F0%9F%87%AA%20TR-HTTPUPGRADE-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-104.21.44.185%3A8443
+trojan://4863e1b2-ec2f-4c71-b862-ce533028e57e@185.107.56.194:443/?type=tcp&security=tls&sni=trus.moonfree.top#%F0%9F%87%B3%F0%9F%87%B1%20TR-TCP-TLS%20%F0%9F%87%B3%F0%9F%87%B1%20NL-185.107.56.194%3A443
+trojan://4863e1b2-ec2f-4c71-b862-ce533028e57e@37.48.65.144:443/?type=tcp&security=tls&sni=trus.moonfree.top#%F0%9F%87%B3%F0%9F%87%B1%20TR-TCP-TLS%20%F0%9F%87%B3%F0%9F%87%B1%20NL-37.48.65.144%3A443
+trojan://ncynDWKB7Um7@172.67.175.40:443/?type=tcp&security=tls&sni=isna.farsonline24.ir#%F0%9F%87%A9%F0%9F%87%AA%20TR-HTTPUPGRADE-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-172.67.175.40%3A443
+trojan://nEKYp2bQim@104.21.15.33:443/?type=tcp&security=tls&sni=support.sabapardaziran.ir#%F0%9F%87%A9%F0%9F%87%AA%20TR-HTTPUPGRADE-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-104.21.15.33%3A443
+trojan://bpb-trojan@198.202.211.146:443/?type=tcp&security=tls&sni=bpb.my79801.com#%F0%9F%87%BA%F0%9F%87%B8%20TR-TCP-TLS%20%F0%9F%87%BA%F0%9F%87%B8%20US-198.202.211.146%3A443
+trojan://pm1pwiX9aLqF@104.21.48.6:2096/?type=tcp&security=tls&sni=esna.farsonline24.ir#%F0%9F%87%A9%F0%9F%87%AA%20TR-HTTPUPGRADE-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-104.21.48.6%3A2096
+trojan://VGZ0nM9KY3Qz@172.67.175.40:2096/?type=tcp&security=tls&sni=esna.farsonline24.ir#%F0%9F%87%A9%F0%9F%87%AA%20TR-HTTPUPGRADE-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-172.67.175.40%3A2096
+trojan://c21b972a-bc92-4f8c-8e6a-6868001f7f88@141.193.213.106:443/?type=tcp&security=tls&sni=ush9pgjbr1t6mxmbwe.jjjiedian6j4tblb.com#%F0%9F%87%BA%F0%9F%87%B8%20TR-TCP-NA%20%F0%9F%87%BA%F0%9F%87%B8%20US-141.193.213.106%3A443
+trojan://b8808043-6566-4923-9195-e66bfb553d57@51.38.99.96:443/?type=tcp&security=tls&sni=ba24.ir#%F0%9F%87%AB%F0%9F%87%B7%20TR-TCP-TLS%20%F0%9F%87%AB%F0%9F%87%B7%20FR-51.38.99.96%3A443
+trojan://ef23ddd0-14c5-39c2-9880-af55ce892363@23.94.25.129:55511/?type=tcp&security=tls&sni=t17.qifei.app#%F0%9F%87%BA%F0%9F%87%B8%20TR-TCP-TLS%20%F0%9F%87%BA%F0%9F%87%B8%20US-23.94.25.129%3A55511
+trojan://4863e1b2-ec2f-4c71-b862-ce533028e57e@74.63.241.25:443/?type=tcp&security=tls&sni=trus.moonfree.top#%F0%9F%87%BA%F0%9F%87%B8%20TR-TCP-TLS%20%F0%9F%87%BA%F0%9F%87%B8%20US-74.63.241.25%3A443
+trojan://b26e31e5-eac1-45b0-9069-83830bd69521@20.187.85.198:443/?type=tcp&security=tls&sni=hkt.iamnotagoodman.com#%F0%9F%87%AD%F0%9F%87%B0%20TR-TCP-TLS%20%F0%9F%87%AD%F0%9F%87%B0%20HK-20.187.85.198%3A443
+ss://YWVzLTI1Ni1jZmI6eTlWVVJ5TnpKV05SWUVHUQ@217.30.10.18:9008#%F0%9F%87%B5%F0%9F%87%B1_PL_%E6%B3%A2%E5%85%B0_1461%0D
+ss://YWVzLTI1Ni1jZmI6RVhOM1MzZVFwakU3RUp1OA@217.30.10.18:9027#%F0%9F%87%B5%F0%9F%87%B1_PL_%E6%B3%A2%E5%85%B0_1297%0D
+ss://YWVzLTI1Ni1jZmI6VVdaUWVMUldua3Fna3NlcQ@217.30.10.18:9032#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_148
+ss://YWVzLTI1Ni1jZmI6ZjhmN2FDemNQS2JzRjhwMw@46.183.184.60:989#%F0%9F%87%AD%F0%9F%87%B7_HR_%E5%85%8B%E7%BD%97%E5%9C%B0%E4%BA%9A_hamrah_1704
+ss://YWVzLTI1Ni1jZmI6eTlWVVJ5TnpKV05SWUVHUQ@217.30.10.70:9008#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_1011
+ss://YWVzLTI1Ni1jZmI6OVh3WXlac0s4U056UUR0WQ@217.30.10.70:9059#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_987
+ss://YWVzLTI1Ni1jZmI6YUxwUXRmRVplNDQ1UXlIaw@217.30.10.70:9098#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_1003
+ss://YWVzLTI1Ni1jZmI6UzdLd1V1N3lCeTU4UzNHYQ@217.30.10.70:9042#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_231
+ss://YWVzLTI1Ni1jZmI6WnBORERLUnU5TWFnTnZhZg@217.30.10.70:9015#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_229
+ss://YWVzLTI1Ni1jZmI6ZjhmN2FDemNQS2JzRjhwMw@192.71.166.100:989#%F0%9F%87%AC%F0%9F%87%B7_HAMRAH_1021
+ss://YWVzLTI1Ni1jZmI6ZkcyYXJ0VW1IZk5UMmNYNw@217.30.10.70:9018#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_992
+ss://YWVzLTI1Ni1jZmI6ZjhucEtnTnpka3NzMnl0bg@217.30.10.70:9088#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_1012
+ss://YWVzLTI1Ni1jZmI6WkVUNTlMRjZEdkNDOEtWdA@217.30.10.70:9005#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_984
+ss://YWVzLTI1Ni1jZmI6VVRKQTU3eXBrMlhLUXBubQ@217.30.10.70:9033#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_220
+ss://YWVzLTI1Ni1jZmI6QndjQVVaazhoVUZBa0RHTg@217.30.10.70:9031#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_227
+ss://YWVzLTI1Ni1jZmI6a1NQbXZ3ZEZ6R01NVzVwWQ@217.30.10.70:9007#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_471
+ss://YWVzLTI1Ni1jZmI6S25KR2FkM0ZxVHZqcWJhWA@217.30.10.70:9014#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_224
+ss://YWVzLTI1Ni1jZmI6R0E5S3plRWd2ZnhOcmdtTQ@217.30.10.70:9019#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_221
+ss://YWVzLTI1Ni1jZmI6SmRtUks5Z01FcUZnczhuUA@217.30.10.70:9003#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_990
+ss://YWVzLTI1Ni1jZmI6d2pUdWdYM1p0SE1COWMzWg@217.30.10.70:9057#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_991
+ss://YWVzLTI1Ni1jZmI6VTZxbllSaGZ5RG1uOHNnbg@217.30.10.70:9041#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_254
+ss://YWVzLTI1Ni1jZmI6VWtYUnNYdlI2YnVETUcyWQ@217.30.10.70:9001#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_995
+ss://YWVzLTI1Ni1jZmI6d2ZMQzJ5N3J6WnlDbXV5dA@217.30.10.70:9093#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_985
+ss://YWVzLTI1Ni1jZmI6VFBxWDhlZGdiQVVSY0FNYg@217.30.10.70:9079#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_225
+ss://YWVzLTI1Ni1jZmI6RVhOM1MzZVFwakU3RUp1OA@217.30.10.70:9027#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_282
+ss://YWVzLTI1Ni1jZmI6ck5CZk51dUFORkNBazdLQg@217.30.10.70:9056#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_256
+ss://YWVzLTI1Ni1jZmI6YmY3djMzNEtLRFYzWURoSA@217.30.10.70:9070#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_1007
+ss://YWVzLTI1Ni1jZmI6UVdERHZWRTlucE51clFmQQ@217.30.10.70:9026#%F0%9F%87%B5%F0%9F%87%B1_HAMRAH_472
+ss://YWVzLTI1Ni1jZmI6R0E5S3plRWd2ZnhOcmdtTQ@217.30.10.18:9019#%F0%9F%87%B5%F0%9F%87%B1_PL_%E6%B3%A2%E5%85%B0_1299_5297
+trojan://29ea82cf-f956-42b2-a5dc-35feea39e7ff@download1tw.windowsupdatea.com:443/?type=tcp&security=tls&sni=glc-tw1.windowsupdatea.com&allowInsecure=1#%F0%9F%87%A8%F0%9F%87%B3%20Taiwan%208%0D%0D
+trojan://wkmY1R4EcP@45.76.228.197:443/?type=tcp&security=tls&sni=z-v2-003263.kailib.com&allowInsecure=1#US38%20222.5KB%2Fs%0D
+trojan://2158f727-fb4e-483c-925f-7cc1a20cb7a2@162.55.6.150:443/?type=tcp&security=tls&sni=medidorr-gro-hidalgo-1.uninnet.net.mx.prod.hosts.ooklaserver.net&allowInsecure=1#%E6%9C%AA%E7%9F%A5105%0D
+trojan://56b6df40-0f4d-11ef-97ad-1239d0255272@51.38.65.155:443/?type=tcp&security=tls&sni=chatbuzzteambhm.chatbuzzt7150.workers.dev&allowInsecure=1#%E6%9C%AA%E7%9F%A5328%0D
+trojan://99b166ff-25ab-4bda-9493-618d491c2a9a@103.224.212.213:443/?type=tcp&security=tls&sni=us232.support-putin-kill-all-ukrainians.98848.xyz&allowInsecure=1#%E6%9C%AA%E7%9F%A5330%0D
+trojan://wkmY1R4EcP@45.63.110.20:443/?type=tcp&security=tls&sni=z-v2-003281.kailib.com&allowInsecure=1#%E2%9A%A1%EF%B8%8F%40DeamNet%2B%F0%9F%87%BA%F0%9F%87%B8United%2BStates%2B3%0D
+trojan://wkmY1R4EcP@144.202.46.58:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%94%92%F0%9F%87%BA%F0%9F%87%B8%20US%20144.202.46.58%20%E2%97%88%20tcp%3A443%20%E2%97%88%20The%20Constant%20Company%20%2F%20Vultr%20Holdings%20%E2%97%88%2032323%0D
+trojan://wkmY1R4EcP@207.148.1.78:443/?type=tcp&security=tls&sni=wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc&allowInsecure=1#%F0%9F%92%B0%F0%9F%92%A5%F0%9F%87%BA%F0%9F%87%B8%20US%20207.148.1.78%20%E2%97%88%20tcp%3A443%20%E2%97%88%20Choopa%20%2F%20Vultr%20Holdings%20%E2%97%88%206f449%0D
+trojan://wkmY1R4EcP@45.32.137.6:443/?type=tcp&security=tls&sni=wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc&allowInsecure=1#%F0%9F%92%B0%F0%9F%92%A5%F0%9F%87%BA%F0%9F%87%B8%20US%2045.32.137.6%20%E2%97%88%20tcp%3A443%20%E2%97%88%20Choopa%20%2F%20Vultr%20Holdings%20%E2%97%88%20876e2%0D
+trojan://654a309b-fdaa-3263-9bed-74a7e1532fd9@az05feiy.kuli888.xyz:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%A6%F0%9F%87%BA%2BAU_39%0D
+trojan://9KogHwaY7hVD@103.224.212.212:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%A6%F0%9F%87%BA%20AU_24%0D%0D_949_949%0D
+trojan://4478@195.15.243.26:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%A8%F0%9F%87%AD_CH_%E7%91%9E%E5%A3%AB_tr_1107%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.tokyometropolis.chernigov.ua:2053/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%A8%F0%9F%87%B3_CN_%E4%B8%AD%E5%9B%BD_tr_1243%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.tokyometropolis.kherson.ua:2053/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%A8%F0%9F%87%B3_CN_%E4%B8%AD%E5%9B%BD_tr_1097%0D
+trojan://973ed2e0-c4d8-4737-a093-71629148086d@51.77.213.197:443/?type=tcp&security=tls&sni=frt2.sshocean.net&allowInsecure=1#%F0%9F%87%AB%F0%9F%87%B7_FR_%E6%B3%95%E5%9B%BD_tr_1245%0D
+trojan://8697fe6b-1lWNFc1RmRBNk5NQU5KSnga3fa58ac5a3ef0-b4ab-11eb-b65e-1239d0255272@185.44.76.188:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%AC%F0%9F%87%A7_GB_%E8%8B%B1%E5%9B%BD_tr_1036%0D
+trojan://18844%40zxcvbn@49.212.204.123:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%AF%F0%9F%87%B5_JP_%E6%97%A5%E6%9C%AC_tr_1040%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.seoulcitygovernment.com.ua:8443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%B0%F0%9F%87%B7_KR_%E9%9F%A9%E5%9B%BD_tr_1133%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.seoulcityhall.com.ua:2053/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%B0%F0%9F%87%B7_KR_%E9%9F%A9%E5%9B%BD_tr_659%0D
+trojan://5c777277-17f2-4272-ae65-7bd00fa4fbaa@18.65.190.65:443/?type=tcp&security=tls&sni=wel-jp.optage.moe&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD_tr_1235%0D
+trojan://6aWFNbrFDs@need.uno:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD_pm_258%0D
+trojan://a3fa58b581353bb375d2ddad0f327938@72.167.45.6:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD_tr_1048%0D
+trojan://aef2ca33-b162-409f-8f16-4c736c338412@20.205.37.136:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%AD%F0%9F%87%B0_HK_%E9%A6%99%E6%B8%AF_tr_1253%0D
+trojan://your_password@aws-es-madrid-1.f1rocketnode.com:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8%20US_355%0D%0D_1145_1145%0D
+trojan://02e653c9-7c93-46a9-999d-11834bd0c577@132.145.51.172:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%AC%F0%9F%87%A7_GB_%E8%8B%B1%E5%9B%BD_tr_1228%0D
+trojan://21c6c7cb-332b-4a0c-9ad7-dff9c3111442@104.21.19.64:443/?type=tcp&security=tls&sni=us02web.zoom.us&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD_tr_1006%0D
+trojan://jagoanssh-Aweqdcc@104.21.32.17:443/?type=tcp&security=tls&sni=to.ruangguru.com&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD_tr_1017%0D
+trojan://7a73f1dc97a70905870c0c0484b12145@133.242.55.38:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%AF%F0%9F%87%B5_JP_%E6%97%A5%E6%9C%AC_tr_1055%0D
+trojan://c4b5b500-d9f2-11ed-aa52-1239d0255272@172.64.145.223:443/?type=tcp&security=tls&sni=tr.test3.net&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD_tr_1078%0D
+trojan://share.mjj-home.com@45.154.214.159:443/?type=tcp&security=tls&sni=api.mjj-home.com&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD_pm_785%0D
+trojan://a3fa58b581353bb375d2ddad0f327938@184.168.127.50:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%B8%F0%9F%87%AC_SG_%E6%96%B0%E5%8A%A0%E5%9D%A1_tr_1222%0D
+trojan://acb8ecf0960d4152a510bd7f72c699fa@104.160.18.251:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD_tr_1069%0D
+trojan://7d2f4381-c5d5-38ae-9ee9-5dd8e37f66d7@45.67.228.199:443/?type=tcp&security=tls&sni=nl1.nodegz.top&allowInsecure=1#%F0%9F%87%B3%F0%9F%87%B1%E8%8D%B7%E5%85%B01472%0D
+trojan://8993fa1c-342e-41fc-b01e-8719abde1324@au.mjt000.com:443/?type=tcp&security=tls&sni=au.mjt000.com&allowInsecure=1#%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9AAU-T%0D
+trojan://469ed42e-2905-3aec-a622-e8dae2100813@172.67.219.141:443/?type=tcp&security=tls&sni=backcn.rmanluo.top&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD_tr_1044%0D
+trojan://36d48ba9-7445-4b41-b210-58f4e07a627a@104.31.16.120:443/?type=tcp&security=tls&sni=in01.trojanyyds.xyz&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD_tr_1070%0D
+trojan://79770a32-9607-4919-9483-0f1794559390@172.67.177.123:443/?type=tcp&security=tls&sni=nika3hdfy2.foriran.trade&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD_tr_1236%0D
+trojan://79770a32-9607-4919-9483-0f1794559390@188.114.97.3:443/?type=tcp&security=tls&sni=nika3hdfy2.foriran.trade&allowInsecure=1#%F0%9F%87%B3%F0%9F%87%B1_NL_%E8%8D%B7%E5%85%B0_tr_1237%0D
+trojan://469ed42e-2905-3aec-a622-e8dae2100813@104.21.38.60:443/?type=tcp&security=tls&sni=backcn.rmanluo.top&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD_pm_783%0D
+trojan://ac5852df-8caf-4d86-8c77-93a7092f66f1@download2hkt.windowsupdatea.com:443/?type=tcp&security=tls&sni=daxun-hkt2.windowsupdatea.com&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD_1583_5389%0D
+trojan://32787f90-c845-11ee-8ca5-1239d0255272@104.17.140.37:443/?type=ws&host=sg-4.test3.net&path=%2Fhowdy&security=tls&sni=sg-4.test3.net&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD_1592_5398%0D
+trojan://wkmY1R4EcP@207.246.68.67:443/?type=tcp&security=tls&sni=z-v2-003338.kailib.com&allowInsecure=1#v2cross.com_279%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.tokyometropolis.ivano-frankivsk.ua:2053/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%A8%F0%9F%87%B3_CN_%E4%B8%AD%E5%9B%BD_tr_1113%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.tokyometropolis.kyiv.ua:2053/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%A8%F0%9F%87%B3_CN_%E4%B8%AD%E5%9B%BD_tr_1098%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.tokyometropolis.odessa.ua:2053/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%A8%F0%9F%87%B3_CN_%E4%B8%AD%E5%9B%BD_tr_1099%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.tokyometropolis.kharkov.ua:2053/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%A8%F0%9F%87%B3_CN_%E4%B8%AD%E5%9B%BD_tr_1096%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.tokyometropolis.odesa.ua:2053/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%A8%F0%9F%87%B3_CN_%E4%B8%AD%E5%9B%BD_tr_1244%0D
+trojan://c2c76420-257f-492a-b20f-6560f3bfa78d@waphk.mjt000.com:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%AC%F0%9F%87%A7_GB_%E8%8B%B1%E5%9B%BD_tr_1151%0D
+trojan://4f2f34cc-d2e9-4ca8-a687-68efe5ad5959@ap.liangyuandiancloud.com:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%AD%F0%9F%87%B0_HK_%E9%A6%99%E6%B8%AF_tr_1126%0D
+trojan://272cd64a-9f71-4e08-8fbd-0988d7fa99c8@sg.liangyuandiancloud.com:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%AD%F0%9F%87%B0%2BHK_149%0D
+trojan://4f2f34cc-d2e9-4ca8-a687-68efe5ad5959@nljs.liangyuandiancloud.com:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%AD%F0%9F%87%B0_HK_%E9%A6%99%E6%B8%AF_pm_215%0D
+trojan://4f2f34cc-d2e9-4ca8-a687-68efe5ad5959@in.liangyuandiancloud.com:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%AD%F0%9F%87%B0_HK_%E9%A6%99%E6%B8%AF_pm_108%0D
+trojan://72d8e820-7926-4ce3-a87c-b6969f425c79@103.235.46.40:443/?type=tcp&security=tls&sni=www.baidu.com&allowInsecure=1#%F0%9F%87%AD%F0%9F%87%B0_HK_%E9%A6%99%E6%B8%AF_tr_1011%0D
+trojan://4f2f34cc-d2e9-4ca8-a687-68efe5ad5959@hkjs.liangyuandiancloud.com:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8US_338%0D%0D_1042_1042%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.seoulcityhall.com.ua:8443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%B0%F0%9F%87%B7_KR_%E9%9F%A9%E5%9B%BD_tr_632%0D
+trojan://7d0f1f83-0f2f-4b90-930e-de44ac233fef@20.210.234.145:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%AF%F0%9F%87%B5_JP_%E6%97%A5%E6%9C%AC_pm_137%0D
+trojan://4f2f34cc-d2e9-4ca8-a687-68efe5ad5959@lu.liangyuandiancloud.com:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%AD%F0%9F%87%B0_HK_%E9%A6%99%E6%B8%AF_tr_1154%0D
+trojan://4f2f34cc-d2e9-4ca8-a687-68efe5ad5959@uk.liangyuandiancloud.com:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%AD%F0%9F%87%B0_HK_%E9%A6%99%E6%B8%AF_tr_1127%0D
+trojan://81d93f62-15a2-4994-adb9-0b5d906aac7e@138.2.114.255:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%B0%F0%9F%87%B7_KR_%E9%9F%A9%E5%9B%BD_tr_1238%0D
+trojan://4f2c305b-9a03-4493-b3e4-2dff2f1af8c9@103.168.56.77:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%B2%F0%9F%87%B3_MN_%E8%92%99%E5%8F%A4_tr_1037%0D
+trojan://eb7e85c8-d699-4d84-9a69-d44a1b5e2de9@46.101.94.226:443/?type=tcp&security=tls&sni=uk-a.speedyweb.xyz&allowInsecure=1#_27%0D_2%0D_2131_2131%0D
+trojan://4f2f34cc-d2e9-4ca8-a687-68efe5ad5959@itjs.liangyuandiancloud.com:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%AD%F0%9F%87%B0_HK_%E9%A6%99%E6%B8%AF_tr_1155%0D
+trojan://9498f3a0-2992-11ee-a4c7-1239d0255272@fr.test3.net:443/?type=tcp&security=tls&sni=zula.ir&allowInsecure=1#%F0%9F%87%AB%F0%9F%87%B7_FR_%E6%B3%95%E5%9B%BD_tr_1241%0D
+trojan://8993fa1c-342e-41fc-b01e-8719abde1324@uk.mjt000.com:443/?type=tcp&security=tls&sni=uk.mjt000.com&allowInsecure=1#%E8%8B%B1%E5%9B%BDUK-T%0D
+trojan://654a309b-fdaa-3263-9bed-74a7e1532fd9@az01.kuli888.xyz:443/?type=tcp&security=tls&sni=az01.kuli888.xyz&allowInsecure=1#%F0%9F%87%A6%F0%9F%87%BA_AU_%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A_pm_784%0D
+trojan://7a73f1dc97a70905870c0c0484b12145@trs22.bolab.net:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%AF%F0%9F%87%B5_JP_%E6%97%A5%E6%9C%AC_pm_786%0D
+trojan://61d2b2f6-d6ce-4724-9a5d-cc1123a1c949@pt.mjt000.com:443/?type=tcp&security=tls&sni=pt.mjt000.com&allowInsecure=1#%F0%9F%87%AC%F0%9F%87%A7_GB_%E8%8B%B1%E5%9B%BD_pm_948%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.taipeicitygovernment.com.ua:8443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%B9%F0%9F%87%BC_TW_%E5%8F%B0%E6%B9%BE_tr_690%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.taipeicitygovernment.net.ua:8443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%B9%F0%9F%87%BC_TW_%E5%8F%B0%E6%B9%BE_tr_681%0D
+trojan://a13820c547fa34c5c45515c12f0cd576@zz6.91js.pw:10051/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%A8%F0%9F%87%B3_CN_%E4%B8%AD%E5%9B%BD_tr_1163%0D
+trojan://c46cdd67-aac9-4a8c-9ddb-8ba66ece9286@guolicheng.cc:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD_tr_1177%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.taipeicitygovernment.biz.ua:8443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%B9%F0%9F%87%BC_TW_%E5%8F%B0%E6%B9%BE_tr_668%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.taipeicitygovernment.kyiv.ua:8443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%B9%F0%9F%87%BC_TW_%E5%8F%B0%E6%B9%BE_tr_633%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.taipeicitygovernment.cn.ua:8443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%B9%F0%9F%87%BC_TW_%E5%8F%B0%E6%B9%BE_tr_674%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.taipeicitygovernment.ivano-frankivsk.ua:8443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%B9%F0%9F%87%BC_TW_%E5%8F%B0%E6%B9%BE_tr_646%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.taipeicitygovernment.chernovtsy.ua:8443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%B9%F0%9F%87%BC_TW_%E5%8F%B0%E6%B9%BE_tr_679%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.taipeicitygovernment.if.ua:8443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%B9%F0%9F%87%BC_TW_%E5%8F%B0%E6%B9%BE_tr_614%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.taipeicitygovernment.co.ua:8443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%B9%F0%9F%87%BC_TW_%E5%8F%B0%E6%B9%BE_tr_585%0D
+trojan://4863e1b2-ec2f-4c71-b862-ce533028e57e@trus.moonfree.top:443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD_tr_1052%0D
+trojan://96983eb4-c8f1-316e-ab00-500014ed3d8b@official.taipeicitygovernment.org.ua:8443/?type=tcp&security=tls&allowInsecure=1#%F0%9F%87%B9%F0%9F%87%BC_TW_%E5%8F%B0%E6%B9%BE_tr_619%0D
+ss://YWVzLTI1Ni1jZmI6R0E5S3plRWd2ZnhOcmdtTQ@5.188.181.201:9019#%F0%9F%87%AA%F0%9F%87%B8_ES_SSS_84
+ss://YWVzLTI1Ni1jZmI6WkVUNTlMRjZEdkNDOEtWdA@5.188.181.201:9005#%F0%9F%87%AA%F0%9F%87%B8_ES_SSS_94
+ss://YWVzLTI1Ni1jZmI6TTN0MlpFUWNNR1JXQmpSYQ@5.188.181.201:9011#%F0%9F%87%AA%F0%9F%87%B8_ES_SSS_115
+ss://YWVzLTI1Ni1jZmI6VWtYUnNYdlI2YnVETUcyWQ@5.188.181.201:9001#%F0%9F%87%AA%F0%9F%87%B8_ES_SSS_87
+ss://YWVzLTI1Ni1jZmI6R2VyZWdldFI4Y3ZRSHpZcg@5.188.181.201:9030#%F0%9F%87%AA%F0%9F%87%B8_ES_SSS_99
+ss://YWVzLTI1Ni1jZmI6ZjhmN2FDemNQS2JzRjhwMw@171.22.254.17:989#%F0%9F%87%B5%F0%9F%87%B9_PT_p.All_651
+ss://YWVzLTI1Ni1jZmI6VVRKQTU3eXBrMlhLUXBubQ@217.30.10.18:9033#%F0%9F%87%B7%F0%9F%87%BA_RU_p.All_1581
+ss://YWVzLTI1Ni1jZmI6dWVMWFZrdmg0aGNraEVyUQ@217.30.10.18:9060#%F0%9F%87%B7%F0%9F%87%BA_RU_p.All_2285
+ss://YWVzLTI1Ni1jZmI6ZFUzRFNOUzh3WVBYekVLdw@5.188.181.201:9029#%F0%9F%87%AA%F0%9F%87%B8_%E8%A5%BF%E7%8F%AD%E7%89%99_hamraH_295
+ss://YWVzLTI1Ni1jZmI6Z1lDWVhma1VRRXMyVGFKUQ@217.30.10.18:9038#%F0%9F%87%B7%F0%9F%87%BA_%E4%BF%84%E7%BD%97%E6%96%AF_hamraH_234
+ss://YWVzLTI1Ni1jZmI6S25KR2FkM0ZxVHZqcWJhWA@217.30.10.18:9014#%F0%9F%87%B7%F0%9F%87%BA_RU_%E4%BF%84%E7%BD%97%E6%96%AF_34
+ss://YWVzLTI1Ni1jZmI6THAyN3JxeUpxNzJiWnNxWA@217.30.10.18:9045#%F0%9F%87%B7%F0%9F%87%BA_%E4%BF%84%E7%BD%97%E6%96%AF_hamraH_40
+ss://YWVzLTI1Ni1jZmI6ZGFGWWFncURkQmRBNlZUWA@217.30.10.18:9073#%F0%9F%87%B7%F0%9F%87%BA_%E4%BF%84%E7%BD%97%E6%96%AF_hamraH_41
+ss://YWVzLTI1Ni1jZmI6a1NQbXZ3ZEZ6R01NVzVwWQ@217.30.10.18:9007#%F0%9F%87%B7%F0%9F%87%BA_%E4%BF%84%E7%BD%97%E6%96%AF_hamraH_309
+ss://YWVzLTI1Ni1jZmI6YmY3djMzNEtLRFYzWURoSA@217.30.10.18:9070#%F0%9F%87%B7%F0%9F%87%BA_%E4%BF%84%E7%BD%97%E6%96%AF_hamraH_25
+ss://YWVzLTI1Ni1jZmI6U241QjdqVHFyNzZhQ0pUOA@217.30.10.18:9097#%F0%9F%87%B7%F0%9F%87%BA_RU_SSS_116
+ss://YWVzLTI1Ni1jZmI6VVdaUWVMUldua3Fna3NlcQ@217.30.10.70:9032#%F0%9F%87%B7%F0%9F%87%BA_RU_SSS_121
+ss://YWVzLTI1Ni1jZmI6Z1lDWVhma1VRRXMyVGFKUQ@217.30.10.70:9038#%F0%9F%87%B7%F0%9F%87%BA_%E4%BF%84%E7%BD%97%E6%96%AF_hamraH_29
+ss://YWVzLTI1Ni1jZmI6Y3A4cFJTVUF5TGhUZlZXSA@217.30.10.70:9064#%F0%9F%87%B7%F0%9F%87%BA_RU_SSS_104
+ss://YWVzLTI1Ni1jZmI6dWVMWFZrdmg0aGNraEVyUQ@217.30.10.70:9060#%F0%9F%87%B7%F0%9F%87%BA_RU_SSS_72
+ss://YWVzLTI1Ni1jZmI6TTN0MlpFUWNNR1JXQmpSYQ@217.30.10.70:9011#%F0%9F%87%B7%F0%9F%87%BA_RU_SSS_77
+ss://YWVzLTI1Ni1jZmI6TnZTOE40VmY4cUFHUFNDTA@217.30.10.18:9046#%F0%9F%87%B7%F0%9F%87%BA_RU_m_267
+ss://YWVzLTI1Ni1jZmI6WnBORERLUnU5TWFnTnZhZg@217.30.10.18:9015#%F0%9F%87%B7%F0%9F%87%BA_%E4%BF%84%E7%BD%97%E6%96%AF_hamraH_310
+ss://Y2hhY2hhMjAtaWV0Zjphc2QxMjM0NTY@103.36.91.23:8388#AB_1
+ss://YWVzLTI1Ni1jZmI6ZjhmN2FDemNQS2JzRjhwMw@185.153.197.5:989#AB_4
+ss://YWVzLTI1Ni1jZmI6ZjhmN2FDemNQS2JzRjhwMw@154.90.63.177:989#AB_5
+ss://YWVzLTI1Ni1jZmI6UzdLd1V1N3lCeTU4UzNHYQ@217.30.10.18:9042#AB_4096
+ss://YWVzLTI1Ni1jZmI6VFBxWDhlZGdiQVVSY0FNYg@217.30.10.18:9079#AB_85
+ss://YWVzLTI1Ni1jZmI6U0JNN1I4ODNqQm1ucWU2Qw@217.30.10.18:9053#AB_87
+ss://YWVzLTI1Ni1jZmI6d2ZMQzJ5N3J6WnlDbXV5dA@217.30.10.18:9093#AB_88
+ss://YWVzLTI1Ni1jZmI6SFNadXlKUWNXZThkeE5kRg@217.30.10.18:9043#AB_92
+ss://YWVzLTI1Ni1jZmI6YzNOdEhKNXVqVjJ0R0Rmag@217.30.10.70:9084#AB_4310
+ss://YWVzLTI1Ni1jZmI6YTNHRll0MzZTbTgyVnlzOQ@217.30.10.18:9000#AB_110
+ss://Y2hhY2hhMjAtaWV0Zjphc2QxMjM0NTY@103.141.221.200:8388#AB_118
+ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg@107.151.182.253:8080#AB_120
+ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg@128.199.172.224:8080#AB_126
+ss://Y2hhY2hhMjAtaWV0Zjphc2QxMjM0NTY@103.149.183.10:8388#AB_137
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5dHFoTWRJclRrZ1E0NlB2aHlBdE1I@92.112.126.90:443#AB_150
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@185.237.185.89:990#AB_165
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1@45.87.175.193:8080#AB_177
+ss://YWVzLTI1Ni1jZmI6d2pUdWdYM1p0SE1COWMzWg@217.30.10.18:9057#AB_768
+ss://YWVzLTI1Ni1jZmI6Rkc1ZGRMc01QYlY1Q3V0RQ@217.30.10.18:9050#AB_812
+ss://YWVzLTI1Ni1jZmI6VWtYUnNYdlI2YnVETUcyWQ@217.30.10.18:9001#AB_919
+ss://YWVzLTI1Ni1jZmI6QndjQVVaazhoVUZBa0RHTg@217.30.10.18:9031#AB_921
+hy2://Telegram--%3E%40Ln2Ray@206.71.158.23:45000/?insecure=1&sni=gavazn.55994421.xyz&obfs=salamander&obfs-password=Telegram--%3E%40Ln2Ray#%F0%9F%87%B3%F0%9F%87%B1%40FreakConfig
+hy2://Telegram--%3E%40Ln2Ray@gavazn.lnmarketplace.net:45000/?insecure=1&sni=gavazn.55994421.xyz&obfs=salamander&obfs-password=Telegram--%3E%40Ln2Ray#WI-FI--%40IRAN_V2RAY1%20%231
+hy2://Yet-Another-Public-Config-1@206.71.158.37:35000/?insecure=1&sni=YAPC-1.afshin.ir&obfs=salamander&obfs-password=Yet-Another-Public-Config-1#%F0%9F%87%B3%F0%9F%87%B1%20-%20NL%20-%20%40freeOnlineVPN%20%236
+trojan://29ea82cf-f956-42b2-a5dc-35feea39e7ff@104.21.39.134:443/?type=tcp&security=tls&sni=glc-tw1.windowsupdatea.com&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8%20US%2019%20%E2%86%92%20tg%40nicevpn123
+trojan://29ea82cf-f956-42b2-a5dc-35feea39e7ff@172.67.146.22:443/?type=tcp&security=tls&sni=glc-tw1.windowsupdatea.com&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8%20US%20344%20%E2%86%92%20tg%40nicevpn123
+trojan://fuck@42.236.73.72:443/?type=tcp&security=tls&sni=www.zitian.cn#RELAY%F0%9F%9A%A9%20%7C%20www.zitian.cn-443%20%7C%201017.68ms
+trojan://c46cdd67-aac9-4a8c-9ddb-8ba66ece9286@104.16.132.229:443/?type=tcp&security=tls&sni=guolicheng.cc&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_hamrah_201
+trojan://c46cdd67-aac9-4a8c-9ddb-8ba66ece9286@104.16.133.229:443/?type=tcp&security=tls&sni=guolicheng.cc&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_hamrah_206
+trojan://6455f944-7c07-4ab0-b88f-440e581f41d9@138.2.38.49:443/?type=tcp&security=tls&sni=jp2.twincloud.xyz&allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8_US_hamrah_398
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1@45.87.175.187:8080#Lithuania%20%284%29
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@185.93.173.60:990#Bolivia
+vmess://eyJhZGQiOiIxNS4yMzUuNTAuMTcyIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiJiYXJhZGloYS5jb20iLCJpZCI6IjAzZmNjNjE4LWI5M2QtNjc5Ni02YWVkLThhMzhjOTc1ZDU4MSIsIm5ldCI6IndzIiwicGF0aCI6Ii9saW5rdndzIiwicG9ydCI6IjQ0MyIsInBzIjoiQ2FuYWRhICg5KSIsInNjeSI6ImF1dG8iLCJzbmkiOiJiYXJhZGloYS5jb20iLCJ0bHMiOiJ0bHMiLCJ0eXBlIjoiIiwidiI6IjIifQ==
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@46.183.217.204:990#%F0%9F%87%B1%F0%9F%87%BB%20Latvia
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@45.87.175.158:8080#Lithuania%2020
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@188.214.157.30:990#%F0%9F%87%B2%F0%9F%87%A6%20Morocco%203
+vmess://eyJhZGQiOiIyMy4xNjIuMjAwLjIyNyIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiIwM2ZjYzYxOC1iOTNkLTY3OTYtNmFlZC04YTM4Yzk3NWQ1ODEiLCJuZXQiOiJ3cyIsInBhdGgiOiIvbGlua3Z3cyIsInBvcnQiOiI0NDMiLCJwcyI6IvCfh6jwn4emIENhbmFkYSAxMCIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiJ0bHMiLCJ0eXBlIjoiIiwidiI6IjIifQ==
+vmess://eyJhZGQiOiI1Ny4xMjkuMjUuMjUiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6ImYua2hpbGVpLmNvbSIsImlkIjoiMDNmY2M2MTgtYjkzZC02Nzk2LTZhZWQtOGEzOGM5NzVkNTgxIiwibmV0Ijoid3MiLCJwYXRoIjoiL2xpbmt2d3MiLCJwb3J0IjoiNDQzIiwicHMiOiLwn4er8J+HtyBGcmFuY2UgMzEiLCJzY3kiOiJhdXRvIiwic25pIjoiZi5raGlsZWkuY29tIiwidGxzIjoidGxzIiwidHlwZSI6IiIsInYiOiIyIn0=
+vmess://eyJhZGQiOiI1Ny4xMjkuMjguNjkiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6ImJhcmFkaWhhLmNvbSIsImlkIjoiMDNmY2M2MTgtYjkzZC02Nzk2LTZhZWQtOGEzOGM5NzVkNTgxIiwibmV0Ijoid3MiLCJwYXRoIjoiL2xpbmt2d3MiLCJwb3J0IjoiNDQzIiwicHMiOiLwn4er8J+HtyBGcmFuY2UgMzYiLCJzY3kiOiJhdXRvIiwic25pIjoiYmFyYWRpaGEuY29tIiwidGxzIjoidGxzIiwidHlwZSI6IiIsInYiOiIyIn0=
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@23.95.76.147:990#%40MARAMBASHI%20%F0%9F%92%99
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@45.154.204.7:990#t.me%2FOutlineVpnOfficial%20%282%29
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@185.47.254.87:990#%F0%9F%87%AC%F0%9F%87%B9Guatemala%20-%3E%20%F0%9F%87%AC%F0%9F%87%B9Guatemala%20%E2%9A%A1%40DeamNet_Proxy
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpWVmxBZmY3N0NuQVU0M0FvYzVqMTVZ@90.156.203.62:5112#%F0%9F%87%B7%F0%9F%87%BA%40FreakConfig
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@171.22.254.129:990#t.me%2FOutlineVpnOfficial%20%285%29
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@45.82.252.109:990#t.me%2FOutlineVpnOfficial%20%288%29
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ@138.186.142.80:990#AB_159
