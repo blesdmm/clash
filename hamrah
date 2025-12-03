@@ -20,7 +20,7 @@ listeners:
   listen: 0.0.0.0
 port: 7892
 socks-port: 7891
-# mixed-port: 7890
+mixed-port: 7890
 redir-port: 9797
 tproxy-port: 9898
 mode: rule
@@ -197,105 +197,15 @@ dns:
     - https://ada.openbld.net/dns-query
     - https://freedns.controld.com/p0
 proxy-providers:
+
   A1:
     type: http
-    url: "https://raw.githubusercontent.com/Ruk1ng001/freeSub/main/clash.yaml"
+    url: "https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/vless/x"
     interval: 300
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
-      url: "https://www.createporn.com/"
-      interval: 50
-      expected-status: 200
-  A2:
-    type: http
-    url: "https://shadowmere.xyz/api/b64sub/"
-    interval: 300
-    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
-    health-check:
-      enable: true
-      url: "https://www.createporn.com/"
-      interval: 50
-      expected-status: 200
-  A6:
-    type: http
-    url: "https://raw.githubusercontent.com/Surfboardv2ray/v2ray-worker-sub/refs/heads/master/Eternity"
-    interval: 300
-    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
-    health-check:
-      enable: true
-      url: "https://www.createporn.com/"
-      interval: 50
-      expected-status: 200
-  A7:
-    type: http
-    url: "https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg"
-    interval: 300
-    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
-    health-check:
-      enable: true
-      url: "https://www.createporn.com/"
-      interval: 50
-      expected-status: 200
-  A8:
-    type: http
-    url: "https://proxypool1999.banyunxiaoxi.icu/clash/proxies"
-    interval: 300
-    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
-    health-check:
-      enable: true
-      url: "https://www.createporn.com/"
-      interval: 50
-      expected-status: 200
-  A12:
-    type: http
-    url: "http://155.248.172.106:12580/clash/proxies"
-    interval: 300
-    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
-    health-check:
-      enable: true
-      url: "https://www.createporn.com/"
-      interval: 50
-      expected-status: 200 
-  A13:
-    type: http
-    url: "http://66.42.50.118:12580/clash/proxies"
-    interval: 300
-    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
-    health-check:
-      enable: true
-      url: "https://www.createporn.com/"
-      interval: 50
-      expected-status: 200
-
-  A29:
-    type: http
-    url: "https://config.v2cross.com/clashprofile/config" # https://raw.githubusercontent.com/mheidari98/.proxy/main/all
-    interval: 300
-    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
-    health-check:
-      enable: true
-      url: "https://www.createporn.com/"
-      interval: 50
-      expected-status: 200
-  A32:
-    type: http
-    url: "https://proxypool.link/clash/proxies" # #https://raw.githubusercontent.com/dongchengjie/airport/main/subs/merged/tested_within.yaml" # https://raw.githubusercontent.com/PangTouY00/Auto_proxy/main/Long_term_subscription_num
-    interval: 300
-    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
-    health-check:
-      enable: true
-      url: "https://www.createporn.com/"
-      interval: 50
-      expected-status: 200
-  A34:
-    type: http
-    url: "https://raw.githubusercontent.com/ssrsub/ssr/master/clash.yaml"
-    interval: 300
-    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
-    health-check:
-      enable: true
-      url: "https://www.createporn.com/"
+      url: "http://www.gstatic.com/generate_204"
       interval: 50
       expected-status: 200
 proxies:
@@ -313,7 +223,7 @@ proxy-groups:
       - "🇺🇸US🇺🇸"
   - name: "🎈Auto"
     type: "url-test"
-    url: "https://www.createporn.com/"
+    url: "http://www.gstatic.com/generate_204"
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     interval: 300
     tolerance: 50000
@@ -321,10 +231,10 @@ proxy-groups:
     include-all-providers: true
     udp: false
     hidden: true
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png"
+    icon: "https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/provide/Azadi.jpg"
   - name: "🎈fallback"
     type: "fallback"
-    url: "https://www.createporn.com/"
+    url: "http://www.gstatic.com/generate_204"
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     interval: 180
     exclude-type: "direct|http|socks5|redir-in"
@@ -342,7 +252,7 @@ proxy-groups:
     exclude-type: "socks5|http|direct|redir-in"
     include-all-providers: true
     hidden: true
-    url: "https://www.createporn.com/"
+    url: "http://www.gstatic.com/generate_204"
   - name: "🎯 Direct"
     type: "select"
     icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io/main/docs/assets/icons/fish.svg"
@@ -450,65 +360,11 @@ rules :
   - PROCESS-NAME,com.android.location.fused,REJECT,no-resolve
   - DOMAIN-SUFFIX,google.com,PROXY
   - DOMAIN-KEYWORD,google,PROXY
-  - DOMAIN-SUFFIX,netflix.com,PROXY
-  - DOMAIN-SUFFIX,netflix.net,PROXY
-  - DOMAIN-SUFFIX,nflxext.com,PROXY
-  - DOMAIN-SUFFIX,nflximg.com,PROXY
-  - DOMAIN-SUFFIX,nflxso.net,PROXY
-  - DOMAIN-SUFFIX,nflxvideo.net,PROXY
-  - DOMAIN-SUFFIX,spotify.com,PROXY
-  - DOMAIN-SUFFIX,scdn.co,PROXY
-  - DOMAIN-SUFFIX,spoti.fi,PROXY
-  - DOMAIN-SUFFIX,youtube.com,PROXY
-  - DOMAIN-SUFFIX,googlevideo.com,PROXY
-  - DOMAIN-SUFFIX,ytimg.com,PROXY
-  - DOMAIN-SUFFIX,hulu.com,PROXY
-  - DOMAIN-SUFFIX,disneyplus.com,PROXY
-  - DOMAIN-SUFFIX,hbo.com,PROXY
-  - DOMAIN-SUFFIX,primevideo.com,PROXY
-  - DOMAIN-SUFFIX,cn,DIRECT
-  - DOMAIN-KEYWORD,-cn,DIRECT
-  - DOMAIN-SUFFIX,ir,DIRECT
-  - DOMAIN-KEYWORD,ir,DIRECT
-  - DOMAIN-SUFFIX,local,DIRECT
-  - IP-CIDR,127.0.0.0/8,DIRECT
-  - IP-CIDR,172.16.0.0/12,DIRECT
-  - IP-CIDR,192.168.0.0/16,DIRECT
-  - IP-CIDR,10.0.0.0/8,DIRECT
-  - DOMAIN-SUFFIX,openai.com,PROXY
-  - DOMAIN-SUFFIX,chatgpt.com,PROXY
-  - DOMAIN-SUFFIX,anthropic.com,PROXY
-  - DOMAIN-SUFFIX,claude.ai,PROXY
-  - DOMAIN-SUFFIX,t.me,PROXY
-  - DOMAIN-SUFFIX,telegram.org,PROXY
-  - DOMAIN-SUFFIX,netflix.com,PROXY
-  - DOMAIN-SUFFIX,youtube.com,PROXY
-  - DOMAIN-SUFFIX,disney.com,PROXY
-  - DOMAIN-SUFFIX,apple.com,PROXY
-  - DOMAIN-SUFFIX,icloud.com,PROXY
-  - DOMAIN-SUFFIX,microsoft.com,PROXY
-  - DOMAIN-SUFFIX,windows.com,PROXY
-  - DOMAIN-SUFFIX,openai.com,PROXY
-  - DOMAIN-SUFFIX,chatgpt.com,PROXY
-  - DOMAIN-SUFFIX,oaistatic.com,PROXY
-  - DOMAIN-SUFFIX,oaiusercontent.com,PROXY
-  - DOMAIN-KEYWORD,openai,PROXY
-  - DOMAIN-SUFFIX,anthropic.com,PROXY
-  - DOMAIN-SUFFIX,claude.ai,PROXY
-  - DOMAIN-SUFFIX,gemini.google.com,PROXY
-  - DOMAIN-SUFFIX,bard.google.com,PROXY
-  - DOMAIN-SUFFIX,perplexity.ai,PROXY
-  - DOMAIN-SUFFIX,midjourney.com,PROXY
-  - DOMAIN-SUFFIX,netflix.com,PROXY
-  - DOMAIN-SUFFIX,disneyplus.com,PROXY
-  - DOMAIN-SUFFIX,youtube.com,PROXY
-  - DOMAIN-SUFFIX,spotify.com,PROXY
-  - IN-PORT,7890,PROXY
-  - IN-PORT,7892,PROXY
-  - IN-PORT,7891,PROXY
-  - IN-TYPE,SOCKS/HTTP,PROXY
-  - IN-USER,mihomo,PROXY
-  - IN-NAME,ss,PROXY
+#  - IP-CIDR,127.0.0.0/8,,redir-in,no-resolve
+#  - IP-CIDR6,2620:0:2d0:200::7/32,PROXY
+#  - IP-SUFFIX,8.8.8.8/24,PROXY
+#  - SRC-IP-CIDR,192.168.1.201/32,,redir-in
+#  - SRC-IP-SUFFIX,192.168.1.201/8,,redir-in
   - DOMAIN-SUFFIX,local,DIRECT
   - IP-CIDR,127.0.0.0/8,DIRECT
   - IP-CIDR,172.16.0.0/12,DIRECT
@@ -516,6 +372,16 @@ rules :
   - IP-CIDR,10.0.0.0/8,DIRECT
   - IP-CIDR,17.0.0.0/8,DIRECT
   - IP-CIDR,100.64.0.0/10,DIRECT
+  - IN-PORT,7890,PROXY
+  - IN-PORT,7892,PROXY
+  - IN-PORT,7891,PROXY
+  - IN-TYPE,SOCKS/HTTP,PROXY
+  - IN-USER,mihomo,PROXY
+  - IN-NAME,ss,PROXY
+ # - PROCESS-PATH,/usr/bin/wget,PROXY
+#  - PROCESS-PATH,C:\Program Files\Google\Chrome\Application\chrome.exe,PROXY
+#  - PROCESS-NAME,curl,PROXY
+#  - PROCESS-NAME,chrome.exe,PROXY
   - PROCESS-NAME,com.termux,PROXY
   - AND,((DOMAIN,google.com),(NETWORK,UDP)),PROXY
   - OR,((NETWORK,UDP),(DOMAIN,google.com)),REJECT
