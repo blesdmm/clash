@@ -61,27 +61,33 @@ profile:
   store-selected: true
   store-fake-ip: true
 hosts:
-  '*.clash.dev': 127.0.0.1
-  'alpha.clash.dev': '::1'
+  alpha.clash.dev: ::1
   test.com: [1.1.1.1, 2.2.2.2]
   baidu.com: google.com
-  ota.googlezip.net': 127.0.0.1
-  ota-cache1.googlezip.net': 127.0.0.1
-  ota-cache2.googlezip.net': 127.0.0.1
-  localhost': 127.0.0.1       
-  ip6-localhost': ::1             
-  mtalk.google.com': 108.177.125.188
-  alt1-mtalk.google.com': 3.3.3.3
-  alt2-mtalk.google.com': 3.3.3.3
-  alt3-mtalk.google.com': 74.125.200.188
-  alt4-mtalk.google.com': 74.125.200.188
-  alt5-mtalk.google.com': 3.3.3.3
-  alt6-mtalk.google.com': 3.3.3.3
-  alt7-mtalk.google.com': 74.125.200.188
-  alt8-mtalk.google.com': 3.3.3.3
+  ota.googlezip.net: 127.0.0.1
+  ota-cache1.googlezip.net: 127.0.0.1
+  ota-cache2.googlezip.net: 127.0.0.1
+  localhost: 127.0.0.1       
+  ip6-localhost: ::1             
+  mtalk.google.com: 108.177.125.188
+  alt1-mtalk.google.com: 3.3.3.3
+  alt2-mtalk.google.com: 3.3.3.3
+  alt3-mtalk.google.com: 74.125.200.188
+  alt4-mtalk.google.com: 74.125.200.188
+  alt5-mtalk.google.com: 3.3.3.3
+  alt6-mtalk.google.com: 3.3.3.3
+  alt7-mtalk.google.com: 74.125.200.188
+  alt8-mtalk.google.com: 3.3.3.3
+  doh.pub: [1.12.12.12, 120.53.53.53, 2402:4e00::]
+  dns.alidns.com: [223.5.5.5, 223.6.6.6, 2400:3200::1, 2400:3200:baba::1]
+  dns.google: [8.8.8.8, 8.8.4.4, 2001:4860:4860::8888, 2001:4860:4860::8844]
+  one.one.one.one: [1.1.1.1, 1.0.0.1, 2606:4700:4700::1111, 2606:4700:4700::1001]
+  dns.18bit.cn: [42.51.13.218, 42.51.37.204, 47.109.110.36, 115.190.191.220]
+  dns.ipv4dns.com: [171.80.2.155, 171.80.2.166]
+  
 tun:
   enable: true
-  mtu: 1500
+  mtu: 4506
   device: clash
   stack: mixed
   dns-hijack:
@@ -90,8 +96,37 @@ tun:
   strict-route: true
   auto-redirect: true
   auto-detect-interface: true
-tunnels:
-- tcp/udp,127.0.0.1:6553,8.8.8.8:53,PROXY
+  
+sniffer:
+  enable: true
+  parse-pure-ip: true
+  force-dns-mapping: true
+  override-destination: true
+  sniff:
+    HTTP:
+      ports:
+        - 80
+        - 443
+      override-destination: false
+    TLS:
+      ports:
+        - 443
+  skip-domain:
+    - +.push.apple.com
+  skip-dst-address:
+    - 91.105.192.0/23
+    - 91.108.4.0/22
+    - 91.108.8.0/21
+    - 91.108.16.0/21
+    - 91.108.56.0/22
+    - 95.161.64.0/20
+    - 149.154.160.0/20
+    - 185.76.151.0/24
+    - 2001:67c:4e8::/48
+    - 2001:b28:f23c::/47
+    - 2001:b28:f23f::/48
+    - 2a0a:f280:203::/48
+    
 dns:
   enable: true
   cache-algorithm: arc
@@ -103,34 +138,41 @@ dns:
   ipv6: true
   defult-nameserver:
     - 127.0.0.1:53
+    - tls://223.5.5.5:853
+    - tls://223.6.6.6:853
     - tls://8.8.8.8
     - 185.236.104.104
     - tls://1.1.1.1
-    - tls://76.76.2.0
-    - tls://76.223.122.150
-    - tls://146.112.41.102
-    - tls://146.112.41.2
-    - tls://1.0.0.1
+    - 114.114.114.114
+    - 223.5.5.5
+    - 8.8.8.8
   direct-nameserver:
     - 1.1.1.1
+    - system
   nameserver:
+    - system
+    - tls://223.5.5.5:853
+    - tls://223.6.6.6:853
     - 127.0.0.1:53
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
     - https://cloudflare-dns.com/dns-query#PROXY
     - https://doh.flashstart.com/f17c9ee5
     - https://ada.openbld.net/dns-query#PROXY
-    - https://freedns.controld.com/p0#PROXY
     - https://rubyfish.cn/dns-query#PROXY
     - https://all.dns.mullvad.net/dns-query#PROXY
   proxy-server-nameserver:
-    - https://cloudflare-dns.com/dns-query:784
-    - https://ada.openbld.net/dns-query:784
-    - https://freedns.controld.com/p0:784
+    - https://cloudflare-dns.com/dns-query
+    - https://ada.openbld.net/dns-query
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
   nameserver-policy:
     "rule-set:social,nsfw,geolocation-!cn":
       - https://8.8.8.8
       - https://cloudflare-dns.com/dns-query
       - https://ada.openbld.net/dns-query
-      - https://freedns.controld.com/p0
+      - https://doh.pub/dns-query
+      - https://dns.alidns.com/dns-query
     geosite:category-ads-all: rcode://refused
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
@@ -191,11 +233,22 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - "ntp.ntsc.ac.cn"
   fallback:
-    - tcp://8.8.8.8
-    - tcp://1.1.1.1
+    - tls://8.8.8.8
+    - tls://1.1.1.1
     - https://cloudflare-dns.com/dns-query
     - https://ada.openbld.net/dns-query
-    - https://freedns.controld.com/p0
+    - https://doh.opendns.com/dns-query
+    - https://dns11.quad9.net/dns-query
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  fallback-filter:
+      geoip: true
+      geoip-code: ir
+      ipcidr:
+        - 0.0.0.0/32
+        - 127.0.0.1/32
+        - '::/128'
+        - '::1/128'
 proxy-providers:
   A1:
     type: http
@@ -249,7 +302,7 @@ proxy-providers:
       expected-status: 200
   A12:
     type: http
-    url: "http://155.248.172.106:12580/clash/proxies"
+    url: "https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml"
     interval: 300
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
@@ -307,8 +360,9 @@ proxies:
     type: dns
 proxy-groups:
   - name: "PROXY"
-    type: "select"
+    type: "url-test"
     icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io/main/docs/assets/icons/adjust.svg"
+    url: "https://connectivitycheck.gstatic.com/generate_204"
     proxies:
       - "🎈Auto"
       - "🎈fallback"
@@ -317,8 +371,8 @@ proxy-groups:
     type: "url-test"
     url: "https://connectivitycheck.gstatic.com/generate_204"
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
-    interval: 300
-    tolerance: 50000
+ #   interval: 300
+ #   tolerance: 50000
     exclude-type: "direct|http|socks5|redir-in"
     include-all-providers: true
     udp: false
@@ -328,7 +382,7 @@ proxy-groups:
     type: "fallback"
     url: "https://connectivitycheck.gstatic.com/generate_204"
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
-    interval: 180
+#    interval: 180
     exclude-type: "direct|http|socks5|redir-in"
     include-all-providers: true
     udp: false
@@ -339,8 +393,8 @@ proxy-groups:
     exclude-filter: "HK|Hong|TW|Tai|Taiwan|🇯🇵|日本|川日|东京|大阪|泉日|埼玉|JP|Japan|🇸🇬|新加坡|狮|SG|Singapore|回国|校园|游戏|🇰🇷|韩国|韓|首尔|KR|Korea|回国|校园|游戏|🇦🇹|timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅|AT|GER|🇩🇪🇱🇻|🇩🇪"
     type: "url-test"
     icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io/main/docs/assets/icons/flags/us.svg"
-    interval: 300
-    tolerance: 5000
+ #   interval: 300
+ #   tolerance: 5000
     exclude-type: "socks5|http|direct|redir-in"
     include-all-providers: true
     hidden: true
