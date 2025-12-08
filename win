@@ -9,18 +9,83 @@ proxy-groups:
     proxies:
       - 🎈 Auto
       - 🐟 Fallback
-
+      - 🤖 AI
 
   - name: 🎈 Auto
     type: url-test
     include-all-proxies: true
- #   include-all-providers: true
+    include-all-providers: true
     hidden: true
     udp: false
     interval: 300
     tolerance: 5
-    url: http://cp.cloudflare.com/generate_204
+    url: "https://1.1.1.1/cdn-cgi/trace"
     exclude-type: "socks5|http|direct|redir-in" # |trojan|vmess
+
+  - name: "🤖 AI"
+    type: "url-test"
+    url: "https://1.1.1.1/cdn-cgi/trace"
+    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+    exclude-type: "direct|http|socks5|redir-in"
+    udp: false
+    hidden: true
+    icon: "https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png"
+    proxies:
+      - "🇺🇲"
+      - "🇭🇰"
+      - "🇯🇵"
+      - "🇹🇼"
+      - "🇸🇬"
+      - "🇰🇷"
+
+  - name: "🇭🇰"
+    type: "url-test"
+    url: "https://1.1.1.1/cdn-cgi/trace"
+    include-all-proxies: true
+    include-all-providers: true
+    filter: "🇭🇰|HK|Hong|Kong|HGC|WTT|CMI|港"
+    proxies: 
+    use:
+
+  - name: "🇯🇵"
+    type: "url-test"
+    url: "https://1.1.1.1/cdn-cgi/trace"
+    include-all-proxies: true
+    include-all-providers: true
+    filter: "🇯🇵|JP|Japan|Tokyo|Osaka|Saitama|东京|大阪|埼玉|日"
+    proxies: 
+
+  - name: "🇺🇲"
+    type: "url-test"
+    url: "https://1.1.1.1/cdn-cgi/trace"
+    include-all-proxies: true
+    include-all-providers: true
+    proxies:
+    filter: "🇺🇸|US|America|United.*?States|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥"
+
+  - name: "🇹🇼"
+    type: "url-test"
+    url: "https://1.1.1.1/cdn-cgi/trace"
+    include-all-proxies: true
+    include-all-providers: true
+    filter: "🇹🇼|TW|Taiwan|新北|彰化|CHT|台|HINET"
+    proxies:
+
+  - name: "🇸🇬"
+    type: "url-test"
+    url: "https://1.1.1.1/cdn-cgi/trace"
+    include-all-proxies: true
+    include-all-providers: true
+    filter: "🇸🇬|SG|Singapore|狮城|^新[^节北]|[^刷更]新[^节北]"
+    proxies: 
+
+  - name: "🇰🇷"
+    type: "url-test"
+    url: "https://1.1.1.1/cdn-cgi/trace"
+    include-all-proxies: true
+    include-all-providers: true
+    filter: "🇰🇷|KO?R|Korea|首尔|韩|韓"
+    proxies: 
 
   - name: 🎯 Direct
     type: select
@@ -43,13 +108,76 @@ proxy-groups:
     interval: 180
     udp: false
     include-all-proxies: true
-  #  include-all-providers: true
+    include-all-providers: true
     exclude-type: "socks5|http|direct|redir-in"
-    url: http://cp.cloudflare.com/generate_204
+    url: "https://1.1.1.1/cdn-cgi/trace"
     
 
 rules:
-
+  - DOMAIN-KEYWORD,anthropic,🤖 AI,no-resolve
+  - DOMAIN-KEYWORD,claude,🤖 AI,no-resolve
+  - DOMAIN-KEYWORD,openai,🤖 AI,no-resolve
+  - DOMAIN,ai.google.dev,🤖 AI,no-resolve
+  - DOMAIN,aistudio.google.com,🤖 AI,no-resolve
+  - DOMAIN,api.githubcopilot.com,🤖 AI,no-resolve
+  - DOMAIN,api.groq.com,🤖 AI,no-resolve
+  - DOMAIN,api.together.xyz,🤖 AI,no-resolve
+  - DOMAIN,bard.google.com,🤖 AI,no-resolve
+  - DOMAIN,console.groq.com,🤖 AI,no-resolve
+  - DOMAIN,copilot-proxy.githubusercontent.com,🤖 AI,no-resolve
+  - DOMAIN,gemini.google.com,🤖 AI,no-resolve
+  - DOMAIN,generativelanguage.googleapis.com,🤖 AI,no-resolve
+  - DOMAIN,notebooklm.google.com,🤖 AI,no-resolve
+  - DOMAIN,sydney.bing.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,ai.azure.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,anthropic.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,auth0.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,bard.google.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,chatgpt.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,claude.ai,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,claude.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,claudeusercontent.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,client-api.arkoselabs.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,copilot.cloud.microsoft,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,copilot.microsoft.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,cursor.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,cursor.sh,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,events.statsigapi.net,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,featuregates.org,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,gemini.google.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,grazie.ai,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,grazie.aws.intellij.net,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,identrust.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,intercom.io,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,intercomcdn.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,jetbrains.ai,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,makersuite.google.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,meta.ai,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,mistral.ai,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,oaistatic.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,oaiusercontent.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,openai.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,perplexity.ai,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,sora.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,x.ai,🤖 AI,no-resolve
+  - DOMAIN-KEYWORD,openai,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,auth0.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,challenges.cloudflare.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,chatgpt.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,client-api.arkoselabs.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,events.statsigapi.net,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,featuregates.org,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,identrust.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,intercom.io,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,intercomcdn.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,oaistatic.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,oaiusercontent.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,openai.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,sentry.io,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,stripe.com,🤖 AI,no-resolve
+  - DOMAIN-SUFFIX,sora.com,🤖 AI,no-resolve
   - AND,((DST-PORT,443),(NETWORK,udp)),🛑 Reject
   - DOMAIN,ad.com,🛑 Reject
   - DOMAIN,www.icloud.com,🚀 PROXY
@@ -72,6 +200,122 @@ rules:
   - NOT,((DOMAIN,google.com)),🚀 PROXY
   - GEOIP,ir,🎯 Direct
   - MATCH,🚀 PROXY
+proxy-providers:
+  A1:
+    type: http
+    url: "https://raw.githubusercontent.com/Ruk1ng001/freeSub/main/clash.yaml"
+    interval: 300
+    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+    health-check:
+      enable: true
+      url: "https://connectivitycheck.gstatic.com/generate_204"
+      interval: 50
+      expected-status: 200
+  A2:
+    type: http
+    url: "https://shadowmere.xyz/api/b64sub/"
+    interval: 300
+    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+    health-check:
+      enable: true
+      url: "https://connectivitycheck.gstatic.com/generate_204"
+      interval: 50
+      expected-status: 200
+  A6:
+    type: http
+    url: "https://raw.githubusercontent.com/Surfboardv2ray/v2ray-worker-sub/refs/heads/master/Eternity"
+    interval: 300
+    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+    health-check:
+      enable: true
+      url: "https://connectivitycheck.gstatic.com/generate_204"
+      interval: 50
+      expected-status: 200
+  A7:
+    type: http
+    url: "https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg"
+    interval: 300
+    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+    health-check:
+      enable: true
+      url: "https://connectivitycheck.gstatic.com/generate_204"
+      interval: 50
+      expected-status: 200
+  A8:
+    type: http
+    url: "https://proxypool1999.banyunxiaoxi.icu/clash/proxies"
+    interval: 300
+    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+    health-check:
+      enable: true
+      url: "https://connectivitycheck.gstatic.com/generate_204"
+      interval: 50
+      expected-status: 200
+  A12:
+    type: http
+    url: "https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml"
+    interval: 300
+    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+    health-check:
+      enable: true
+      url: "https://connectivitycheck.gstatic.com/generate_204"
+      interval: 50
+      expected-status: 200 
+  A13:
+    type: http
+    url: "http://66.42.50.118:12580/clash/proxies"
+    interval: 300
+    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+    health-check:
+      enable: true
+      url: "https://connectivitycheck.gstatic.com/generate_204"
+      interval: 50
+      expected-status: 200
+
+  A29:
+    type: http
+    url: "https://config.v2cross.com/clashprofile/config" # https://raw.githubusercontent.com/mheidari98/.proxy/main/all
+    interval: 300
+    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+    health-check:
+      enable: true
+      url: "https://connectivitycheck.gstatic.com/generate_204"
+      interval: 50
+      expected-status: 200
+  A32:
+    type: http
+    url: "https://proxypool.link/clash/proxies" # #https://raw.githubusercontent.com/dongchengjie/airport/main/subs/merged/tested_within.yaml" # https://raw.githubusercontent.com/PangTouY00/Auto_proxy/main/Long_term_subscription_num
+    interval: 300
+    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+    health-check:
+      enable: true
+      url: "https://connectivitycheck.gstatic.com/generate_204"
+      interval: 50
+      expected-status: 200
+  A34:
+    type: http
+    url: "https://raw.githubusercontent.com/ssrsub/ssr/master/clash.yaml"
+    interval: 300
+    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+    health-check:
+      enable: true
+      url: "https://connectivitycheck.gstatic.com/generate_204"
+      interval: 50
+      expected-status: 200
+  A66:
+    type: http
+    url: "https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/vless/N"
+    interval: 86400
+    exclude-filter: "美|日|ctb|Traffic|Expired|Official website|Landing|Return to China|This site|User|If|Renewal|Email|Subscription|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
+    health-check:
+      enable: true
+      url: "https://1.1.1.1/cdn-cgi/trace"
+      interval: 300
+      lazy: true
+      expected-status: 100
+    override:
+      additional-prefix: "A66 prefix |"
+      additional-suffix: "| test suffix"
 
 proxies:
   - {"name":"1","type":"ss","server":"46.183.217.204","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
