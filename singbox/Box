@@ -8,8 +8,8 @@
       "external_controller": "127.0.0.1:9090",
       "external_ui": "ui",
       "secret": "",
-      "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
-      "external_ui_download_detour": "",
+      "external_ui_download_url": "https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip",
+      "external_ui_download_detour": "direct",
       "default_mode": "rule"
     },
     "cache_file": {
@@ -84,7 +84,6 @@
       "type": "selector",
       "outbounds": [
         "auto",
-        "direct",
         "🇻🇳 机场推荐%3Adafei.de 越南 02\r",
         "🇺🇸 机场推荐:dafei.de 美国 81",
         "🇻🇳 机场推荐%3Adafei.de 越南 06\r",
