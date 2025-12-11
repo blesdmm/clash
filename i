@@ -6943,8 +6943,8 @@ proxy-groups:
 - name: 🚀 select
   type: url-test
   url: "https://connectivitycheck.gstatic.com/generate_204"
-  interval: 3
-  tolerance: 5
+  hidden: true
+  tolerance: 10
   proxies:
   - url-test
   - fallback
@@ -6954,20 +6954,20 @@ proxy-groups:
 - name: url-test
   type: url-test
   include-all-proxies: true
-  proxies:
+  exclude-type: "direct|http|socks5|redir-in|trojan"
+  hidden: true
   icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Auto.png
   url: "https://connectivitycheck.gstatic.com/generate_204"
-  interval: 30
-  tolerance: 50
+  tolerance: 10
 
 - name: AI
   type: url-test
   filter: "美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|United|States|USA|US|CA|PM|MX|PA|BM|GL|GD|CR|VG|VI|BR|CL|PE|CU|HT|AR|UY|PY|JM|SR|BS|GF|BZ|MS|AW|CW|SX|MF|BL|GP|MQ|AG|KN|TT|VC|CO|EC|VE|BO|GT|SV|PR|KY|HN|DM|BB|LC|FK|TC"
   exclude-filter: "HK|Hong|TW|Tai|Taiwan|🇯🇵|日本|川日|东京|大阪|泉日|埼玉|JP|Japan|🇸🇬|新加坡|狮|SG|Singapore|回国|校园|游戏|🇰🇷|韩国|韓|首尔|KR|Korea|回国|校园|游戏|🇦🇹|timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅|AT|GER|🇩🇪🇱🇻|🇩🇪" 
   icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io/main/docs/assets/icons/flags/us.svg"
+  exclude-type: "direct|http|socks5|redir-in|trojan"
   interval: 30
-  tolerance: 50
-  exclude-type: "socks5|http|direct|redir-in"
+  tolerance: 5
   include-all-proxies: true
   hidden: true
   url: "https://connectivitycheck.gstatic.com/generate_204"
@@ -6975,6 +6975,7 @@ proxy-groups:
 
 - name: 🌍 IRAN
   type: select
+  hidden: true
   proxies:
   - DIRECT
   - 🚀 select
@@ -6984,6 +6985,10 @@ proxy-groups:
 
 - name: 🐟 FINAL
   type: url-test
+  url: "https://connectivitycheck.gstatic.com/generate_204"
+  interval: 3
+  udp: true
+  hidden: true
   proxies:
   - 🚀 select
   - url-test
@@ -6994,6 +6999,8 @@ proxy-groups:
 - name: fallback
   type: fallback
   include-all-proxies: true
+  exclude-type: "direct|http|socks5|redir-in|trojan"
+  hidden: true
   proxies:
   icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Auto.png
   url: "https://connectivitycheck.gstatic.com/generate_204"
