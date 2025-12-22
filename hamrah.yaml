@@ -321,7 +321,7 @@ proxy-providers:
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
-      url: "https://connectivitycheck.gstatic.com/generate_204"
+      url: "http://connectivitycheck.gstatic.com/generate_204"
       interval: 300
       timeout: 5000
       lazy: true
@@ -338,7 +338,7 @@ proxy-providers:
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
-      url: "https://connectivitycheck.gstatic.com/generate_204"
+      url: "http://connectivitycheck.gstatic.com/generate_204"
       interval: 300
       timeout: 5000
       lazy: true
@@ -355,7 +355,7 @@ proxy-providers:
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
-      url: "https://connectivitycheck.gstatic.com/generate_204"
+      url: "http://connectivitycheck.gstatic.com/generate_204"
       interval: 300
       timeout: 5000
       lazy: true
@@ -373,7 +373,7 @@ proxy-providers:
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
-      url: "https://connectivitycheck.gstatic.com/generate_204"
+      url: "http://connectivitycheck.gstatic.com/generate_204"
       interval: 300
       timeout: 5000
       lazy: true
@@ -390,7 +390,7 @@ proxy-providers:
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
-      url: "https://connectivitycheck.gstatic.com/generate_204"
+      url: "http://connectivitycheck.gstatic.com/generate_204"
       interval: 300
       timeout: 5000
       lazy: true
@@ -407,7 +407,7 @@ proxy-providers:
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
-      url: "https://connectivitycheck.gstatic.com/generate_204"
+      url: "http://connectivitycheck.gstatic.com/generate_204"
       interval: 300
       timeout: 5000
       lazy: true
@@ -424,7 +424,7 @@ proxy-providers:
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
-      url: "https://connectivitycheck.gstatic.com/generate_204"
+      url: "http://connectivitycheck.gstatic.com/generate_204"
       interval: 300
       timeout: 5000
       lazy: true
@@ -441,7 +441,7 @@ proxy-providers:
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
-      url: "https://connectivitycheck.gstatic.com/generate_204"
+      url: "http://connectivitycheck.gstatic.com/generate_204"
       interval: 300
       timeout: 5000
       lazy: true
@@ -458,7 +458,7 @@ proxy-providers:
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
-      url: "https://connectivitycheck.gstatic.com/generate_204"
+      url: "http://connectivitycheck.gstatic.com/generate_204"
       interval: 300
       timeout: 5000
       lazy: true
@@ -475,7 +475,7 @@ proxy-providers:
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
-      url: "https://connectivitycheck.gstatic.com/generate_204"
+      url: "http://connectivitycheck.gstatic.com/generate_204"
       interval: 300
       timeout: 5000
       lazy: true
@@ -492,7 +492,7 @@ proxy-providers:
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
-      url: "https://connectivitycheck.gstatic.com/generate_204"
+      url: "http://connectivitycheck.gstatic.com/generate_204"
       interval: 300
       timeout: 5000
       lazy: true
@@ -509,7 +509,7 @@ proxy-providers:
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
-      url: "https://connectivitycheck.gstatic.com/generate_204"
+      url: "http://connectivitycheck.gstatic.com/generate_204"
       interval: 300
       timeout: 5000
       lazy: true
@@ -524,8 +524,8 @@ proxy-groups:
   - name: "PROXY"
     type: "url-test"
     icon: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Rocket.png"
-    url: "https://connectivitycheck.gstatic.com/generate_204"
-    tolerance: 10
+    url: "http://connectivitycheck.gstatic.com/generate_204"
+    tolerance: 1
     proxies:
       - "🎈Auto"
       - "🎈fallback"
@@ -534,23 +534,21 @@ proxy-groups:
       
   - name: "🎈Auto"
     type: "url-test"
-    url: "https://connectivitycheck.gstatic.com/generate_204"
+    url: "http://connectivitycheck.gstatic.com/generate_204"
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
-    tolerance: 0
+    tolerance: 1
     exclude-type: "direct|http|socks5|redir-in|trojan|DNS"
     include-all-providers: true
-    udp: true
     hidden: false
     icon: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Auto.png"
     
   - name: "🎈fallback"
     type: "fallback"
-    url: "https://connectivitycheck.gstatic.com/generate_204"
+    url: "http://connectivitycheck.gstatic.com/generate_204"
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     interval: 18
     exclude-type: "direct|http|socks5|redir-in|trojan|DNS"
     include-all-providers: true
-    udp: true
     hidden: false
     icon: "https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png"
     
@@ -559,11 +557,11 @@ proxy-groups:
     exclude-filter: "HK|Hong|TW|Tai|Taiwan|🇯🇵|日本|川日|东京|大阪|泉日|埼玉|JP|Japan|🇸🇬|新加坡|狮|SG|Singapore|回国|校园|游戏|🇰🇷|韩国|韓|首尔|KR|Korea|回国|校园|游戏|🇦🇹|timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅|AT|GER|🇩🇪🇱🇻|🇩🇪"
     type: "url-test"
     icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io/main/docs/assets/icons/flags/us.svg"
-    tolerance: 0
+    tolerance: 1
     exclude-type: "socks5|http|direct|redir-in|trojan|DNS"
     include-all-providers: true
     hidden: false
-    url: "https://connectivitycheck.gstatic.com/generate_204"
+    url: "http://connectivitycheck.gstatic.com/generate_204"
     
   - name: "🇺🇸US🇺🇸back"
     filter: "🇺🇸|US|America|United.*?States|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|CA|PM|MX|PA|BM|GL|GD|CR|VG|VI|BR|CL|PE|CU|HT|AR|UY|PY|JM|SR|BS|GF|BZ|MS|AW|CW|SX|MF|BL|GP|MQ|AG|KN|TT|VC|CO|EC|VE|BO|GT|SV|PR|KY|HN|DM|BB|LC|FK|TC"
@@ -574,13 +572,13 @@ proxy-groups:
     exclude-type: "socks5|http|direct|redir-in|trojan|DNS"
     include-all-providers: true
     hidden: false
-    url: "https://connectivitycheck.gstatic.com/generate_204"
+    url: "http://connectivitycheck.gstatic.com/generate_204"
     
   - name: "AI"
     type: "url-test"
-    url: "https://connectivitycheck.gstatic.com/generate_204"
+    url: "http://connectivitycheck.gstatic.com/generate_204"
     exclude-filter: "timeout|connection refused|Expired|If|Renewal"
-    tolerance: 0
+    tolerance: 1
     hidden: false
     icon: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Final.png"
     proxies:
@@ -700,6 +698,18 @@ rule-providers:
     url: "https://raw.githubusercontent.com/privacy-protection-tools/dead-horse/master/anti-ad-white-for-clash.yaml"
     interval: 86400
     size-limit: 0
+  category-ai-!cn:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-!cn.yaml"
+    interval: 86400
+    size-limit: 0
+  category-ai-cn:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-cn.yaml"
+    interval: 86400
+    size-limit: 0
   AI:
     type: http
     behavior: classical
@@ -720,19 +730,19 @@ rule-providers:
     size-limit: 0
   GoogleCNProxyIP:
     type: http
-    behavior: classical
+    behavior: ipcidr
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCNProxyIP.list"
     interval: 86400
     size-limit: 0
   GoogleCN:
     type: http
-    behavior: classical
+    behavior: domain
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list"
     interval: 86400
     size-limit: 0
   YouTube:
     type: http
-    behavior: classical
+    behavior: domain
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list"
     interval: 86400
     size-limit: 0
@@ -750,6 +760,8 @@ rules :
   - RULE-SET,GoogleCN,AI
   - RULE-SET,YouTube,AI
   - RULE-SET,Google,AI
+  - RULE-SET,category-ai-cn,AI
+  - RULE-SET,category-ai-!cn,AI
   - DOMAIN-KEYWORD,soft98.ir,🎯 Direct
   - DOMAIN,soft98,🎯 Direct
   - DOMAIN-SUFFIX,soft98.ir,🎯 Direct
