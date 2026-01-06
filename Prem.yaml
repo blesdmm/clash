@@ -79,7 +79,7 @@ proxy-providers:
 
   provider2:
     type: http
-    url: "https://raw.githubusercontent.com/Alvin9999/pac2/master/clash/1/config.yaml"    
+    url: "https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/vless/1"    
     path: Prem/P2.yaml
     interval: 899
     proxy: DIRECT
@@ -90,18 +90,7 @@ proxy-providers:
       interval: 30
       url: "https://www.google.com/generate_204"
       
-  provider3:
-    type: http
-    url: "http://66.42.50.118:12580/clash/proxies"    
-    path: Prem/P3.yaml
-    interval: 899
-    proxy: DIRECT
-    skip-cert-verify: true
-    exclude-type: "vless"
-    health-check:
-      enable: true
-      interval: 30
-      url: "https://www.google.com/generate_204"
+
 proxies:
 proxy-groups:
   - name: PROXY
@@ -131,7 +120,7 @@ proxy-groups:
     use:
       - provider1
       - provider2
-      - provider3
+  #    - provider3
   #    - provider4
    #   - provider7
   #    - provider6
@@ -140,14 +129,14 @@ proxy-groups:
     type: url-test
     url: "https://www.google.com/generate_204"
     disable-udp: true
-    filter: "🇺🇸|US|America|United.*?States|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥"
+ #   filter: "🇺🇸|US|America|United.*?States|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥"
     interval: 300
 #    tolerance: 5000
     hidden: true
     use:
       - provider1
       - provider2
-      - provider3
+   #   - provider3
    #   - provider4
    #   - provider7
    #   - provider6
@@ -163,7 +152,7 @@ proxy-groups:
     use:
       - provider1
       - provider2
-      - provider3
+ #     - provider3
   #    - provider4
   #    - provider7
   #    - provider6
