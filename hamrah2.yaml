@@ -70,8 +70,9 @@ dns:
 proxies:
 proxy-groups:
   - name: 🕹 select
-    type: url-test
-  #  include-all-providers: true
+    type: select
+    include-all-providers: true
+    exclude-type: "direct|redir-in|DNS"
     proxies:
       - ♻️ url-test
       - 🚧 fallback
@@ -81,29 +82,29 @@ proxy-groups:
     type: url-test
     url: https://speed.cloudflare.com/__down?bytes=20000000
     include-all-providers: true
-    exclude-type: "direct|http|socks5|redir-in|trojan|DNS|shadosocks|shadosocksr|vless"
+    exclude-type: "direct|redir-in|DNS"
     interval: 300
-    hidden: false
+    hidden: true
     proxies:
-    use:
+
   - name: 🚧 fallback
     type: fallback
     url: https://speed.cloudflare.com/__down?bytes=20000000
     include-all-providers: true
-    exclude-type: "direct|http|socks5|redir-in|trojan|DNS|shadosocks|shadosocksr|vless"
+    exclude-type: "direct|redir-in|DNS"
     interval: 180
-    hidden: false
+    hidden: true
     proxies:
-    use:
+
       
   - name: ⚖️ load-balance
     type: load-balance
     strategy: round-robin
     url: https://speed.cloudflare.com/__down?bytes=20000000
     include-all-providers: true
-    exclude-type: "direct|http|socks5|redir-in|trojan|DNS|shadosocks|shadosocksr|vless"
+    exclude-type: "direct|redir-in|DNS"
     interval: 180
-    hidden: false
+    hidden: true
     proxies:
     use:
 
@@ -314,6 +315,11 @@ rules:
   - AND,((PROCESS-NAME,clash),(NOT,((IN-TYPE,inner)))),REJECT
   - IN-TYPE,inner,🕹 select
   - MATCH,🕹 select
+
+
+
+
+
 
 
 

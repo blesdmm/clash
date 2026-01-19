@@ -94,8 +94,10 @@ proxies:
     udp: false
 proxy-groups:
   - name: Proxy
-    type: url-test
-  #  include-all-providers: true
+    type: select
+    include-all-providers: true
+    exclude-type: "direct|redir-in|DNS"
+    hidden: true
     proxies:
       - Auto
       - fallback
@@ -104,8 +106,9 @@ proxy-groups:
     type: url-test
     url: https://t1.geigei.gq/generate_204
     include-all-providers: true
+    hidden: true
     interval: 100
-    exclude-type: "direct|http|socks5|redir-in|trojan|DNS|shadosocks|shadosocksr|vless"
+    exclude-type: "direct|redir-in|DNS"
     filter: "America|United States|US|美国"
     lazy: true
 
@@ -113,7 +116,8 @@ proxy-groups:
     type: fallback
     url: https://t1.geigei.gq/generate_204
     include-all-providers: true
-    exclude-type: "direct|http|socks5|redir-in|trojan|DNS|shadosocks|shadosocksr|vless"
+    exclude-type: "direct|redir-in|DNS"
+    hidden: true
     interval: 180
     filter: "America|United States|US|美国"
     lazy: true
@@ -122,7 +126,8 @@ proxy-groups:
     type: url-test
     url: https://t1.geigei.gq/generate_204
     include-all-providers: true
-    exclude-type: "direct|http|socks5|redir-in|trojan|DNS|shadosocks|shadosocksr|vless"
+    exclude-type: "direct|redir-in|DNS"
+    hidden: true
     interval: 100
     lazy: true
     filter: "HongKong|HK|香港|Singapore|SG|新加坡Taiwan|TW|台湾|Germany|Deutsch|DE|德国"
@@ -130,8 +135,9 @@ proxy-groups:
   - name: Geo-JP
     type: url-test
     url: https://t1.geigei.gq/generate_204
-    exclude-type: "direct|http|socks5|redir-in|trojan|DNS|shadosocks|shadosocksr|vless"
+    exclude-type: "direct|redir-in|DNS"
     include-all-providers: true
+    hidden: true
     interval: 100
     lazy: true
     filter: "Japan|JP|日本"
@@ -139,8 +145,9 @@ proxy-groups:
   - name: Geo-US
     type: url-test
     url: https://t1.geigei.gq/generate_204
-    exclude-type: "direct|http|socks5|redir-in|trojan|DNS|shadosocks|shadosocksr|vless"
+    exclude-type: "direct|redir-in|DNS"
     include-all-providers: true
+    hidden: true
     interval: 100
     lazy: true
     filter: "America|United States|US|美国"
@@ -148,22 +155,22 @@ proxy-groups:
   - name: Geo-CN
     type: url-test
     url: https://t1.geigei.gq/generate_204
-    exclude-type: "direct|http|socks5|redir-in|trojan|DNS|shadosocks|shadosocksr|vless"
+    exclude-type: "direct|redir-in|DNS"
     include-all-providers: true
+    hidden: true
     interval: 100
     lazy: true
     filter: "China|CN|中国"
   
   - name: Social
     type: url-test
-    use: 
+    hidden: true
     proxies: 
       - Proxy
       - Auto
   - name: IR
     type: select
     disable-dns: true
-    use: 
     proxies: 
       - IRAN
       - Proxy

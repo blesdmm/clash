@@ -55,8 +55,9 @@ dns:
     - https://dns.google/dns-query
 proxy-groups:
   - name: Mismatch
-    type: url-test
- #   include-all-providers: true
+    type: select
+    include-all-providers: true
+    exclude-type: "direct|redir-in|DNS"
     proxies:
       - Auto
       - Autofallback
@@ -73,13 +74,15 @@ proxy-groups:
     type: url-test
     interval: 180
     include-all-providers: true
+    hidden: true
     tolerance: 9
-    exclude-type: "direct|http|socks5|redir-in|trojan|DNS|shadosocks|shadosocksr|vless"
+    exclude-type: "direct|redir-in|DNS"
     url: https://cp.cloudflare.com/generate_204
       
   - name: Autofallback
     type: fallback
     interval: 50
+    hidden: true
     include-all-providers: true
     exclude-type: "direct|http|socks5|redir-in|trojan|DNS"
     url: https://cp.cloudflare.com/generate_204
@@ -88,8 +91,9 @@ proxy-groups:
     type: url-test
     interval: 100
     tolerance: 99
+    hidden: true
     url: https://cp.cloudflare.com/generate_204
-    exclude-type: "direct|http|socks5|redir-in|trojan|DNS|shadosocks|shadosocksr|vless"
+    exclude-type: "direct|redir-in|DNS"
     include-all-providers: true
     filter: "HongKong|HK|香港"
 
@@ -97,8 +101,9 @@ proxy-groups:
     type: url-test
     interval: 100
     tolerance: 99
+    hidden: true
     url: https://cp.cloudflare.com/generate_204
-    exclude-type: "direct|http|socks5|redir-in|trojan|DNS|shadosocks|shadosocksr|vless"
+    exclude-type: "direct|redir-in|DNS"
     include-all-providers: true
     filter: "Taiwan|TW|台湾"
 
@@ -106,8 +111,9 @@ proxy-groups:
     type: url-test
     interval: 100
     tolerance: 99
+    hidden: true
     url: https://cp.cloudflare.com/generate_204
-    exclude-type: "direct|http|socks5|redir-in|trojan|DNS|shadosocks|shadosocksr|vless"
+    exclude-type: "direct|redir-in|DNS"
     include-all-providers: true
     filter: "Singapore|SG|新加坡"
 
@@ -115,8 +121,9 @@ proxy-groups:
     type: url-test
     interval: 100
     tolerance: 99
+    hidden: true
     url: https://cp.cloudflare.com/generate_204
-    exclude-type: "direct|http|socks5|redir-in|trojan|DNS|shadosocks|shadosocksr|vless"
+    exclude-type: "direct|redir-in|DNS"
     include-all-providers: true
     filter: "Japan|JP|日本"
 
@@ -124,8 +131,9 @@ proxy-groups:
     type: url-test
     interval: 100
     tolerance: 99
+    hidden: true
     url: https://cp.cloudflare.com/generate_204
-    exclude-type: "direct|http|socks5|redir-in|trojan|DNS|shadosocks|shadosocksr|vless"
+    exclude-type: "direct|redir-in|DNS"
     include-all-providers: true
     filter: "America|United States|US|美国"
 
@@ -133,8 +141,9 @@ proxy-groups:
     type: url-test
     interval: 100
     tolerance: 99
+    hidden: true
     url: https://cp.cloudflare.com/generate_204
-    exclude-type: "direct|http|socks5|redir-in|trojan|DNS|shadosocks|shadosocksr|vless"
+    exclude-type: "direct|redir-in|DNS"
     include-all-providers: true
     filter: "Britain|England|UK|英国"
  
@@ -142,8 +151,9 @@ proxy-groups:
     type: url-test
     interval: 100
     tolerance: 99
+    hidden: true
     url: https://cp.cloudflare.com/generate_204
-    exclude-type: "direct|http|socks5|redir-in|trojan|DNS|shadosocks|shadosocksr|vless"
+    exclude-type: "direct|redir-in|DNS"
     include-all-providers: true
     filter: "Germany|Deutsch|DE|德国"
 
@@ -151,8 +161,9 @@ proxy-groups:
     type: url-test
     interval: 100
     tolerance: 99
+    hidden: true
     url: https://cp.cloudflare.com/generate_204
-    exclude-type: "direct|http|socks5|redir-in|trojan|DNS|shadosocks|shadosocksr|vless"
+    exclude-type: "direct|redir-in|DNS"
     include-all-providers: true
     disable-dns: true
     filter: "China|CN|中国"
