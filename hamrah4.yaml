@@ -38,9 +38,11 @@ dns:
 proxies:
 proxy-groups:
   - name: 🕹
-    type: select
-   # include-all-providers: true
-    exclude-type: "direct|redir-in|DNS"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    exclude-type: "direct|redir-in|DNS|trojan"
     proxies:
       - ♻️ url-test
       - 🚧 fallback
@@ -48,34 +50,27 @@ proxy-groups:
 
   - name: ♻️ url-test
     type: url-test
-    url: https://speed.cloudflare.com/__down?bytes=20000000
+    url: http://www.gstatic.com/generate_204
     include-all-providers: true
-    interval: 180
-    tolerance: 100
-    hidden: true
-    proxies:
-    exclude-type: "direct|redir-in|DNS"
+    interval: 300
+    tolerance: 50
+    exclude-type: "direct|redir-in|DNS|trojan"
 
   - name: 🚧 fallback
     type: fallback
-    url: https://speed.cloudflare.com/__down?bytes=20000000
+    url: http://www.gstatic.com/generate_204
     include-all-providers: true
     interval: 180
-    tolerance: 10
-    hidden: true
-    proxies:
-    exclude-type: "direct|redir-in|DNS"
+    exclude-type: "direct|redir-in|DNS|trojan"
 
   - name: ⚖️ load-balance
     type: load-balance
     strategy: round-robin
-    url: https://speed.cloudflare.com/__down?bytes=20000000
+    url: http://www.gstatic.com/generate_204
     include-all-providers: true
     interval: 180
-    tolerance: 100
-    hidden: true
-    proxies:
-    exclude-type: "direct|redir-in|DNS"
+    tolerance: 10
+    exclude-type: "direct|redir-in|DNS|trojan"
         
   - name: 🎯
     type: select
@@ -89,67 +84,67 @@ proxy-providers:
     type: http
     url: https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/clash-meta/all.yaml
     interval: 86400
-    health-check: {enable: true,url: "http://speed.cloudflare.com/__down?bytes=20000000",interval: 300}
+    health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
 
   provider2:
     type: http
     url: https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/vless/p.all
     interval: 86400
-    health-check: {enable: true,url: "http://speed.cloudflare.com/__down?bytes=20000000",interval: 300}
+    health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
       
   provider3:
     type: http
     url: https://raw.githubusercontent.com/abbasdvd3/clash/main/vless/x
     interval: 86400
-    health-check: {enable: true,url: "http://speed.cloudflare.com/__down?bytes=20000000",interval: 300}
+    health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
       
   provider4:
     type: http
     url: https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml    
     interval: 86400
-    health-check: {enable: true,url: "http://speed.cloudflare.com/__down?bytes=20000000",interval: 300}
+    health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
       
   provider5:
     type: http
     url: https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/sub/sub_merge_yaml.yml
     interval: 86400
-    health-check: {enable: true,url: "http://speed.cloudflare.com/__down?bytes=20000000",interval: 300}
+    health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
       
   provider6:
     type: http
     url: https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml
     interval: 86400
-    health-check: {enable: true,url: "http://speed.cloudflare.com/__down?bytes=20000000",interval: 300}
+    health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
     
   provider7:
     type: http
     url: https://raw.githubusercontent.com/SnapdragonLee/SystemProxy/master/dist/clash_config.yaml
     interval: 86400
-    health-check: {enable: true,url: "http://speed.cloudflare.com/__down?bytes=20000000",interval: 300}
+    health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
 
   provider8:
     type: http
     url: https://raw.githubusercontent.com/SnapdragonLee/SystemProxy/master/dist/clash_config_extra_US.yaml
     interval: 86400
-    health-check: {enable: true,url: "http://speed.cloudflare.com/__down?bytes=20000000",interval: 300}
+    health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
       
   provider10:
     type: http
     url: https://raw.githubusercontent.com/vxiaov/free_proxies@main/clash/clash.provider.yaml
     interval: 86400
-    health-check: {enable: true,url: "http://speed.cloudflare.com/__down?bytes=20000000",interval: 300}
+    health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
       
   provider11:
     type: http
     url: https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml
     interval: 86400
-    health-check: {enable: true,url: "http://speed.cloudflare.com/__down?bytes=20000000",interval: 300}
+    health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
       
   provider12:
     type: http
     url: https://tt.vg/freeclash
     interval: 86400
-    health-check: {enable: true,url: "http://speed.cloudflare.com/__down?bytes=20000000",interval: 300}
+    health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
  
 rules:
 
