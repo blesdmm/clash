@@ -63,58 +63,20 @@ dns:
 proxies:
 proxy-groups:
   - name: 🕹 select
-    type: url-test
-    # include-all-providers: true
+    type: select
+    include-all-providers: true
     url: http://www.gstatic.com/generate_204
     nodeGroupType: 0
     exclude-type: "direct|redir-in|DNS|trojan"
     proxies:
-      - ♻️ url-test
-      - 🚧 fallback
-      - ⚖️ load-balance
       - ✈️
-      - 🇭🇰 
-      - 🇨🇳 
-      - 🇸🇬 
-      - 🇺🇲 
-      - 🇯🇵 
-      - 🇰🇷 
+
   - name: ✈️
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 180
     exclude-type: "direct|redir-in|DNS|trojan"
     include-all-providers: true
-    hidden: true
-
-  - name: ♻️ url-test
-    type: fallback
-    url: http://www.gstatic.com/generate_204
-    include-all-providers: true
-    exclude-type: "direct|redir-in|DNS|trojan"
-    nodeGroupType: 0
-    hidden: true
-
-  - name: 🚧 fallback
-    type: fallback
-    url: http://www.gstatic.com/generate_204
-    exclude-type: "direct|redir-in|DNS|trojan"
-    include-all-providers: true
-    hidden: true
-    nodeGroupType: 0
-    proxies:
-      - 🇭🇰 
-      - 🇨🇳 
-      - 🇸🇬 
-      - 🇺🇲 
-      - 🇯🇵 
-      - 🇰🇷 
-  - name: ⚖️ load-balance
-    type: fallback
-    url: http://www.gstatic.com/generate_204
-    exclude-type: "direct|redir-in|DNS|trojan"
-    include-all-providers: true
-    nodeGroupType: 0
     hidden: true
   
   - name: 🎯
@@ -124,82 +86,30 @@ proxy-groups:
       - DIRECT
       - 🕹 select
       
-  - name: 🇭🇰
-    type: fallback
-    url: http://www.gstatic.com/generate_204
-    exclude-type: "direct|redir-in|DNS|trojan"
-    include-all-providers: true
-    filter: "🇭🇰|HK|Hong|Kong|HGC|WTT|CMI|港"
-    hidden: true
 
-  - name: 🇯🇵
-    type: fallback
-    url: http://www.gstatic.com/generate_204
-    exclude-type: "direct|redir-in|DNS|trojan"
-    include-all-providers: true
-    filter: "🇯🇵|JP|Japan|Tokyo|Osaka|Saitama|东京|大阪|埼玉|日"
-    hidden: true
-
-  - name: 🇺🇲
-    type: fallback
-    url: http://www.gstatic.com/generate_204
-    exclude-type: "direct|redir-in|DNS|trojan"
-    include-all-providers: true
-    hidden: true
-    filter: "🇺🇸|US|America|United.*?States|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥"
-
-  - name: 🇨🇳
-    type: fallback
-    url: http://www.gstatic.com/generate_204
-    exclude-type: "direct|redir-in|DNS|trojan"
-    include-all-providers: true
-    filter: "🇹🇼|TW|Taiwan|新北|彰化|CHT|台|HINET"
-    hidden: true
-
-  - name: 🇸🇬
-    type: fallback
-    url: http://www.gstatic.com/generate_204
-    exclude-type: "direct|redir-in|DNS|trojan"
-    include-all-providers: true
-    filter: "🇸🇬|SG|Singapore|狮城|^新[^节北]|[^刷更]新[^节北]"
-    hidden: true
-
-  - name: 🇰🇷
-    type: fallback
-    url: http://www.gstatic.com/generate_204
-    exclude-type: "direct|redir-in|DNS|trojan"
-    include-all-providers: true
-    filter: "🇰🇷|KO?R|Korea|首尔|韩|韓"
-    hidden: true
 
       
 proxy-providers:
   provider1:
     type: http
-    url: "https://raw.githubusercontent.com/Misaka-blog/chromego_merge/main/sub/merged_proxies_new.yaml"    
+    url: "https://www.xrayvip.com/free.txt"    
     interval: 3600
     proxies: DIRECT
     health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
-    override:
-      additional-prefix: "[provider1]"
 
   provider2:
     type: http
-    url: "https://raw.githubusercontent.com/abbasdvd3/clash/main/vless/x"
+    url: "https://muma16fx.netlify.app/"
     interval: 3600
     proxies: DIRECT
     health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
-    override:
-      additional-prefix: "[provider2]"
        
   provider3:
     type: http
-    url: "https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/protocols/hysteria"    
+    url: "https://9527521.xyz/pubconfig/YCw0l6R3PoDbGFq5"    
     interval: 3600
     proxies: DIRECT
     health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
-    override:
-      additional-prefix: "[provider3]"
 
   provider4:
     type: http
@@ -207,17 +117,13 @@ proxy-providers:
     interval: 3600
     proxies: DIRECT
     health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
-    override:
-      additional-prefix: "[provider4]"
        
   provider5:
     type: http
-    url: "https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/protocols/shadowsocks"    
+    url: "https://proxypool1999.banyunxiaoxi.icu/clash/proxies"    
     interval: 3600
     proxies: DIRECT
     health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
-    override:
-      additional-prefix: "[provider5]"
 
   provider6:
     type: http
@@ -225,17 +131,13 @@ proxy-providers:
     interval: 3600
     proxies: DIRECT
     health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
-    override:
-      additional-prefix: "[provider6]"
        
   provider7:
     type: http
-    url: "https://raw.githubusercontent.com/Vauth/node/main/Main"    
+    url: "https://proxypool.link/clash/proxies"    
     interval: 3600
     proxies: DIRECT
     health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
-    override:
-      additional-prefix: "[provider7]"
 
   provider8:
     type: http
@@ -243,17 +145,13 @@ proxy-providers:
     interval: 3600
     proxies: DIRECT
     health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
-    override:
-      additional-prefix: "[provider8]"
       
   provider9:
     type: http
-    url: "https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/All_Configs_base64_Sub.txt"    
+    url: "https://anaer.github.io/Sub/proxies.yaml"    
     interval: 3600
     proxies: DIRECT
     health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
-    override:
-      additional-prefix: "[provider9]"
 
   provider10:
     type: http
@@ -261,27 +159,21 @@ proxy-providers:
     interval: 3600
     proxies: DIRECT
     health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
-    override:
-      additional-prefix: "[provider10]"
       
   provider11:
     type: http
-    url: "https://raw.githubusercontent.com/ALIILAPRO/v2rayNG-Config/main/sub.txt"    
+    url: "http://66.42.50.118:12580/clash/proxies"    
     interval: 3600
     path: h3/provider11.yaml
     proxies: DIRECT
     health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
-    override:
-      additional-prefix: "[provider11]"
 
   provider12:
     type: http
-    url: "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/clash-meta/all.yaml"
+    url: "https://weoknow.com/data/dayupdate/1/z1.txt"
     interval: 3600
     proxies: DIRECT
     health-check: {enable: true,url: "http://www.gstatic.com/generate_204",interval: 300}
-    override:
-      additional-prefix: "[provider12]"
 rule-providers:
   ir:
     type: http
