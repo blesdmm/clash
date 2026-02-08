@@ -244,13 +244,8 @@ proxy-groups:
   - name: PROXY
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png
-    include-all: true
-    disable-udp: true
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Ssh
-    interval: 300
-    timeout: 5000
-    max-failed-times: 4
-    lazy: false
+    use:
+      - A2
     proxies:
       - 🟢Auto🟢
       - 🟡fallback🟡
@@ -258,7 +253,7 @@ proxy-groups:
   - name: 🟢Auto🟢
     type: url-test
     url: http://cp.cloudflare.com/generate_204
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     include-all: true
     disable-udp: true
     interval: 300
@@ -272,7 +267,7 @@ proxy-groups:
   - name: 🟡fallback🟡
     type: fallback
     url: http://cp.cloudflare.com/generate_204
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     include-all: true
     disable-udp: true
     interval: 100
@@ -345,7 +340,7 @@ proxy-providers:
 #       additional-suffix: "| A2 suffix"
   A3:
     type: http
-    url: ""
+    url: "https://proxypool.link/clash/proxies"
     path: ./proxies/A3.yaml
     interval: 300
     health-check:
@@ -386,7 +381,7 @@ proxy-providers:
 #       additional-suffix: "| A4 suffix"
   A5:
     type: http
-    url: "" # https://proxypool1999.banyunxiaoxi.icu/clash/proxies
+    url: "https://proxypool1999.banyunxiaoxi.icu/clash/proxies"
     path: ./proxies/A5.yaml
     interval: 300
     health-check:
@@ -426,7 +421,7 @@ proxy-providers:
 #       additional-suffix: "| A6 suffix"
   A7:
     type: http
-    url: "" # http://66.42.50.118:12580/clash/proxies
+    url: "https://config.v2cross.com/clashprofile/config"
     path: ./proxies/A7.yaml
     interval: 300
     health-check:
@@ -446,7 +441,7 @@ proxy-providers:
 #       additional-suffix: "| A7 suffix"
   A8:
     type: http
-    url: "" # https://raw.githubusercontent.com/mheidari98/.proxy/main/all # https://config.v2cross.com/clashprofile/config
+    url: "https://pxypool.131433.xyz/clash/proxies" # https://raw.githubusercontent.com/mheidari98/.proxy/main/all # 
     path: ./proxies/A8.yaml
     interval: 300
     health-check:
@@ -526,7 +521,7 @@ proxy-providers:
 #       additional-suffix: "| A11 suffix"
   A12:
     type: http
-    url: "" # https://raw.githubusercontent.com/ts-sf/fly/main/clash
+    url: "http://weoknow.com/data/dayupdate/1/z1.text" # https://raw.githubusercontent.com/ts-sf/fly/main/clash
     path: ./proxies/A12.yaml
     interval: 300
     health-check:
@@ -565,6 +560,120 @@ proxy-providers:
 
       
 rule-providers:
+  reject1:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.text"
+    interval: 86400
+  icloud1:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.text"
+    interval: 86400
+  apple1:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.text"
+    interval: 86400
+  google1:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.text"
+    interval: 86400
+  proxy1:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.text"
+    interval: 86400
+  direct1:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.text"
+    interval: 86400
+  private1:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.text"
+    interval: 86400
+  gfw1:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.text"
+    interval: 86400
+  telegramcidr:
+    type: http
+    format: text
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.text"
+    interval: 86400
+  LocalAreaNetwork:
+    type: http
+    format: text
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/LocalAreaNetwork.list"
+    interval: 86400
+  BanAD:
+    type: http
+    format: text
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/BanAD.list"
+    interval: 86400
+  BanProgramAD:
+    type: http
+    format: text
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/BanProgramAD.list"
+    interval: 86400
+  GoogleCN:
+    type: http
+    format: text
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/GoogleCN.list"
+    interval: 86400
+  SteamCN:
+    type: http
+    format: text
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/SteamCN.list"
+    interval: 86400
+  Microsoft:
+    type: http
+    format: text
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Microsoft.list"
+    interval: 86400
+  Apple:
+    type: http
+    format: text
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Apple.list"
+    interval: 86400
+  ProxyMedia:
+    type: http
+    format: text
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ProxyMedia.list"
+    interval: 86400
+  Telegram:
+    type: http
+    format: text
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Telegram.list"
+    interval: 86400
+  ProxyLite:
+    type: http
+    format: text
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ProxyLite.list"
+    interval: 86400
   nsfw:
     type: http
     format: yaml
@@ -657,60 +766,67 @@ rule-providers:
     interval: 86400
   category-ai-!cn:
     type: http
+    format: yaml
     behavior: domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-!cn.yaml"
     interval: 86400
   category-ai-cn:
     type: http
-    behavior: domain
+    format: yaml
+    behavior: classical
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-cn.yaml"
     interval: 86400
   AI:
     type: http
     behavior: classical
+    format: yaml
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AI.list"
     interval: 86400
   OpenAi:
     type: http
+    format: text
     behavior: classical
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list"
     interval: 86400
   GoogleFCM:
     type: http
+    format: text
     behavior: classical
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list"
     interval: 86400
   GoogleCNProxyIP:
     type: http
+    format: text
     behavior: ipcidr
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCNProxyIP.list"
     interval: 86400
-  GoogleCN:
-    type: http
-    behavior: domain
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list"
-    interval: 86400
-  YouTube:
-    type: http
-    behavior: domain
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list"
-    interval: 86400
   Google:
     type: http
+    format: text
     behavior: classical
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list"
     interval: 86400
-    
+  YouTube:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list"
+    interval: 86400
 rules :
+  - DOMAIN,clash.razord.top,DIRECT
+  - DOMAIN,yacd.haishan.me,DIRECT
+  - RULE-SET,reject1,REJECT
+  - RULE-SET,icloud1,PROXY
+  - RULE-SET,apple1,PROXY
+  - RULE-SET,google1,PROXY
+  - RULE-SET,proxy1,PROXY
+  - RULE-SET,direct1,🎯 Direct
+  - RULE-SET,private1,🎯 Direct
+  - RULE-SET,gfw1,PROXY
+  - RULE-SET,telegramcidr,PROXY
   - RULE-SET,GoogleFCM,PROXY
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,PROXY
   - DOMAIN-SUFFIX,services.googleapis.cn,PROXY
-  - RULE-SET,GoogleCNProxyIP,PROXY
-  - RULE-SET,GoogleCN,PROXY
-  - RULE-SET,YouTube,PROXY
-  - RULE-SET,Google,PROXY
-  - RULE-SET,category-ai-cn,PROXY
-  - RULE-SET,category-ai-!cn,PROXY
   - DOMAIN-KEYWORD,soft98.ir,🎯 Direct
   - DOMAIN,soft98,🎯 Direct
   - DOMAIN-SUFFIX,soft98.ir,🎯 Direct
@@ -720,8 +836,6 @@ rules :
   - DOMAIN-SUFFIX,farsroid,🎯 Direct
   - DOMAIN-KEYWORD,farsroid.com,🎯 Direct
   - DOMAIN,farsroid.com,🎯 Direct
-  - RULE-SET,anti-AD-white,🎯 Direct
-  - RULE-SET,anti-AD,REJECT
   - DOMAIN-SUFFIX,createporn.com,PROXY
   - DOMAIN-KEYWORD,createporn,PROXY
   - DOMAIN,createporn,PROXY
@@ -879,9 +993,26 @@ rules :
   - RULE-SET,ir,🎯 Direct
   - RULE-SET,ircidr,🎯 Direct
   - RULE-SET,irasn,🎯 Direct
+  - RULE-SET,LocalAreaNetwork,🎯 Direct
+  - RULE-SET,BanAD,REJECT
+  - RULE-SET,BanProgramAD,REJECT
+  - RULE-SET,SteamCN,PROXY
+  - RULE-SET,Microsoft,PROXY
+  - RULE-SET,Apple,PROXY
+  - RULE-SET,ProxyMedia,PROXY
+  - RULE-SET,Telegram,PROXY
+  - RULE-SET,ProxyLite,PROXY
   - RULE-SET,social,PROXY,no-resolve
   - RULE-SET,nsfw,PROXY,no-resolve
   - RULE-SET,geolocation-!cn,PROXY
+  - RULE-SET,anti-AD-white,🎯 Direct
+  - RULE-SET,anti-AD,REJECT
+  - RULE-SET,GoogleCNProxyIP,PROXY
+  - RULE-SET,GoogleCN,PROXY
+  - RULE-SET,YouTube,PROXY
+  - RULE-SET,Google,PROXY
+  - RULE-SET,category-ai-cn,PROXY
+  - RULE-SET,category-ai-!cn,PROXY
   - GeoIP,ir,🎯 Direct
   - MATCH,PROXY
 

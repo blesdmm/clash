@@ -42,6 +42,11 @@ global-ua: clash.meta
 profile:
   store-selected: true
   store-fake-ip: true
+  smart-collector-size: 100
+
+lgbm-auto-update: true
+lgbm-update-interval: 72
+lgbm-url: "https://github.com/vernesong/mihomo/releases/download/LightGBM-Model/Model.bin"
 
 dns:
   enable: true
@@ -52,46 +57,40 @@ dns:
   respect-rules: true
   listen: 0.0.0.0:53
   ipv6: true
+  default-nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+    - 1.1.1.1
+    - 8.8.8.8
+  nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+    - 119.29.29.29
+    - 180.76.76.76
+    - system
+    - 1.1.1.1
+    - 8.8.8.8
   direct-nameserver:
     - system
     - 1.1.1.1
-  nameserver:
-    - system
-    - 114.114.114.114
-    - 8.8.8.8 
-    - tls://223.5.5.5:853 
-    - https://doh.pub/dns-query 
-    - https://dns.alidns.com/dns-query#h3=true 
-    - https://mozilla.cloudflare-dns.com/dns-query#DNS&h3=true
-    - quic://dns.adguard.com:784
-    - https://cloudflare-dns.com/dns-query
-    - https://sky.rethinkdns.com/dns-query
-    - https://dnspub.restena.lu/dns-query
-    - https://doh.flashstart.com/f17c9ee5
-    - https://ada.openbld.net/dns-query
-    - https://rubyfish.cn/dns-query#PROXY
-    - https://all.dns.mullvad.net/dns-query
+    - 8.8.8.8
   proxy-server-nameserver:
     - https://cloudflare-dns.com/dns-query:784
-    - https://sky.rethinkdns.com/dns-query
-    - https://ada.openbld.net/dns-query:784
-    - https://dnspub.restena.lu/dns-query
-  nameserver-policy:
-    "rule-set:social,nsfw,geolocation-!cn":
-      - https://8.8.8.8/dns-query
-      - https://sky.rethinkdns.com/dns-query
-      - https://cloudflare-dns.com/dns-query
-      - https://dnspub.restena.lu/dns-query
-      - https://ada.openbld.net/dns-query
-    "geoip:ir,google,openai":
-      - https://doh.pub/dns-query
-      - https://dns.alidns.com/dns-query
-    "geosite:category-ads-all": rcode://success
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
-  fake-ip-filter-mode: blacklist
-  direct-nameserver-follow-policy: false
   fake-ip-filter:
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - router.asus.com
+    - localhost.sec.qq.com
+    - localhost.ptlogin2.qq.com
+    - +.msftconnecttest.com
     - "*.lan"
     - "*.local"
     - "www.torrent.eu.org"
@@ -144,84 +143,11 @@ dns:
     - "+.stun.playstation.net"
     - "*.mcdn.bilivideo.cn"
     - "ntp.ntsc.ac.cn"
-  fallback:
-    - tcp://8.8.8.8
-    - tcp://1.1.1.1
-    - https://sky.rethinkdns.com/dns-query
-    - https://cloudflare-dns.com/dns-query
-    - https://dnspub.restena.lu/dns-query
-    - https://ada.openbld.net/dns-query
-  fallback-filter:
-    geoip: true
-    geoip-code: ir
-    geosite:                         
-      - social
-      - nsfw
-    ipcidr:
-     - 0.0.0.0/8
-     - 10.0.0.0/8
-     - 100.64.0.0/10
-     - 127.0.0.0/8
-     - 169.254.0.0/16
-     - 172.16.0.0/12
-     - 192.0.0.0/24
-     - 192.0.2.0/24
-     - 192.88.99.0/24
-     - 192.168.0.0/16
-     - 198.18.0.0/16
-     - 198.51.100.0/24
-     - 203.0.113.0/24
-     - 224.0.0.0/4
-     - 240.0.0.0/4
-     - 255.255.255.255/32
-     - ::1/128
-     - fc00::/7
-     - fe80::/10
-     - 39.102.194.95/32
-     - 182.43.124.6/32
-     - 101.35.177.86/32
-     - 116.89.243.8/32
-     - 119.28.87.227/32
-    domain:
-     - '+.xincache.com'
-     - 'www.gstatic.com'
-     - '+.ampproject.org'
-     - '+.appspot.com'
-     - '+.blogger.com'
-     - '+.google.com'
-     - '+.google.cn'
-     - '+.googleusercontent.com'
-     - '+.ggpht.com'
-     - '+.gmail.com'
-     - '+.gvt0.com'
-     - '+.gvt1.com'
-     - '+.gvt2.com'
-     - '+.gvt3.com'
-     - '+.youtu.be'
-     - '+.yt.be'
-     - '+.ytimg.com'
-     - '+.googlevideo.com'
-     - '+.youtube.com'
-     - '+.xn--ngstr-lra8j.com'
-     - '+.xn--flw351e.com'
-     - '+.xn--9kr7l.com'
-     - '+.xn--ggle-55da.com'
-     - '+.xn--gogl-0nd52e.com'
-     - '+.xn--gogl-1nd42e.com'
-     - '+.googleapis.com'
-     - '+.googleapis.cn'
-     - '+.gstatic.com'
-     - '+.gstatic.cn'
-     - '+.services.googleapis.cn'
-     - '+.services.googleapis.com'
-     - '+.connectivitycheck.gstatic.cn'
-     - '+.connectivitycheck.gstatic.com'
 proxy-providers:
   A1:
     type: http
     url: "https://raw.githubusercontent.com/tbbatbb/Proxy/master/dist/clash.config.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -241,7 +167,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -261,7 +186,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/aiboboxx/clashfree/main/clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -281,7 +205,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -301,7 +224,6 @@ proxy-providers:
     type: http
     url: "https://config.v2cross.com/clashprofile/config"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -321,7 +243,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -341,7 +262,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/AzadNetCH/Clash/main/AzadNet_META_IRAN-Direct.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -361,7 +281,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/tbbatbb/Proxy/master/dist/clash.config.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -381,7 +300,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Alvin9999/pac2/master/clash/1/config.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -401,7 +319,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -421,7 +338,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/ermaozi01/free_clash_vpn/main/subscribe/clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -441,7 +357,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -461,7 +376,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/vveg26/get_proxy/main/dist/clash.config.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -481,7 +395,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/vveg26/chromego_merge/main/sub/merged_proxies.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -501,7 +414,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/lcx12901/v2ray-/master/sspool.herokuapp.com/yzcloud.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -521,7 +433,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/lcx12901/v2ray-/master/sspool.herokuapp.com/yzcloud2.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -541,7 +452,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/ronghuaxueleng/get_v2/main/pub/changfengoss.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -561,7 +471,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/ronghuaxueleng/get_v2/main/pub/combine.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -581,7 +490,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/bingoYB/node_processing/main/dist/all.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -601,7 +509,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/itxve/fetch-clash-node/main/node/ClashNode.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -621,7 +528,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/YasserDivaR/pr0xy/main/winformClash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -641,7 +548,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/sh3d0ww02f/sh3d0ww02f.github.io/main/clash1.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -661,7 +568,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/obscure1990/freeVM/master/snippets/nodes.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -681,7 +587,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/sun9426/sun9426.github.io/main/subscribe/Clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -701,7 +607,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/itxve/fetch-clash-node/main/node/ClashNode.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -721,7 +626,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/sh3d0ww02f/sh3d0ww02f.github.io/main/clash1.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -741,7 +646,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/igeekshare/GeekshareFreeNode/main/clash/Geekshare.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -761,7 +666,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/learnhard-cn/free_proxy_ss/main/clash/clash.provider.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -781,7 +686,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/learnhard-cn/free_proxy_ss/main/clash/config.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -801,7 +706,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/jw853355718/clash_233/master/config.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -821,7 +726,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/BUTUbird/ClashPoint/main/application.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -841,7 +746,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/vpei/free-node-1/main/o/proxies.txt"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -861,7 +766,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/du5/free/master/file/0909/Clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -881,7 +786,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/oslook/clash-freenode/main/clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -901,7 +806,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/jw853355718/clash_233/master/config.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -921,7 +826,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/kevin-wud/v2ray-node/main/clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -941,7 +846,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/nasheep/FreeNode/main/clash/PlayLab"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -961,7 +866,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/tony0392/clash/main/clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -981,7 +886,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/zhlx2835/freefq/main/clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1001,7 +906,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Junely/clash/main/template3.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1021,7 +926,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/misersun/config003/main/config_all_quest.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1041,7 +946,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/misersun/config003/main/config_all.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1061,7 +966,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/renyige1314/CLASH/main/CLASH"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1081,7 +986,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/69z1zfw2fly/fly/main/2.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1101,7 +1006,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Flik6/getNode/main/clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1121,7 +1026,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/free18/v2ray/main/Clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1141,7 +1046,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1162,7 +1067,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/shbioc/clash/main/aaa01.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1182,7 +1087,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1202,7 +1107,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/9Fork/openit/main/Clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1222,7 +1127,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/aiboboxx/clashfree/main/clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1242,7 +1147,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/rxsweet/proxies/main/sub/rx.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1262,7 +1167,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/rxsweet/proxies/main/sub/srx.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1282,7 +1187,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/rxsweet/proxies/main/sub/free.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1302,7 +1207,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/rxsweet/proxies/main/sub/sources/dynamicAll.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1322,7 +1227,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/rxsweet/proxies/main/sub/sources/miningAll.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1342,7 +1247,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/imboys/proxyForClash/refs/heads/master/free%20proxy.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1362,7 +1267,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/yudou66.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1382,7 +1287,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/wenode.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1402,7 +1307,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/nodefree.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1422,7 +1327,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/nodev2ray.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1442,7 +1347,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/ndnode.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1462,7 +1367,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/clashmeta.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1482,7 +1387,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/v2rayshare.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1502,7 +1407,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/cxr9912/cxr2022/refs/heads/main/free.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1522,7 +1427,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/cxr9912/cxr2022/refs/heads/main/aaaaaaaa.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1543,7 +1448,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/cxr9912/cxr2022/main/ss.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1563,7 +1468,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/cxr9912/cxr2022/main/ssr.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1583,7 +1488,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/cxr9912/cxr2022/main/free.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1603,7 +1508,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/cxr9912/cxr2022/main/vmess.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1623,7 +1528,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/cxr9912/cxr2022/main/mix.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1643,7 +1548,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/moneyfly1/sublist/main/clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1663,7 +1568,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/NiceVPN123/NiceVPN/main/Clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1683,7 +1588,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/shbioc/clash/main/aaa01.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1704,7 +1609,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/pojiezhiyuanjun/2023/master/0804clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1724,7 +1629,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/freenodes/freenodes/main/clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1744,7 +1649,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/moneyfly1/sublist/main/clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1764,7 +1669,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/freebaipiao/freebaipiao/main/jiassweetoy3.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1784,7 +1689,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/gooooooooooooogle/Clash-Config/main/Clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1805,7 +1710,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1825,7 +1730,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/ainita.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1845,7 +1750,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/amin_o__o_bitplatform.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1865,7 +1770,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/hamedp-71/Sub_Checker_Creator_final.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1885,7 +1790,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/hamedp-71/Trojan_hp.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1905,7 +1810,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/MatinGhanbari_v2ray-configs-super-sub.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1925,7 +1830,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/namira.dev.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1945,7 +1850,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/yebekhe/vpn-fail.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1965,7 +1870,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/gheychiamoozesh.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1985,7 +1890,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/the3rf_com_sub_php.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2005,7 +1910,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/F0rc3Run_XX.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2025,7 +1930,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/shatakvpn.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2045,7 +1950,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/WilliamStar007/ClashX-V2Ray-TopFreeProxy/main/combine/clash.config.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2065,7 +1970,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/lagzian/SS-Collector/main/mix_clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2085,7 +1990,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/clash-meta/all.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2105,7 +2010,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/free-config/refs/heads/main/free-mihomo-sub/MahsaNetConfigTopic.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2125,7 +2030,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/FreedomGuard/Finder_configs.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2145,7 +2050,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/ebrasha/lite.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2165,7 +2070,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Misaka-blog/chromego_merge/main/sub/merged_proxies_new.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
+
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2185,7 +2090,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/66.42.50.118.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2199,13 +2103,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "AA11C1C1 prefix |"
-#       additional-suffix: "| AA11C1C1 suffix"
   AAA11C1C11:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/Barabama/clashmeta.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2219,13 +2120,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "AAA11C1C11 prefix |"
-#       additional-suffix: "| AAA11C1C11 suffix"
   AAAA11C1C111:
     type: http
     url: "https://raw.githubusercontent.com/10ium/free-config/refs/heads/main/dnsforgame/shecan.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2239,13 +2137,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "AAAA11C1C111 prefix |"
-#       additional-suffix: "| AAAA11C1C111 suffix"
   A1AAA11C1C11:
     type: http
     url: "https://bitbucket.org/huwo1/proxy_nodes/raw/f31ca9ec67b84071515729ff45b011b6b09c10f2/clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2259,13 +2154,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A1AAA11C1C11 prefix |"
-#       additional-suffix: "| A1AAA11C1C11 suffix"
   AiAAA11C1C111:
     type: http
     url: ""
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2279,13 +2171,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "AiAAA11C1C111 prefix |"
-#       additional-suffix: "| AiAAA11C1C111 suffix"
   AAA11C1C1AAA11C1C111:
     type: http
     url: "https://github.com/mahdibland/V2RayAggregator/raw/master/sub/sub_merge_yaml.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2299,13 +2188,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "AAA11C1C1AAA11C1C111 prefix |"
-#       additional-suffix: "| AAA11C1C1AAA11C1C111 suffix"
   A1AAA11C1C1AAA11C1C111:
     type: http
     url: "https://github.com/MrMohebi/xray-proxy-grabber-telegram/raw/master/collected-proxies/clash-meta/all.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2319,13 +2205,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A1AAA11C1C1AAA11C1C111 prefix |"
-#       additional-suffix: "| A1AAA11C1C1AAA11C1C111 suffix"
   AAA11C1C1AAA11C1C111A1:
     type: http
     url: "https://raw.githubusercontent.com/mlabalabala/v2ray-node/main/nodefree4clash.txt"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2339,13 +2222,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "AAA11C1C1AAA11C1C111A1 prefix |"
-#       additional-suffix: "| AAA11C1C1AAA11C1C111A1 suffix"
   A1AAA11C1C1AAA11C1C111A1:
     type: http
     url: "https://raw.githubusercontent.com/ALIILAPRO/v2rayNG-Config/main/sub.txt"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2359,13 +2239,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A1AAA11C1C1AAA11C1C111A1 prefix |"
-#       additional-suffix: "| A1AAA11C1C1AAA11C1C111A1 suffix"
   A1A1AAA11C1C1AAA11C1C111A1:
     type: http
     url: "https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/All_Configs_base64_Sub.txt"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2379,13 +2256,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A1A1AAA11C1C1AAA11C1C111A1 prefix |"
-#       additional-suffix: "| A1A1AAA11C1C1AAA11C1C111A1 suffix"
   A1A1A1AAA11C1C1AAA11C1C111A1:
     type: http
     url: "https://github.com/vxiaov/free_proxy_ss/raw/main/clash/clash.provider.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2399,13 +2273,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A1A1A1AAA11C1C1AAA11C1C111A1 prefix |"
-#       additional-suffix: "| A1A1A1AAA11C1C1AAA11C1C111A1 suffix"
   A1A1A1A1AAA11C1C1AAA11C1C111A1:
     type: http
     url: "https://github.com/NiREvil/vless/blob/main/sub/clash-meta.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2419,13 +2290,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A1A1A1A1AAA11C1C1AAA11C1C111A1 prefix |"
-#       additional-suffix: "| A1A1A1A1AAA11C1C1AAA11C1C111A1 suffix"
   A1A1A1A1A1AAA11C1C1AAA11C1C111A1:
     type: http
     url: "https://github.com/LonUp/NodeList/raw/main/Clash/Node/Latest.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2439,13 +2307,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A1A1A1A1A1AAA11C1C1AAA11C1C111A1 prefix |"
-#       additional-suffix: "| A1A1A1A1A1AAA11C1C1AAA11C1C111A1 suffix"
   A1A1A1A1A1AAA11C1C1AAA11C1C111A1gg:
     type: http
     url: "https://gitlab.com/univstar1/v2ray/-/raw/main/data/clash/general.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2459,13 +2324,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A1A1A1A1A1AAA11C1C1AAA11C1C111A1gg prefix |"
-#       additional-suffix: "| A1A1A1A1A1AAA11C1C1AAA11C1C111A1gg suffix"
   A1A1A1A1A1AAA11C1C1AAA11C1CA1:
     type: http
     url: "https://freevpnspy.githubrowcontent.com/2024/08/20240802_novless.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2479,13 +2341,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A1A1A1A1A1AAA11C1C1AAA11C1CA1 prefix |"
-#       additional-suffix: "| A1A1A1A1A1AAA11C1C1AAA11C1CA1 suffix"
   qqA1A1A1A1AAA11C1C1AAA11C1C111A1:
     type: http
     url: "https://freevpnspy.githubrowcontent.com/2024/08/20240802_vless.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2499,13 +2358,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "qqA1A1A1A1AAA11C1C1AAA11C1C111A1 prefix |"
-#       additional-suffix: "| qqA1A1A1A1AAA11C1C1AAA11C1C111A1 suffix"
   A1A1A1A1A1AAA11C1C1AAA11C1C111A1oo:
     type: http
     url: "https://raw.githubusercontent.com/chongdong1230/dxz/main/clash"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2519,13 +2375,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A1A1A1A1A1AAA11C1C1AAA11C1C111A1oo prefix |"
-#       additional-suffix: "| A1A1A1A1A1AAA11C1C1AAA11C1C111A1oo suffix"
   AA1A1A1A1A1AAA11C1C1AAA11C1C111A11xx:
     type: http
     url: "https://raw.githubusercontent.com/itsyebekhe/PSG/main/subscriptions/clash/mix"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2539,13 +2392,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "AA1A1A1A1A1AAA11C1C1AAA11C1C111A11xx prefix |"
-#       additional-suffix: "| AA1A1A1A1A1AAA11C1C1AAA11C1C111A11xx suffix"
   A1A1A1A1A1AAA11C1C1AAA11C1C111A1A1rr:
     type: http
     url: "https://sub.pmsub.me/clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2559,14 +2409,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A1A1A1A1A1AAA11C1C1AAA11C1C111A1A1rr prefix |"
-#       additional-suffix: "| A1A1A1A1A1AAA11C1C1AAA11C1C111A1A1rr suffix"
-
   DDFDDA1:
     type: http
     url: "https://sub.pmsub.me/clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2580,13 +2426,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "DDFDDA1 prefix |"
-#       additional-suffix: "| DDFDDA1 suffix"
   ADDFDDA11:
     type: http
     url: "https://anaer.github.io/Sub/clash.yaml"
     interval: 300
-#    exclude-filter: "timeout|connection refused|Expired|If|Renewal"
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2600,8 +2443,6 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "ADDFDDA11 prefix |"
-#       additional-suffix: "| ADDFDDA11 suffix"
 proxies:
   - name: redir-in
     type: direct
@@ -2610,6 +2451,11 @@ proxies:
 proxy-groups:
   - name: "PROXY"
     type: "smart"
+    policy-priority: "Premium:0.9;SG:1.3" 
+    uselightgbm: false
+    collectdata: false
+    sample-rate: 1
+    prefer-asn: true
     icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io/main/docs/assets/icons/adjust.svg"
     proxies:
       - "🎈Auto"
@@ -2622,17 +2468,25 @@ proxy-groups:
   
   - name: "🎈Auto"
     type: "smart"
+    policy-priority: "Premium:0.9;SG:1.3" 
+    uselightgbm: false
+    collectdata: false
+    sample-rate: 1
+    prefer-asn: true
     url: "http://www.gstatic.com/generate_204"
     include-all-providers: true
-    interval: 180
-    tolerance: 50
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     icon: "https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/provide/Azadi.jpg"
 
   - name: "🤖 AI"
     type: "smart"
+    policy-priority: "Premium:0.9;SG:1.3" 
+    uselightgbm: false
+    collectdata: false
+    sample-rate: 1
+    prefer-asn: true
     url: "http://www.gstatic.com/generate_204"
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     icon: "https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png"
     proxies:
       - "🇺🇲"
@@ -2643,57 +2497,69 @@ proxy-groups:
       - "🇰🇷"
   - name: "🇭🇰"
     type: "smart"
+    policy-priority: "Premium:0.9;SG:1.3" 
+    uselightgbm: false
+    collectdata: false
+    sample-rate: 1
+    prefer-asn: true
     url: "http://www.gstatic.com/generate_204"
     include-all-providers: true
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     filter: "🇭🇰|HK|Hong|Kong|HGC|WTT|CMI|港"
-    interval: 180
-    tolerance: 50 
-    use:
 
   - name: "🇯🇵"
     type: "smart"
+    policy-priority: "Premium:0.9;SG:1.3" 
+    uselightgbm: false
+    collectdata: false
+    sample-rate: 1
+    prefer-asn: true
     url: "http://www.gstatic.com/generate_204"
-    interval: 180
-    tolerance: 50
     include-all-providers: true
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     filter: "🇯🇵|JP|Japan|Tokyo|Osaka|Saitama|东京|大阪|埼玉|日"
 
   - name: "🇺🇲"
     type: "smart"
+    policy-priority: "Premium:0.9;SG:1.3" 
+    uselightgbm: false
+    collectdata: false
+    sample-rate: 1
+    prefer-asn: true
     url: "http://www.gstatic.com/generate_204"
-    interval: 180
-    tolerance: 50
     include-all-providers: true
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     filter: "🇺🇸|US|America|United.*?States|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥"
 
   - name: "🇹🇼"
     type: "smart"
+    policy-priority: "Premium:0.9;SG:1.3" 
+    uselightgbm: false
+    collectdata: false
+    sample-rate: 1
+    prefer-asn: true
     url: "http://www.gstatic.com/generate_204"
-    interval: 180
-    tolerance: 50
     include-all-providers: true
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     filter: "🇹🇼|TW|Taiwan|新北|彰化|CHT|台|HINET"
 
   - name: "🇸🇬"
     type: "smart"
     url: "http://www.gstatic.com/generate_204"
-    interval: 180
-    tolerance: 50
     include-all-providers: true
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     filter: "🇸🇬|SG|Singapore|狮城|^新[^节北]|[^刷更]新[^节北]"
 
   - name: "🇰🇷"
     type: "smart"
+    policy-priority: "Premium:0.9;SG:1.3" 
+    uselightgbm: false
+    collectdata: false
+    sample-rate: 1
+    prefer-asn: true
     url: "http://www.gstatic.com/generate_204"
-    interval: 180
-    tolerance: 50
     include-all-providers: true
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     filter: "🇰🇷|KO?R|Korea|首尔|韩|韓"
 
   - name: "🎯 Direct"
@@ -2703,18 +2569,6 @@ proxy-groups:
       - "redir-in"
       - "PROXY"
 rule-providers:
-  nsfw:
-    type: http
-    format: yaml
-    behavior: domain
-    url: "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/nsfw.yaml"
-    interval: 30
-  social:
-    type: http
-    format: yaml
-    behavior: domain
-    url: "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/social.yaml"
-    interval: 30
   ir:
     type: http
     format: yaml
@@ -2769,72 +2623,13 @@ rule-providers:
     behavior: classical
     url: "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/irasn.yaml"
     interval: 86400
-  geolocation-!cn:
-    type: http
-    format: yaml
-    behavior: domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.yaml"
-    interval: 86400
   AWA:
     type: http
     format: yaml
     behavior: domain
     url: "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Clash.yaml"
-    interval: 86400
-  AI:
-    type: http
-    behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AI.list"
-    interval: 86400
-    
-  OpenAi:
-    type: http
-    behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list"
-    interval: 86400
-    
-  GoogleFCM:
-    type: http
-    behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list"
-    interval: 86400
-    
-  GoogleCNProxyIP:
-    type: http
-    behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCNProxyIP.list"
-    interval: 86400
-    
-  GoogleCN:
-    type: http
-    behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list"
-    interval: 86400
-    
-  YouTube:
-    type: http
-    behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list"
-    interval: 86400
-    
-  Google:
-    type: http
-    behavior: classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list"
-    interval: 86400
-    
+    interval: 86400  
 rules :
-  - DOMAIN-SUFFIX,openai.com,🤖 AI
-  - DOMAIN-SUFFIX,chatgpt.com,🤖 AI
-  - DOMAIN-SUFFIX,oaistatic.com,🤖 AI
-  - DOMAIN-SUFFIX,oaiusercontent.com,🤖 AI
-  - DOMAIN-KEYWORD,openai,🤖 AI
-  - DOMAIN-SUFFIX,anthropic.com,🤖 AI
-  - DOMAIN-SUFFIX,claude.ai,🤖 AI
-  - DOMAIN-SUFFIX,gemini.google.com,🤖 AI
-  - DOMAIN-SUFFIX,bard.google.com,🤖 AI
-  - DOMAIN-SUFFIX,perplexity.ai,🤖 AI
-  - DOMAIN-SUFFIX,midjourney.com,🤖 AI
   - DOMAIN-KEYWORD,soft98.ir,🎯 Direct
   - DOMAIN,soft98,🎯 Direct
   - DOMAIN-SUFFIX,soft98.ir,🎯 Direct
@@ -2844,9 +2639,6 @@ rules :
   - DOMAIN-SUFFIX,farsroid,🎯 Direct
   - DOMAIN-KEYWORD,farsroid.com,🎯 Direct
   - DOMAIN,farsroid.com,🎯 Direct
-  - DOMAIN-SUFFIX,createporn.com,🤖 AI
-  - DOMAIN-KEYWORD,createporn,🤖 AI
-  - DOMAIN,createporn,🤖 AI
   - DOMAIN,ad.com,REJECT
   - PROCESS-NAME,com.sec.location.nsflp2,REJECT,no-resolve
   - PROCESS-NAME,com.samsung.android.location,REJECT,no-resolve
@@ -2854,30 +2646,13 @@ rules :
   - PROCESS-NAME,com.google.android.gms.location.history,REJECT,no-resolve
   - PROCESS-NAME,com.sec.location.nsflp2,REJECT,no-resolve
   - PROCESS-NAME,com.android.location.fused,REJECT,no-resolve
-  - DOMAIN-SUFFIX,google.com,🤖 AI
-  - DOMAIN-KEYWORD,google,🤖 AI
   - IP-CIDR,127.0.0.0/8,🎯 Direct,no-resolve
-  - IP-CIDR6,2620:0:2d0:200::7/32,PROXY
-  - IP-SUFFIX,8.8.8.8/24,🤖 AI
   - SRC-IP-CIDR,192.168.1.201/32,🎯 Direct
   - SRC-IP-SUFFIX,192.168.1.201/8,🎯 Direct
   - DOMAIN-SUFFIX,local,🎯 Direct
   - IP-CIDR,127.0.0.0/8,🎯 Direct
   - IP-CIDR,172.16.0.0/12,🎯 Direct
   - IP-CIDR,192.168.0.0/16,🎯 Direct
-  - IN-PORT,7890,PROXY
-  - IN-PORT,7892,PROXY
-  - IN-PORT,7891,PROXY
-  - IN-TYPE,SOCKS/HTTP,PROXY
-  - IN-USER,mihomo,PROXY
-  - IN-NAME,ss,PROXY
-  - PROCESS-PATH,C:\Program Files\Google\Chrome\Application\chrome.exe,PROXY
-  - PROCESS-NAME,curl,PROXY
-  - PROCESS-NAME,chrome.exe,PROXY
-  - PROCESS-NAME,com.termux,PROXY
-  - AND,((DOMAIN,google.com),(NETWORK,UDP)),🤖 AI
-  - OR,((NETWORK,UDP),(DOMAIN,google.com)),REJECT
-  - NOT,((DOMAIN,google.com)),🤖 AI
   - RULE-SET,private,🎯 Direct,no-resolve
   - RULE-SET,apps,🎯 Direct
   - RULE-SET,ads,REJECT
@@ -2888,23 +2663,9 @@ rules :
   - RULE-SET,ir,🎯 Direct
   - RULE-SET,ircidr,🎯 Direct
   - RULE-SET,irasn,🎯 Direct
-  - RULE-SET,social,PROXY,no-resolve
-  - RULE-SET,nsfw,PROXY,no-resolve
-  - RULE-SET,geolocation-!cn,PROXY
   - GEOIP,ir,🎯 Direct
-  - RULE-SET,GoogleFCM,🤖 AI
-  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,🤖 AI
-  - DOMAIN-SUFFIX,services.googleapis.cn,🤖 AI
-  - RULE-SET,GoogleCNProxyIP,🤖 AI
-  - RULE-SET,GoogleCN,🤖 AI
-  - RULE-SET,YouTube,🤖 AI
-  - RULE-SET,Google,🤖 AI
-  - GEOIP,google,🤖 AI
-  - GEOIP,telegram,PROXY
-  - GEOIP,twitter,PROXY
-  - GEOIP,facebook,PROXY
   - GEOIP,private,🎯 Direct,no-resolve
   - GEOSITE,category-ads-all,REJECT
   - GEOSITE,category-ir,🎯 Direct,no-resolve
   - GEOSITE,ir,🎯 Direct
-  - MATCH,PROXY
+  - MATCH, 
