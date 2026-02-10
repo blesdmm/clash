@@ -52,8 +52,75 @@ dns:
       - '+.google.com'
       - '+.facebook.com'
       - '+.youtube.com'
+proxy-groups:
+  - name: PROXY
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Ssh|Vmess|Vless
+    include-all: true
+    disable-udp: true
+    proxies:
+      - 🟢Auto🟢
+      - 🟡fallback🟡
+      - 🔴load-balance🔴
+  - name: 🟢Auto🟢
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    exclude-filter: 美|日|ctb|Traffic|Expired|Official website|Landing|Return to China|This site|User|If|Renewal|Email|Subscription|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅
+    include-all: true
+    disable-udp: true
+    interval: 300
+    tolerance: 10
+    timeout: 500
+    max-failed-times: 6
+    lazy: true
+    hidden: true
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+  - name: 🟡fallback🟡
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    exclude-filter: 美|日|ctb|Traffic|Expired|Official website|Landing|Return to China|This site|User|If|Renewal|Email|Subscription|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅
+    include-all: true
+    disable-udp: true
+    interval: 100
+    timeout: 500
+    max-failed-times: 6
+    lazy: true
+    hidden: true
+    icon: http://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png
+  - name: 🔴load-balance🔴
+    type: load-balance
+    url: http://cp.cloudflare.com/generate_204
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh #|Vmess|Vless|Trojan|Hysteria|Hysteria2
+    exclude-filter: 美|日|ctb|Traffic|Expired|Official website|Landing|Return to China|This site|User|If|Renewal|Email|Subscription|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅
+    filter: "America|United States|US|美国"
+    include-all: true
+    disable-udp: true
+    interval: 100
+    timeout: 500
+    max-failed-times: 6
+    lazy: true
+    hidden: true
+    icon: http://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png
+  - name: 🎯 Direct
+    type: select
+    disable-udp: true
+    icon: http://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png
+    proxies:
+      - "DIRECT"
+      - "PROXY"
+  - name: 🛑 Reject
+    type: select
+    disable-udp: true
+    icon: http://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png
+    proxies:
+      - "RejectDrop"
+      - "DIRECT"
+      - "PROXY"
 sniffer:
-  enable: true
+  enable: false
   force-dns-mapping: true
   parse-pure-ip: true
   override-destination: false
@@ -287,62 +354,7 @@ proxies:
   udp: true
   ip-version: ipv4
   interface-name: eth0
-  routing-mark: 1234
-proxy-groups:
-  - name: "PROXY"
-    type: "select"
-    hidden: false
-    exclude-type: "direct|redir-in|DNS"
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Final.png"
-    proxies:
-      - "🎈Auto"
-      - "🎈fallback"
-
-  - name: "🎈Auto"
-    type: "url-test"
-    url: "http://cp.cloudflare.com/"
-    exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
-    filter: "^(?=.*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)).*$"
-    exclude-type: "direct|redir-in|DNS|trojan"
-    include-all-providers: true
-    hidden: true
-    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png"
-
-  - name: "🎈fallback"
-    type: "fallback"
-    url: "http://cp.cloudflare.com/"
-    filter: "^(?=.*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)).*$"
-    exclude-type: "direct|redir-in|DNS|trojan"
-    include-all-providers: true
-    hidden: true
-    icon: "https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png"
-
-  - name: "🇺🇸US🇺🇸"
-    filter: "^(?=.*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)).*$"
-    exclude-filter: "timeout|connection refused|美|日|ctb|Expired|If|Renewal|Email|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
-    type: "url-test"
-    icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io/main/docs/assets/icons/flags/us.svg"
-    exclude-type: "direct|redir-in|DNS|trojan"
-    include-all-providers: true
-    hidden: true
-    url: "http://cp.cloudflare.com/"
-    
-  - name: "🎯 Direct"
-    type: "select"
-    icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io/main/docs/assets/icons/fish.svg"
-    proxies:
-      - "IRAN"
-      - "PROXY"
-      - "🎈fallback"
-    
-  - name: "🛑 Reject"
-    type: "select"
-    icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io/main/docs/assets/icons/block.svg"
-    proxies:
-      - "REJECT"
-      - "DIRECT"
-      - "PROXY"
-      
+  routing-mark: 1234    
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 Direct
   - DOMAIN-SUFFIX,ip6-localhost,🎯 Direct

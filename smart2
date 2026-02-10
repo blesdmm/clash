@@ -23,7 +23,7 @@ external-ui: dashboard
 external-ui-name: ui
 external-ui-url: "https://github.com//Zephyruso/zashboard/releases/latest/download/dist.zip"
 keep-alive-interval: 30
-disable-keep-alive: false
+disable-keep-alive: true
 keep-alive-idle: 15
 find-process-mode: strict
 unified-delay: false
@@ -58,11 +58,13 @@ dns:
   listen: 0.0.0.0:53
   ipv6: true
   default-nameserver:
+    - 127.0.1.0:53
     - 223.5.5.5
     - 114.114.114.114
     - 1.1.1.1
     - 8.8.8.8
   nameserver:
+    - 127.0.1.0:53
     - 223.5.5.5
     - 114.114.114.114
     - 119.29.29.29
@@ -143,6 +145,149 @@ dns:
     - "+.stun.playstation.net"
     - "*.mcdn.bilivideo.cn"
     - "ntp.ntsc.ac.cn"
+
+proxies:
+  - name: redir-in
+    type: direct
+    port: 9797
+    server: 127.0.0.1
+proxy-groups:
+  - name: "PROXY"
+    type: "smart"
+    policy-priority: "Premium:0.9;SG:1.3" 
+    uselightgbm: true
+    collectdata: true
+    sample-rate: 1
+    prefer-asn: true
+    url: "http://www.gstatic.com/generate_204"
+    include-all-providers: true
+    disable-udp: true
+    icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io/main/docs/assets/icons/adjust.svg"
+    proxies:
+      - "🎈Auto"
+      - "🇺🇲"
+      - "🇭🇰"
+      - "🇯🇵"
+      - "🇹🇼"
+      - "🇸🇬"
+      - "🇰🇷"
+  
+  - name: "🎈Auto"
+    type: "smart"
+    policy-priority: "Premium:0.9;SG:1.3" 
+    uselightgbm: true
+    collectdata: true
+    sample-rate: 1
+    prefer-asn: true
+    url: "http://www.gstatic.com/generate_204"
+    include-all-providers: true
+    disable-udp: true
+    exclude-type: redir-in|Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    icon: "https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/provide/Azadi.jpg"
+
+  - name: "🤖 AI"
+    type: "smart"
+    policy-priority: "Premium:0.9;SG:1.3" 
+    uselightgbm: true
+    collectdata: true
+    sample-rate: 1
+    prefer-asn: true
+    url: "http://www.gstatic.com/generate_204"
+    include-all-providers: true
+    disable-udp: true
+    exclude-type: redir-in|Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    icon: "https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png"
+    proxies:
+      - "🇺🇲"
+      - "🇭🇰"
+      - "🇯🇵"
+      - "🇹🇼"
+      - "🇸🇬"
+      - "🇰🇷"
+  - name: "🇭🇰"
+    type: "smart"
+    policy-priority: "Premium:0.9;SG:1.3" 
+    uselightgbm: true
+    collectdata: true
+    sample-rate: 1
+    prefer-asn: true
+    url: "http://www.gstatic.com/generate_204"
+    include-all-providers: true
+    disable-udp: true
+    exclude-type: redir-in|Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    filter: "🇭🇰|HK|Hong|Kong|HGC|WTT|CMI|港"
+
+  - name: "🇯🇵"
+    type: "smart"
+    policy-priority: "Premium:0.9;SG:1.3" 
+    uselightgbm: true
+    collectdata: true
+    sample-rate: 1
+    prefer-asn: true
+    url: "http://www.gstatic.com/generate_204"
+    include-all-providers: true
+    disable-udp: true
+    exclude-type: redir-in|Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    filter: "🇯🇵|JP|Japan|Tokyo|Osaka|Saitama|东京|大阪|埼玉|日"
+
+  - name: "🇺🇲"
+    type: "smart"
+    policy-priority: "Premium:0.9;SG:1.3" 
+    uselightgbm: true
+    collectdata: true
+    sample-rate: 1
+    prefer-asn: true
+    url: "http://www.gstatic.com/generate_204"
+    include-all-providers: true
+    disable-udp: true
+    exclude-type: redir-in|Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    filter: "🇺🇸|US|America|United.*?States|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥"
+
+  - name: "🇹🇼"
+    type: "smart"
+    policy-priority: "Premium:0.9;SG:1.3" 
+    uselightgbm: true
+    collectdata: true
+    sample-rate: 1
+    prefer-asn: true
+    url: "http://www.gstatic.com/generate_204"
+    include-all-providers: true
+    disable-udp: true
+    exclude-type: redir-in|Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    filter: "🇹🇼|TW|Taiwan|新北|彰化|CHT|台|HINET"
+
+  - name: "🇸🇬"
+    type: "smart"
+    policy-priority: "Premium:0.9;SG:1.3" 
+    uselightgbm: true
+    collectdata: true
+    sample-rate: 1
+    prefer-asn: true
+    url: "http://www.gstatic.com/generate_204"
+    include-all-providers: true
+    disable-udp: true
+    exclude-type: redir-in|Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    filter: "🇸🇬|SG|Singapore|狮城|^新[^节北]|[^刷更]新[^节北]"
+
+  - name: "🇰🇷"
+    type: "smart"
+    policy-priority: "Premium:0.9;SG:1.3" 
+    uselightgbm: true
+    collectdata: true
+    sample-rate: 1
+    prefer-asn: true
+    url: "http://www.gstatic.com/generate_204"
+    include-all-providers: true
+    disable-udp: true
+    exclude-type: redir-in|Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    filter: "🇰🇷|KO?R|Korea|首尔|韩|韓"
+
+  - name: "🎯 Direct"
+    type: "select"
+    icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io/main/docs/assets/icons/fish.svg"
+    proxies:
+      - "redir-in"
+      - "PROXY"
 proxy-providers:
   A1:
     type: http
@@ -165,7 +310,7 @@ proxy-providers:
 #       additional-suffix: "| A1 suffix"
   A2:
     type: http
-    url: "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yaml"
+    url: "https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/socks5"
     interval: 300
     health-check:
       enable: true
@@ -241,7 +386,7 @@ proxy-providers:
 #       additional-suffix: "| A5 suffix"
   A6:
     type: http
-    url: "https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yaml"
+    url: ""
     interval: 300
     health-check:
       enable: true
@@ -469,7 +614,7 @@ proxy-providers:
 #       additional-suffix: "| A17 suffix"
   A18:
     type: http
-    url: "https://raw.githubusercontent.com/ronghuaxueleng/get_v2/main/pub/combine.yaml"
+    url: ""
     interval: 300
     health-check:
       enable: true
@@ -528,7 +673,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/YasserDivaR/pr0xy/main/winformClash.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -542,13 +686,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A1 prefix |"
-#       additional-suffix: "| A1 suffix"
+
   A22:
     type: http
     url: "https://raw.githubusercontent.com/sh3d0ww02f/sh3d0ww02f.github.io/main/clash1.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -562,8 +704,7 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A22 prefix |"
-#       additional-suffix: "| A22 suffix"
+
   A23:
     type: http
     url: "https://raw.githubusercontent.com/obscure1990/freeVM/master/snippets/nodes.yaml"
@@ -581,13 +722,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A23 prefix |"
-#       additional-suffix: "| A23 suffix"
+
   A24:
     type: http
     url: "https://raw.githubusercontent.com/sun9426/sun9426.github.io/main/subscribe/Clash.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -601,8 +740,7 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A24 prefix |"
-#       additional-suffix: "| A24 suffix"
+
   A25:
     type: http
     url: "https://raw.githubusercontent.com/itxve/fetch-clash-node/main/node/ClashNode.yaml"
@@ -620,13 +758,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A25 prefix |"
-#       additional-suffix: "| A25 suffix"
+
   A26:
     type: http
     url: "https://raw.githubusercontent.com/sh3d0ww02f/sh3d0ww02f.github.io/main/clash1.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -640,13 +776,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A26 prefix |"
-#       additional-suffix: "| A26 suffix"
+
   A27:
     type: http
     url: "https://raw.githubusercontent.com/igeekshare/GeekshareFreeNode/main/clash/Geekshare.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -660,13 +794,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A27 prefix |"
-#       additional-suffix: "| A27 suffix"
+
   A28:
     type: http
     url: "https://raw.githubusercontent.com/learnhard-cn/free_proxy_ss/main/clash/clash.provider.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -680,13 +812,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A28 prefix |"
-#       additional-suffix: "| A28 suffix"
+
   A29:
     type: http
     url: "https://raw.githubusercontent.com/learnhard-cn/free_proxy_ss/main/clash/config.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -700,13 +830,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A29 prefix |"
-#       additional-suffix: "| A29 suffix"
+
   A31:
     type: http
     url: "https://raw.githubusercontent.com/jw853355718/clash_233/master/config.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -720,13 +848,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A31 prefix |"
-#       additional-suffix: "| A31 suffix"
+
   A32:
     type: http
     url: "https://raw.githubusercontent.com/BUTUbird/ClashPoint/main/application.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -740,13 +866,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A32 prefix |"
-#       additional-suffix: "| A32 suffix"
+
   A33:
     type: http
     url: "https://raw.githubusercontent.com/vpei/free-node-1/main/o/proxies.txt"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -760,13 +884,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A33 prefix |"
-#       additional-suffix: "| A33 suffix"
+
   A34:
     type: http
     url: "https://raw.githubusercontent.com/du5/free/master/file/0909/Clash.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -780,13 +902,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A34 prefix |"
-#       additional-suffix: "| A34 suffix"
+
   A35:
     type: http
     url: "https://raw.githubusercontent.com/oslook/clash-freenode/main/clash.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -800,13 +920,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A35 prefix |"
-#       additional-suffix: "| A35 suffix"
+
   A36:
     type: http
     url: "https://raw.githubusercontent.com/jw853355718/clash_233/master/config.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -820,13 +938,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A36 prefix |"
-#       additional-suffix: "| A36 suffix"
+
   A37:
     type: http
     url: "https://raw.githubusercontent.com/kevin-wud/v2ray-node/main/clash.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -840,13 +956,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "A37 prefix |"
-#       additional-suffix: "| A37 suffix"
+
   A38:
     type: http
     url: "https://raw.githubusercontent.com/nasheep/FreeNode/main/clash/PlayLab"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -866,7 +980,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/tony0392/clash/main/clash.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -886,7 +999,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/zhlx2835/freefq/main/clash.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -906,7 +1018,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Junely/clash/main/template3.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -926,7 +1037,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/misersun/config003/main/config_all_quest.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -946,7 +1056,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/misersun/config003/main/config_all.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -966,7 +1075,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/renyige1314/CLASH/main/CLASH"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -986,7 +1094,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/69z1zfw2fly/fly/main/2.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1006,7 +1113,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Flik6/getNode/main/clash.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1026,7 +1132,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/free18/v2ray/main/Clash.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1044,9 +1149,8 @@ proxy-providers:
 #       additional-suffix: "| AI1 suffix"
   AO1:
     type: http
-    url: "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml"
+    url: "https://anaer.github.io/Sub/proxies.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1067,7 +1171,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/shbioc/clash/main/aaa01.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1081,33 +1184,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "AP1 prefix |"
-#       additional-suffix: "| AP1 suffix"
-  AA1:
-    type: http
-    url: "https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yaml"
-    interval: 300
 
-    health-check:
-      enable: true
-      url: "http://www.gstatic.com/generate_204"
-      interval: 300
-      timeout: 5000
-      lazy: true
-      expected-status: 204
-      header:
-      User-Agent:
-      - "Clash/v1.18.0"
-      - "mihomo/1.18.3"
-      - "meta/0.2.0.9.smart"
-      - "meta/0.2.0.9.meta"
-#      additional-prefix: "AA1 prefix |"
-#       additional-suffix: "| AA1 suffix"
   AS1:
     type: http
     url: "https://raw.githubusercontent.com/9Fork/openit/main/Clash.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1121,13 +1202,10 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "AS1 prefix |"
-#       additional-suffix: "| AS1 suffix"
   AD1:
     type: http
     url: "https://raw.githubusercontent.com/aiboboxx/clashfree/main/clash.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1141,13 +1219,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "AD1 prefix |"
-#       additional-suffix: "| AD1 suffix"
+
   AF1:
     type: http
     url: "https://raw.githubusercontent.com/rxsweet/proxies/main/sub/rx.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1161,13 +1237,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "AF1 prefix |"
-#       additional-suffix: "| AF1 suffix"
+
   AG1:
     type: http
     url: "https://raw.githubusercontent.com/rxsweet/proxies/main/sub/srx.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1181,13 +1255,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "AG1 prefix |"
-#       additional-suffix: "| AG1 suffix"
+
   AH1:
     type: http
     url: "https://raw.githubusercontent.com/rxsweet/proxies/main/sub/free.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1201,13 +1273,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "AH1 prefix |"
-#       additional-suffix: "| AH1 suffix"
+
   AJ1:
     type: http
     url: "https://raw.githubusercontent.com/rxsweet/proxies/main/sub/sources/dynamicAll.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1221,13 +1291,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "AJ1 prefix |"
-#       additional-suffix: "| AJ1 suffix"
+
   AK1:
     type: http
     url: "https://raw.githubusercontent.com/rxsweet/proxies/main/sub/sources/miningAll.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1241,13 +1309,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "AK1 prefix |"
-#       additional-suffix: "| AK1 suffix"
+
   AL1:
     type: http
     url: "https://raw.githubusercontent.com/imboys/proxyForClash/refs/heads/master/free%20proxy.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1261,13 +1327,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "AL1 prefix |"
-#       additional-suffix: "| AL1 suffix"
+
   AZ1:
     type: http
     url: "https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/yudou66.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1281,13 +1345,11 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-#      additional-prefix: "AZ1 prefix |"
-#       additional-suffix: "| AZ1 suffix"
+
   AX1:
     type: http
     url: "https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/wenode.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1307,7 +1369,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/nodefree.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1327,7 +1388,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/nodev2ray.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1347,7 +1407,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/ndnode.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1367,7 +1426,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/clashmeta.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1387,7 +1445,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/v2rayshare.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1427,7 +1484,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/cxr9912/cxr2022/refs/heads/main/aaaaaaaa.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1870,7 +1926,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/gheychiamoozesh.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1890,7 +1945,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/the3rf_com_sub_php.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1910,7 +1964,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/F0rc3Run_XX.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1930,7 +1983,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/shatakvpn.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1950,7 +2002,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/WilliamStar007/ClashX-V2Ray-TopFreeProxy/main/combine/clash.config.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -1990,7 +2041,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/clash-meta/all.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2010,7 +2060,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/free-config/refs/heads/main/free-mihomo-sub/MahsaNetConfigTopic.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2030,7 +2079,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/FreedomGuard/Finder_configs.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2050,7 +2098,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/10ium/MihomoSaz/main/Sublist/ebrasha/lite.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2070,7 +2117,6 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/Misaka-blog/chromego_merge/main/sub/merged_proxies_new.yaml"
     interval: 300
-
     health-check:
       enable: true
       url: "http://www.gstatic.com/generate_204"
@@ -2392,182 +2438,6 @@ proxy-providers:
       - "mihomo/1.18.3"
       - "meta/0.2.0.9.smart"
       - "meta/0.2.0.9.meta"
-  A1A1A1A1A1AAA11C1C1AAA11C1C111A1A1rr:
-    type: http
-    url: "https://sub.pmsub.me/clash.yaml"
-    interval: 300
-    health-check:
-      enable: true
-      url: "http://www.gstatic.com/generate_204"
-      interval: 300
-      timeout: 5000
-      lazy: true
-      expected-status: 204
-      header:
-      User-Agent:
-      - "Clash/v1.18.0"
-      - "mihomo/1.18.3"
-      - "meta/0.2.0.9.smart"
-      - "meta/0.2.0.9.meta"
-  DDFDDA1:
-    type: http
-    url: "https://sub.pmsub.me/clash.yaml"
-    interval: 300
-    health-check:
-      enable: true
-      url: "http://www.gstatic.com/generate_204"
-      interval: 300
-      timeout: 5000
-      lazy: true
-      expected-status: 204
-      header:
-      User-Agent:
-      - "Clash/v1.18.0"
-      - "mihomo/1.18.3"
-      - "meta/0.2.0.9.smart"
-      - "meta/0.2.0.9.meta"
-  ADDFDDA11:
-    type: http
-    url: "https://anaer.github.io/Sub/clash.yaml"
-    interval: 300
-    health-check:
-      enable: true
-      url: "http://www.gstatic.com/generate_204"
-      interval: 300
-      timeout: 5000
-      lazy: true
-      expected-status: 204
-      header:
-      User-Agent:
-      - "Clash/v1.18.0"
-      - "mihomo/1.18.3"
-      - "meta/0.2.0.9.smart"
-      - "meta/0.2.0.9.meta"
-proxies:
-  - name: redir-in
-    type: direct
-    port: 9797
-    server: 127.0.0.1
-proxy-groups:
-  - name: "PROXY"
-    type: "smart"
-    policy-priority: "Premium:0.9;SG:1.3" 
-    uselightgbm: false
-    collectdata: false
-    sample-rate: 1
-    prefer-asn: true
-    icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io/main/docs/assets/icons/adjust.svg"
-    proxies:
-      - "🎈Auto"
-      - "🇺🇲"
-      - "🇭🇰"
-      - "🇯🇵"
-      - "🇹🇼"
-      - "🇸🇬"
-      - "🇰🇷"
-  
-  - name: "🎈Auto"
-    type: "smart"
-    policy-priority: "Premium:0.9;SG:1.3" 
-    uselightgbm: false
-    collectdata: false
-    sample-rate: 1
-    prefer-asn: true
-    url: "http://www.gstatic.com/generate_204"
-    include-all-providers: true
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
-    icon: "https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/provide/Azadi.jpg"
-
-  - name: "🤖 AI"
-    type: "smart"
-    policy-priority: "Premium:0.9;SG:1.3" 
-    uselightgbm: false
-    collectdata: false
-    sample-rate: 1
-    prefer-asn: true
-    url: "http://www.gstatic.com/generate_204"
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
-    icon: "https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png"
-    proxies:
-      - "🇺🇲"
-      - "🇭🇰"
-      - "🇯🇵"
-      - "🇹🇼"
-      - "🇸🇬"
-      - "🇰🇷"
-  - name: "🇭🇰"
-    type: "smart"
-    policy-priority: "Premium:0.9;SG:1.3" 
-    uselightgbm: false
-    collectdata: false
-    sample-rate: 1
-    prefer-asn: true
-    url: "http://www.gstatic.com/generate_204"
-    include-all-providers: true
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
-    filter: "🇭🇰|HK|Hong|Kong|HGC|WTT|CMI|港"
-
-  - name: "🇯🇵"
-    type: "smart"
-    policy-priority: "Premium:0.9;SG:1.3" 
-    uselightgbm: false
-    collectdata: false
-    sample-rate: 1
-    prefer-asn: true
-    url: "http://www.gstatic.com/generate_204"
-    include-all-providers: true
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
-    filter: "🇯🇵|JP|Japan|Tokyo|Osaka|Saitama|东京|大阪|埼玉|日"
-
-  - name: "🇺🇲"
-    type: "smart"
-    policy-priority: "Premium:0.9;SG:1.3" 
-    uselightgbm: false
-    collectdata: false
-    sample-rate: 1
-    prefer-asn: true
-    url: "http://www.gstatic.com/generate_204"
-    include-all-providers: true
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
-    filter: "🇺🇸|US|America|United.*?States|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥"
-
-  - name: "🇹🇼"
-    type: "smart"
-    policy-priority: "Premium:0.9;SG:1.3" 
-    uselightgbm: false
-    collectdata: false
-    sample-rate: 1
-    prefer-asn: true
-    url: "http://www.gstatic.com/generate_204"
-    include-all-providers: true
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
-    filter: "🇹🇼|TW|Taiwan|新北|彰化|CHT|台|HINET"
-
-  - name: "🇸🇬"
-    type: "smart"
-    url: "http://www.gstatic.com/generate_204"
-    include-all-providers: true
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
-    filter: "🇸🇬|SG|Singapore|狮城|^新[^节北]|[^刷更]新[^节北]"
-
-  - name: "🇰🇷"
-    type: "smart"
-    policy-priority: "Premium:0.9;SG:1.3" 
-    uselightgbm: false
-    collectdata: false
-    sample-rate: 1
-    prefer-asn: true
-    url: "http://www.gstatic.com/generate_204"
-    include-all-providers: true
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
-    filter: "🇰🇷|KO?R|Korea|首尔|韩|韓"
-
-  - name: "🎯 Direct"
-    type: "select"
-    icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io/main/docs/assets/icons/fish.svg"
-    proxies:
-      - "redir-in"
-      - "PROXY"
 rule-providers:
   ir:
     type: http
