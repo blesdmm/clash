@@ -58,56 +58,175 @@ tun:
 proxy-groups:
   - name: PROXY
     type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay
-    include-all: true
+    url: http://cp.cloudflare.com/
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Rocket.png
+    disable-udp: true
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|Vmess|Vless|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Ssh|http|socks5
+    interval: 300
+    timeout: 500
+    max-failed-times: 400
+    lazy: true
     proxies:
       - 🟢Auto🟢
       - 🟡fallback🟡
       - 🔴load-balance🔴
+      - 🟢http🟢
+      - 🟢socks5🟢
+      - 🟢Shadowsocks🟢
+      - 🟢ShadowsocksR🟢
+      - 🟢Vmess🟢
+      - 🟢Vless🟢
+      - 🟢Hysteria|Hysteria2🟢
+      - 🟢Trojan🟢
+      
   - name: 🟢Auto🟢
     type: url-test
-    url: http://cp.cloudflare.com/generate_204
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
-    exclude-filter: 美|日|ctb|Traffic|Expired|Official website|Landing|Return to China|This site|User|If|Renewal|Email|Subscription|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     include-all: true
     disable-udp: true
-    interval: 300
+    interval: 1300
     tolerance: 10
     timeout: 500
-    max-failed-times: 4
+    max-failed-times: 40
     lazy: true
-    hidden: true
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+    hidden: false
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Auto.png
     
   - name: 🟡fallback🟡
     type: fallback
-    url: http://cp.cloudflare.com/generate_204
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
-    exclude-filter: 美|日|ctb|Traffic|Expired|Official website|Landing|Return to China|This site|User|If|Renewal|Email|Subscription|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     include-all: true
     disable-udp: true
     interval: 100
     timeout: 500
-    max-failed-times: 4
+    max-failed-times: 40
     lazy: true
-    hidden: true
+    hidden: false
     icon: http://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png
     
   - name: 🔴load-balance🔴
     type: load-balance
-    url: http://cp.cloudflare.com/generate_204
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh #|Vmess|Vless|Trojan|Hysteria|Hysteria2
-    exclude-filter: 美|日|ctb|Traffic|Expired|Official website|Landing|Return to China|This site|User|If|Renewal|Email|Subscription|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅
-    filter: "America|United States|US|美国"
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     include-all: true
     disable-udp: true
-    interval: 100
+    interval: 1000
     timeout: 500
-    max-failed-times: 4
+    max-failed-times: 40
     lazy: true
-    hidden: true
+    hidden: false
     icon: http://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png
+    
+  - name: 🟢socks5🟢
+    type: url-test
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|Vmess|Vless|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|http
+    include-all: true
+    disable-udp: true
+    interval: 500
+    tolerance: 500
+    timeout: 5000
+    max-failed-times: 40
+    lazy: true
+  - name: 🟢http🟢
+    type: url-test
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|Vmess|Vless|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|socks5
+    include-all: true
+    disable-udp: true
+    interval: 500
+    tolerance: 500
+    timeout: 5000
+    max-failed-times: 40
+    lazy: true
+    hidden: false
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png    
+    
+  - name: 🟢Vmess🟢
+    type: url-test
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|http|Vless|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|socks5
+    include-all: true
+    disable-udp: true
+    interval: 500
+    tolerance: 500
+    timeout: 5000
+    max-failed-times: 40
+    lazy: true
+    hidden: false
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png      
+    
+  - name: 🟢Vless🟢
+    type: url-test
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|http|Vmess|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|socks5
+    include-all: true
+    disable-udp: true
+    interval: 500
+    tolerance: 500
+    timeout: 5000
+    max-failed-times: 40
+    lazy: true
+    hidden: false
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png  
+    
+  - name: 🟢Hysteria|Hysteria2🟢
+    type: url-test
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|http|Vless|Trojan|Vmess|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|socks5
+    include-all: true
+    disable-udp: true
+    interval: 500
+    tolerance: 500
+    timeout: 5000
+    max-failed-times: 40
+    lazy: true
+    hidden: false
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png  
+    
+  - name: 🟢Trojan🟢
+    type: url-test
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|http|Vless|Vmess|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|socks5
+    include-all: true
+    disable-udp: true
+    interval: 500
+    tolerance: 500
+    timeout: 5000
+    max-failed-times: 40
+    lazy: true
+    hidden: false
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png      
+    
+  - name: 🟢Shadowsocks🟢
+    type: url-test
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Vmess|ShadowsocksR|Snell|http|Vless|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|socks5
+    include-all: true
+    disable-udp: true
+    interval: 500
+    tolerance: 500
+    timeout: 5000
+    max-failed-times: 40
+    lazy: true
+    hidden: false
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png      
+    
+  - name: 🟢ShadowsocksR🟢
+    type: url-test
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|Vmess|Snell|http|Vless|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|socks5
+    include-all: true
+    disable-udp: true
+    interval: 500
+    tolerance: 500
+    timeout: 5000
+    max-failed-times: 40
+    lazy: true
+    hidden: false
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png      
     
   - name: 🎯 Direct
     type: select
@@ -116,10 +235,9 @@ proxy-groups:
     proxies:
       - "DIRECT"
       - "PROXY"
-  - name: 🛑 Reject
-    type: select
-    disable-udp: true
-    icon: http://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png
+  - name: "🛑 Reject"
+    type: "select"
+    icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io/main/docs/assets/icons/block.svg"
     proxies:
       - "REJECT"
       - "DIRECT"
@@ -305,7 +423,7 @@ proxy-providers:
     override:
       additional-prefix: "A2 prefix |"
       additional-suffix: "| test suffix"
-  A6:
+  A3:
     type: http
     url: "https://raw.githubusercontent.com/Surfboardv2ray/v2ray-worker-sub/refs/heads/master/Eternity"
     interval: 86400
@@ -319,7 +437,7 @@ proxy-providers:
     override:
       additional-prefix: "A6 prefix |"
       additional-suffix: "| test suffix"
-  A7:
+  A4:
     type: http
     url: "https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg"
     interval: 86400
@@ -333,7 +451,7 @@ proxy-providers:
     override:
       additional-prefix: "A7 prefix |"
       additional-suffix: "| test suffix"
-  A8:
+  A5:
     type: http
     url: "https://proxypool1999.banyunxiaoxi.icu/clash/proxies"
     interval: 86400
@@ -347,7 +465,7 @@ proxy-providers:
     override:
       additional-prefix: "A8 prefix |"
       additional-suffix: "| test suffix"
-  A9:
+  A6:
     type: http
     url: "https://raw.githubusercontent.com/snakem982/proxypool/main/source/clash-meta-2.yaml"
     interval: 86400
@@ -361,7 +479,7 @@ proxy-providers:
     override:
       additional-prefix: "A9 prefix |"
       additional-suffix: "| test suffix"
-  A10:
+  A7:
     type: http
     url: "https://raw.githubusercontent.com/Misaka-blog/chromego_merge/main/sub/merged_proxies_new.yaml"
     interval: 86400
@@ -375,7 +493,7 @@ proxy-providers:
     override:
       additional-prefix: "A10 prefix |"
       additional-suffix: "| test suffix"
-  A11:
+  A8:
     type: http
     url: "http://141.147.161.50:12580/clash/proxies"
     interval: 86400
@@ -389,7 +507,7 @@ proxy-providers:
     override:
       additional-prefix: "A11 prefix |"
       additional-suffix: "| test suffix"
-  A12:
+  A9:
     type: http
     url: "http://155.248.172.106:12580/clash/proxies"
     interval: 86400
@@ -403,7 +521,7 @@ proxy-providers:
     override:
       additional-prefix: "A12 prefix |"
       additional-suffix: "| test suffix"
-  A13:
+  A10:
     type: http
     url: "http://66.42.50.118:12580/clash/proxies"
     interval: 86400
@@ -417,7 +535,7 @@ proxy-providers:
     override:
       additional-prefix: "A13 prefix |"
       additional-suffix: "| test suffix"
-  A14:
+  A11:
     type: http
     url: "https://raw.githubusercontent.com/snakem982/proxypool/main/source/clash-meta.yaml"
     interval: 86400
@@ -431,9 +549,9 @@ proxy-providers:
     override:
       additional-prefix: "A14 prefix |"
       additional-suffix: "| test suffix"
-  A15:
+  A12:
     type: http
-    url: "https://raw.githubusercontent.com/acymz/AutoVPN/refs/heads/main/data/V2.txt"
+    url: "https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/vless/s"
     interval: 86400
     exclude-filter: "美|日|ctb|Traffic|Expired|Official website|Landing|Return to China|This site|User|If|Renewal|Email|Subscription|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
     health-check:
@@ -445,9 +563,9 @@ proxy-providers:
     override:
       additional-prefix: "A15 prefix |"
       additional-suffix: "| test suffix"
-  A16:
+  A13:
     type: http
-    url: "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list_raw.txt"
+    url: "https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/vless/x"
     interval: 86400
     exclude-filter: "美|日|ctb|Traffic|Expired|Official website|Landing|Return to China|This site|User|If|Renewal|Email|Subscription|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
     health-check:
@@ -459,9 +577,9 @@ proxy-providers:
     override:
       additional-prefix: "A16 prefix |"
       additional-suffix: "| test suffix"
-  A22:
+  A14:
     type: http
-    url: "https://raw.githubusercontent.com/yaney01/Yaney01/main/README.md"
+    url: "https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/vless/i"
     interval: 86400
     exclude-filter: "美|日|ctb|Traffic|Expired|Official website|Landing|Return to China|This site|User|If|Renewal|Email|Subscription|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅"
     health-check:
@@ -473,7 +591,7 @@ proxy-providers:
     override:
       additional-prefix: "A22 prefix |"
       additional-suffix: "| test suffix"
-  A66:
+  A15:
     type: http
     url: "https://raw.githubusercontent.com/HakurouKen/free-node/main/public"
     interval: 86400
@@ -487,7 +605,7 @@ proxy-providers:
     override:
       additional-prefix: "A66 prefix |"
       additional-suffix: "| test suffix"
-  A77:
+  A16:
     type: http
     url: "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/row-url/actives.txt"
     interval: 86400
@@ -501,7 +619,7 @@ proxy-providers:
     override:
       additional-prefix: "A77 prefix |"
       additional-suffix: "| test suffix"
-  A88:
+  A17:
     type: http
     url: "https://raw.githubusercontent.com/shabane/kamaji/master/hub/merged.txt"
     interval: 86400
@@ -515,7 +633,7 @@ proxy-providers:
     override:
       additional-prefix: "A88 prefix |"
       additional-suffix: "| test suffix"
-  A99:
+  A18:
     type: http
     url: "https://raw.githubusercontent.com/markbang/chromegopacs/main/hy2pac.txt"
     interval: 86400
@@ -529,7 +647,7 @@ proxy-providers:
     override:
       additional-prefix: "A99 prefix |"
       additional-suffix: "| test suffix"
-  A100:
+  A19:
     type: http
     url: "https://raw.githubusercontent.com/mksshare/mksshare.github.io/main/README.md"
     interval: 86400
@@ -543,7 +661,7 @@ proxy-providers:
     override:
       additional-prefix: "A100 prefix |"
       additional-suffix: "| test suffix"
-  A111:
+  A20:
     type: http
     url: "https://raw.githubusercontent.com/abshare/abshare.github.io/main/README.md"
     interval: 86400
@@ -557,7 +675,7 @@ proxy-providers:
     override:
       additional-prefix: "A111 prefix |"
       additional-suffix: "| test suffix"
-  A122:
+  A21:
     type: http
     url: "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_yaml.yml"
     interval: 86400
@@ -571,7 +689,7 @@ proxy-providers:
     override:
       additional-prefix: "A122 prefix |"
       additional-suffix: "| test suffix"
-  A133:
+  A22:
     type: http
     url: "https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.yml"
     interval: 86400
@@ -585,7 +703,7 @@ proxy-providers:
     override:
       additional-prefix: "A133 prefix |"
       additional-suffix: "| test suffix"
-  A144:
+  A23:
     type: http
     url: "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml"
     interval: 86400
@@ -599,7 +717,7 @@ proxy-providers:
     override:
       additional-prefix: "A14 prefix |"
       additional-suffix: "| test suffix"
-  A155:
+  A24:
     type: http
     url: "https://raw.githubusercontent.com/aiboboxx/clashfree/main/clash.yml"
     interval: 86400
@@ -613,7 +731,7 @@ proxy-providers:
     override:
       additional-prefix: "A155 prefix |"
       additional-suffix: "| test suffix"
-  A101:
+  A25:
     type: http
     url: "https://raw.githubusercontent.com/mheidari98/.proxy/main/all"
     interval: 86400
@@ -627,7 +745,7 @@ proxy-providers:
     override:
       additional-prefix: "A101 prefix |"
       additional-suffix: "| test suffix"
-  A102:
+  A26:
     type: http
     url: "https://raw.githubusercontent.com/NiceVPN123/NiceVPN/main/Clash.yaml"
     interval: 86400
@@ -641,7 +759,7 @@ proxy-providers:
     override:
       additional-prefix: "A102 prefix |"
       additional-suffix: "| test suffix"
-  A106:
+  A27:
     type: http
     url: "https://raw.githubusercontent.com/ts-sf/fly/main/clash"
     interval: 86400
@@ -655,7 +773,7 @@ proxy-providers:
     override:
       additional-prefix: "A106 prefix |"
       additional-suffix: "| test suffix"
-  A107:
+  A28:
     type: http
     url: "https://raw.githubusercontent.com/PangTouY00/Auto_proxy/main/Long_term_subscription_num"
     interval: 86400
@@ -669,7 +787,7 @@ proxy-providers:
     override:
       additional-prefix: "A107 prefix |"
       additional-suffix: "| test suffix"
-  A108:
+  A29:
     type: http
     url: "https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml"
     interval: 86400
@@ -683,7 +801,7 @@ proxy-providers:
     override:
       additional-prefix: "A108 prefix |"
       additional-suffix: "| test suffix"
-  A109:
+  A30:
     type: http
     url: "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.yml"
     interval: 86400
@@ -697,7 +815,7 @@ proxy-providers:
     override:
       additional-prefix: "A109 prefix |"
       additional-suffix: "| test suffix"
-  A110:
+  A31:
     type: http
     url: "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/clash-meta/all.yaml"
     interval: 86400
@@ -711,7 +829,7 @@ proxy-providers:
     override:
       additional-prefix: "A110 prefix |"
       additional-suffix: "| test suffix"
-  AA108:
+  A32:
     type: http
     url: "https://raw.githubusercontent.com/lagzian/SS-Collector/main/mix_clash.yaml"
     interval: 86400
@@ -725,7 +843,7 @@ proxy-providers:
     override:
       additional-prefix: "AA108 prefix |"
       additional-suffix: "| test suffix"
-  AA109:
+  A33:
     type: http
     url: "https://raw.githubusercontent.com/ALIILAPRO/v2rayNG-Config/main/sub.txt"
     interval: 86400
