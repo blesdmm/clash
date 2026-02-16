@@ -5,21 +5,29 @@ ipv6: true
 allow-lan: true
 log-level: debug
 external-controller: "127.0.0.1:9090"
+dns:
+  enable: true
+  listen: 0.0.0.0:5591
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - 127.0.0.1:5591
+    - 223.5.5.5
+    - 8.8.8.8
 proxy-groups:
   - name: select
-    type: select
+    type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png
-    disable-udp: true
-    include-all-proxies: true
     proxies:
       - url-test
       - fallback
+      - http
+      - socks5
       
   - name: url-test
     type: url-test
     url: http://www.gstatic.com/generate_204
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
-    disable-udp: true
     include-all-proxies: true
     interval: 300
     tolerance: 50
@@ -28,21 +36,47 @@ proxy-groups:
     type: fallback
     url: http://www.gstatic.com/generate_204
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
-    disable-udp: true
     interval: 300
     tolerance: 5
     include-all-proxies: true
-    
+
+  - name: http
+    type: url-test
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|http|Shadowsocks|ShadowsocksR|Snell|Vmess|Vless|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    exclude-filter: 美|日|ctb|Traffic|Expired|Official website|Landing|Return to China|This site|User|If|Renewal|Email|Subscription|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅
+    include-all: true
+    interval: 500
+    tolerance: 5
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+
+  - name: socks5
+    type: url-test
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|socks5|Shadowsocks|ShadowsocksR|Snell|Vmess|Vless|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    exclude-filter: 美|日|ctb|Traffic|Expired|Official website|Landing|Return to China|This site|User|If|Renewal|Email|Subscription|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅
+    include-all: true
+    interval: 500
+    tolerance: 5
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+
   - name: 🎯Direct
     type: select
     icon: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Auto.png"
     proxies:
       - DIRECT
       - select
-     
-    
 rules :
-
+  - DOMAIN-SUFFIX,cn,🎯Direct,no-resolve
+  - DOMAIN-KEYWORD,-cn,🎯Direct,no-resolve
+  - DOMAIN-SUFFIX,ir,🎯Direct,no-resolve
+  - DOMAIN-KEYWORD,ir,🎯Direct,no-resolve
+  - DOMAIN-SUFFIX,local,🎯Direct,no-resolve
+  - IP-CIDR,127.0.0.0/8,🎯Direct,no-resolve
+  - IP-CIDR,172.16.0.0/12,🎯Direct
+  - IP-CIDR,192.168.0.0/16,🎯Direct
+  - IP-CIDR,10.0.0.0/8,🎯Direct
+  - GeoIP,ir,🎯Direct
   - MATCH,select
 proxies:
     - name: 154.65.39.8:80

@@ -15,6 +15,190 @@ dns:
   fallback:
     - 8.8.8.8
     - 1.1.1.1
+proxy-groups:
+  - name: PROXY
+    type: select
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Rocket.png
+  #  include-all-proxies: true
+    disable-udp: true
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|Vmess|Vless|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Ssh|http|socks5
+    interval: 300
+    timeout: 5000
+    max-failed-times: 4
+    lazy: true
+    proxies:
+      - 🟢Auto🟢
+      - 🟡fallback🟡
+      - 🔴load-balance🔴
+      - 🟢http🟢
+      - 🟢Shadowsocks🟢
+      - 🟢Vmess🟢
+      - 🟢Vless🟢
+      - 🟢Hysteria|Hysteria2🟢
+      - 🟢Trojan🟢
+      
+  - name: 🟢Auto🟢
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    include-all: true
+    disable-udp: true
+    interval: 300
+    tolerance: 0
+    timeout: 500
+    max-failed-times: 4
+    lazy: true
+    hidden: false
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Auto.png
+    
+  - name: 🟡fallback🟡
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snel|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    include-all: true
+    disable-udp: true
+    interval: 100
+    timeout: 500
+    max-failed-times: 4
+    lazy: true
+    hidden: false
+    icon: http://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png
+    
+  - name: 🔴load-balance🔴
+    type: load-balance
+    url: http://cp.cloudflare.com/generate_204
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    include-all: true
+    disable-udp: true
+    interval: 100
+    timeout: 500
+    max-failed-times: 4
+    lazy: true
+    hidden: false
+    icon: http://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png
+
+  - name: 🟢http🟢
+    type: url-test
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|Vmess|Vless|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    exclude-filter: 美|日|ctb|Traffic|Expired|Official website|Landing|Return to China|This site|User|If|Renewal|Email|Subscription|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅
+    include-all: true
+    disable-udp: true
+    interval: 500
+    tolerance: 500
+    timeout: 5000
+    max-failed-times: 40
+    lazy: true
+    hidden: true
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png    
+    
+  - name: 🟢Vmess🟢
+    type: url-test
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|http|Vless|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|socks5
+    exclude-filter: 美|日|ctb|Traffic|Expired|Official website|Landing|Return to China|This site|User|If|Renewal|Email|Subscription|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅
+    include-all: true
+    disable-udp: true
+    interval: 500
+    tolerance: 500
+    timeout: 5000
+    max-failed-times: 40
+    lazy: true
+    hidden: true
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png      
+    
+  - name: 🟢Vless🟢
+    type: url-test
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|http|Vmess|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|socks5
+    exclude-filter: 美|日|ctb|Traffic|Expired|Official website|Landing|Return to China|This site|User|If|Renewal|Email|Subscription|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅
+    include-all: true
+    disable-udp: true
+    interval: 500
+    tolerance: 500
+    timeout: 5000
+    max-failed-times: 40
+    lazy: true
+    hidden: true
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png  
+    
+  - name: 🟢Hysteria|Hysteria2🟢
+    type: url-test
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|http|Vless|Trojan|Vmess|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|socks5
+    exclude-filter: 美|日|ctb|Traffic|Expired|Official website|Landing|Return to China|This site|User|If|Renewal|Email|Subscription|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅
+    include-all: true
+    disable-udp: true
+    interval: 500
+    tolerance: 500
+    timeout: 5000
+    max-failed-times: 40
+    lazy: true
+    hidden: true
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+    
+  - name: 🟢Trojan🟢
+    type: url-test
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|http|Vless|Vmess|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|socks5
+    exclude-filter: 美|日|ctb|Traffic|Expired|Official website|Landing|Return to China|This site|User|If|Renewal|Email|Subscription|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅
+    include-all: true
+    disable-udp: true
+    interval: 500
+    tolerance: 500
+    timeout: 5000
+    max-failed-times: 40
+    lazy: true
+    hidden: true
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png      
+    
+  - name: 🟢Shadowsocks🟢
+    type: url-test
+    url: http://cp.cloudflare.com/
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Vmess|ShadowsocksR|Snell|http|Vless|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|socks5
+    exclude-filter: 美|日|ctb|Traffic|Expired|Official website|Landing|Return to China|This site|User|If|Renewal|Email|Subscription|流量|过期|官网|落地|回国|本站|用户|若|续费|邮箱|订阅
+    include-all: true
+    disable-udp: true
+    interval: 500
+    tolerance: 500
+    timeout: 5000
+    max-failed-times: 40
+    lazy: true
+    hidden: true
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png      
+    
+  - name: 🎯 Direct
+    type: select
+    disable-udp: true
+    icon: http://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png
+    proxies:
+      - "DIRECT"
+      - "PROXY"
+rules :
+  - DOMAIN-SUFFIX,cn,🎯 Direct,no-resolve
+  - DOMAIN-KEYWORD,-cn,🎯 Direct,no-resolve
+  - DOMAIN-SUFFIX,ir,🎯 Direct,no-resolve
+  - DOMAIN-KEYWORD,ir,🎯 Direct,no-resolve
+  - DOMAIN-SUFFIX,local,🎯 Direct,no-resolve
+  - IP-CIDR,127.0.0.0/8,🎯 Direct,no-resolve
+  - IP-CIDR,172.16.0.0/12,🎯 Direct
+  - IP-CIDR,192.168.0.0/16,🎯 Direct
+  - IP-CIDR,10.0.0.0/8,🎯 Direct
+  - GeoIP,ir,🎯 Direct
+  - MATCH,PROXY
+proxy-providers:
+  A1:
+    type: http
+    url: "https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/i"
+    path: ./proxies/A1.yaml
+    interval: 300
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 300
+      timeout: 50
+      lazy: true
+      expected-status: 204
 proxies:
   - name: 1_Q1
     type: ss
