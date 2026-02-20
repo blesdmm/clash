@@ -32,7 +32,7 @@ external-ui-name: xd
 external-ui-url: "https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip"
 keep-alive-interval: 30
 find-process-mode: strict
-unified-delay: false
+unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: random
 geodata-mode: true
@@ -53,7 +53,7 @@ experimental:
   quic-go-disable-gso: true
   quic-go-disable-ecn: true
 dns:
-  enable: true
+  enable: false
   cache-algorithm: arc
   prefer-h3: true
   use-hosts: true
@@ -157,7 +157,6 @@ dns:
 proxy-groups:
   - name: PROXY
     type: url-test
-    url: http://cp.cloudflare.com
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png
     disable-udp: true
     proxies:
@@ -168,7 +167,6 @@ proxy-groups:
       
   - name: 🟢Auto🟢
     type: url-test
-    url: http://cp.cloudflare.com
     exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|trojan
     include-all: true
     disable-udp: true
@@ -182,7 +180,7 @@ proxy-groups:
     
   - name: 🟡fallback🟡
     type: fallback
-    url: http://cp.cloudflare.com
+#    url: http://cp.cloudflare.com
     exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|trojan
     include-all: true
     disable-udp: true
@@ -195,7 +193,7 @@ proxy-groups:
     
   - name: 🔴load-balance🔴
     type: load-balance
-    url: http://cp.cloudflare.com
+#    url: http://cp.cloudflare.com
     exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Snell|WireGuard|Mieru|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|trojan #|Vmess|Vless|Trojan|Hysteria|Hysteria2
     include-all: true
     disable-udp: true
@@ -208,7 +206,7 @@ proxy-groups:
     
   - name: 🟢http🟢
     type: url-test
-    url: http://cp.cloudflare.com
+#    url: http://cp.cloudflare.com
     exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|Vmess|Vless|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|trojan
     include-all: true
     interval: 50
@@ -787,6 +785,9 @@ rules :
   - RULE-SET,category-ai-!cn,🔴load-balance🔴
   - GeoIP,ir,🎯 Direct
   - MATCH,PROXY
+
+
+
 
 
 
