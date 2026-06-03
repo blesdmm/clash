@@ -9,15 +9,15 @@ FilterTW: &FilterTW '^(?=.*(?i)(台|🇼🇸|🇹🇼|TW|tai|TPE|TSA|KHH))(?!.*(
 FilterEU: &FilterEU '^(?=.*(?i)(奥|比|保|克罗地亚|塞|捷|丹|爱沙|芬|法|德|希|匈|爱尔|意|拉|立|卢|马其它|荷|波|葡|罗|斯洛伐|斯洛文|西|瑞|英|🇧🇪|🇨🇿|🇩🇰|🇫🇮|🇫🇷|🇩🇪|🇮🇪|🇮🇹|🇱🇹|🇱🇺|🇳🇱|🇵🇱|🇸🇪|🇬🇧|CDG|FRA|AMS|MAD|BCN|FCO|MUC|BRU))(?!.*(排除1|排除2|5x)).*$'
 FilterOT: &FilterOT '^(?!.*(DIRECT|Direct|美|港|坡|台|新|日|韩|奥|比|保|克罗地亚|塞|捷|丹|爱沙|芬|法|德|希|匈|爱尔|意|拉|立|卢|马其它|荷|波|葡|罗|斯洛伐|斯洛文|西|瑞|英|🇭🇰|🇼🇸|🇹🇼|🇸🇬|🇯🇵|🇰🇷|🇺🇸|🇬🇧|🇦🇹|🇧🇪|🇨🇿|🇩🇰|🇫🇮|🇫🇷|🇩🇪|🇮🇪|🇮🇹|🇱🇹|🇱🇺|🇳🇱|🇵🇱|🇸🇪|HK|TW|SG|JP|KR|US|GB|CDG|FRA|AMS|MAD|BCN|FCO|MUC|BRU|HKG|TPE|TSA|KHH|SIN|XSP|NRT|HND|KIX|CTS|FUK|JFK|LAX|ORD|ATL|DFW|SFO|MIA|SEA|IAD|LHR|LGW))'
 FilterAL: &FilterAL '^(?!.*(DIRECT|Direct|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))'
-SelectAL: &SelectAL {type: url-test, proxies: [Automatically, Hong_Kong, Taiwan, Japan, Singapore, Korea, United_States, European, Clubhouse]}
+SelectAL: &SelectAL {type: select, proxies: [Automatically, Hong_Kong, Taiwan, Japan, Singapore, Korea, United_States, European, Clubhouse]}
 OneSmart: &OneSmart {type: select, proxies: [mihomo, Hong_Kong, Taiwan, Japan, Singapore, Korea, United_States, European, Clubhouse]}
 SelectDC: &SelectDC {type: select, proxies: [Direct, mihomo, Hong_Kong, Taiwan, Japan, Singapore, Korea, United_States, European, Clubhouse]}
 proxy-providers:
   优质服务商: {<<: *BaseProvider, url: 'https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/vl', override: {additional-prefix: '[excellent] '}}
   备用服务商2: {<<: *BaseProvider, url: 'https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/socks5', override: {additional-prefix: '[Preparation] '}}
   优质服务商3: {<<: *BaseProvider, url: 'https://sub.pusytroller.gq/?url=freenodes'}
-  备用服务商4: {<<: *BaseProvider, url: 'https://www.xrayvip.com/free.txt'}
-  优质服务商5: {<<: *BaseProvider, url: 'https://raw.githubusercontent.com/Junely/clash/main/template3.yaml'}
+  备用服务商4: {<<: *BaseProvider, url: 'https://proxypool.link/clash/proxies'}
+  优质服务商5: {<<: *BaseProvider, url: 'https://check.banyunxiaoxi.icu/sub/sub-base64.txt'}
 #  备用服务商6: {<<: *BaseProvider, url: 'https://proxypool1999.banyunxiaoxi.icu/clash/proxies'}
 #  优质服务商7: {<<: *BaseProvider, url: 'https://raw.githubusercontent.com/misersun/config003/main/config_all.yaml'}
 #  备用服务商8: {<<: *BaseProvider, url: 'https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml'}
@@ -28,7 +28,7 @@ proxy-providers:
 #  优质服务商13: {<<: *BaseProvider, url: 'https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml'}
 #  备用服务商14: {<<: *BaseProvider, url: 'https://raw.githubusercontent.com/ssrsub/ssr/master/clash.yaml'}
 #  优质服务商15: {<<: *BaseProvider, url: 'https://raw.githubusercontent.com/shbioc/clash/main/aaa01.yaml'}
-  备用服务商16: {<<: *BaseProvider, url: 'https://rss.zyfx6.xyz/clash/'}
+  备用服务商16: {<<: *BaseProvider, url: 'https://raw.githubusercontent.com/SnapdragonLee/SystemProxy/master/dist/clash_config.yaml'}
 #  优质服务商17: {<<: *BaseProvider, url: 'https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/yudou66.yaml'}
 #  备用服务商18: {<<: *BaseProvider, url: 'https://raw.githubusercontent.com/ts-sf/fly/main/clash'}
 #  优质服务商19: {<<: *BaseProvider, url: 'https://raw.githubusercontent.com/NiceVPN123/NiceVPN/main/Clash.yaml'}
@@ -232,16 +232,16 @@ proxy-groups:
   - {name: Global,  <<: *OneSmart, hidden: true, icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Global.png}
   - {name: IRAN,  <<: *SelectDC, icon: https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/rule_provider/socks5.svg}
   - {name: Final,  <<: *OneSmart, icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Final.png}
-  - {name: Clubhouse,  type: fallback, include-all: true,hidden: true, filter: *FilterAL, icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Clubhouse.png}
+  - {name: Clubhouse,  type: fallback, exclude-type: Trojan, include-all: true,hidden: true, filter: *FilterAL, icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Clubhouse.png}
   - {name: Direct,  type: select, proxies: [DIRECT], hidden: false, icon: https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/rule_provider/socks5.svg}
-  - {name: Automatically,  hidden: true, type: url-test, proxies: [Hong_Kong, Taiwan, Japan, Singapore, Korea, United_States, European], icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Global.png}
-  - {name: Hong_Kong,  <<: *BaseSmart, include-all: true, hidden: true, policy-priority: 'excellent:2;Preparation:0.5', icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Hong_Kong.png, exclude-type: "direct|redir-in|trojan|DNS"}
-  - {name: Taiwan,  <<: *BaseSmart, filter: *FilterTW, hidden: true, include-all: true, policy-priority: 'excellent:2;Preparation:0.5', icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Taiwan.png, exclude-type: "direct|redir-in|trojan|DNS"}
-  - {name: Japan,  <<: *BaseSmart, filter: *FilterJP, hidden: true, include-all: true, policy-priority: 'excellent:2;Preparation:0.5', icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Japan.png, exclude-type: "direct|redir-in|trojan|DNS"}
-  - {name: Singapore,  <<: *BaseSmart, filter: *FilterSG, hidden: true, include-all: true, policy-priority: 'excellent:2;Preparation:0.5', icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Singapore.png, exclude-type: "direct|redir-in|trojan|DNS"}
-  - {name: Korea,  <<: *BaseSmart, filter: *FilterKR, hidden: true, include-all: true, policy-priority: 'excellent:2;Preparation:0.5', icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Korea.png, exclude-type: "direct|redir-in|trojan|DNS"}
-  - {name: United_States,  <<: *BaseSmart, filter: *FilterUS, hidden: true, include-all: true, policy-priority: 'excellent:2;Preparation:0.5', icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/United_States.png, exclude-type: "direct|redir-in|trojan|DNS"}
-  - {name: European,  <<: *BaseSmart, filter: *FilterEU, hidden: true, include-all: true, policy-priority: 'excellent:2;Preparation:0.5', icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/European_Union.png, exclude-type: "direct|redir-in|trojan|DNS"}
+  - {name: Automatically,  hidden: true, exclude-type: Trojan, type: url-test, proxies: [Hong_Kong, Taiwan, Japan, Singapore, Korea, United_States, European], icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Global.png}
+  - {name: Hong_Kong,  <<: *BaseSmart, exclude-type: Trojan, include-all: true, hidden: true, policy-priority: 'excellent:2;Preparation:0.5', icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Hong_Kong.png, exclude-type: "direct|redir-in|trojan|DNS"}
+  - {name: Taiwan,  <<: *BaseSmart, exclude-type: Trojan, filter: *FilterTW, hidden: true, include-all: true, policy-priority: 'excellent:2;Preparation:0.5', icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Taiwan.png, exclude-type: "direct|redir-in|trojan|DNS"}
+  - {name: Japan,  <<: *BaseSmart, exclude-type: Trojan, filter: *FilterJP, hidden: true, include-all: true, policy-priority: 'excellent:2;Preparation:0.5', icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Japan.png, exclude-type: "direct|redir-in|trojan|DNS"}
+  - {name: Singapore,  <<: *BaseSmart, exclude-type: Trojan, filter: *FilterSG, hidden: true, include-all: true, policy-priority: 'excellent:2;Preparation:0.5', icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Singapore.png, exclude-type: "direct|redir-in|trojan|DNS"}
+  - {name: Korea,  <<: *BaseSmart, exclude-type: Trojan, filter: *FilterKR, hidden: true, include-all: true, policy-priority: 'excellent:2;Preparation:0.5', icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Korea.png, exclude-type: "direct|redir-in|trojan|DNS"}
+  - {name: United_States,  <<: *BaseSmart, exclude-type: Trojan, filter: *FilterUS, hidden: true, include-all: true, policy-priority: 'excellent:2;Preparation:0.5', icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/United_States.png, exclude-type: "direct|redir-in|trojan|DNS"}
+  - {name: European,  <<: *BaseSmart, exclude-type: Trojan, filter: *FilterEU, hidden: true, include-all: true, policy-priority: 'excellent:2;Preparation:0.5', icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/European_Union.png, exclude-type: "direct|redir-in|trojan|DNS"}
 rules: 
 #  - AND,((DST-PORT,443),(NETWORK,UDP)),REJECT
   - DOMAIN-KEYWORD,soft98.ir,Direct
