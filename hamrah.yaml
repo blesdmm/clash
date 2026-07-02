@@ -115,7 +115,7 @@ proxy-providers:
 
   provider6:
     type: "http"
-    url: "https://sub.pusytroller.gq/?url=freenodes"
+    url: "https://d23lye95wfkvbk.cloudfront.net/android.yaml"
     interval: "3600"
     path: ./hamrah/freenodes.yaml
     health-check:
@@ -150,7 +150,7 @@ proxy-groups:
   - name: PROXY
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png
-    exclude-type: Trojan
+    lazy: false
     include-all: true
     proxies:
       - 🟡fallback🟡
@@ -163,13 +163,15 @@ proxy-groups:
     type: url-test
     hidden: false
     include-all: true
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Trojan|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    lazy: false
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
     
   - name: 🟡fallback🟡
     type: fallback
     hidden: false
     include-all: true
+    lazy: false
     exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Trojan|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     icon: http://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png
     
@@ -178,6 +180,7 @@ proxy-groups:
     include-filter: "🇺🇸|United States|United|us"
     hidden: false
     include-all: true
+    lazy: false
     exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Trojan|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     icon: http://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png
     
@@ -185,20 +188,23 @@ proxy-groups:
     type: url-test
     hidden: false
     include-all: true
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Trojan|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    lazy: false
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Trojan|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|vless|vmess|hysteria2|hysteria|shadosocks|shadosocksR
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
 
   - name: 🟢http+fallback🟢
     type: fallback
     hidden: false
     include-all: true
+    lazy: false
     filter: "🇺🇸|United States|United|us"
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Trojan|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Trojan|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|vless|vmess|hysteria2|hysteria|shadosocks|shadosocksR
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
 
   - name: 🎯 Direct
     type: select
     disable-udp: true
+    lazy: false
     icon: http://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png
     proxies:
       - "DIRECT"

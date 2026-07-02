@@ -1,7 +1,7 @@
 ipv6: false
-udp: true
+udp: false
 udp-idle-timeout: 300
-unified-delay: true
+unified-delay: false
 tcp-concurrent: true
 find-process-mode: always
 
@@ -17,16 +17,16 @@ geox-url:
 
 tun:
   enable: true
-  stack: gvisor
+  stack: mixed
   auto-route: true
   auto-detect-interface: true
-  strict-route: false
+  strict-route: true
   mtu: 1400
   dns-hijack:
     - any:53
 
 sniffer:
-  enable: true
+  enable: false
   sniff:
     HTTP:
       ports: [80, 8080-8880]
@@ -41,7 +41,8 @@ dns:
   enable: true
   ipv6: false
   enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
+  listen: 0.0.0.0:53
+  fake-ip-range: 100.0.0.1/8
   use-hosts: true
   respect-rules: true
   nameserver-policy:
@@ -106,40 +107,40 @@ dns:
     - https://199.58.83.33/dns-query
     - tls://199.58.83.33:443
     - tls://199.58.83.33:53053
-    - tls://edns.apad.pro:853#国外代理
-    - https://edns.apad.pro:3306/dns-query#国外代理
-    - tls://h2o.apad.pro:853#国外代理
-    - https://h2o.apad.pro/dns-query#国外代理
+    - tls://edns.apad.pro:853
+    - https://edns.apad.pro:3306/dns-query
+    - tls://h2o.apad.pro:853
+    - https://h2o.apad.pro/dns-query
     - https://doh.apad.pro/dns-query
     - https://doh.apad.pro/cn-query
     - tls://1dot1dot1dot1.cloudflare-dns.com:853
     - https://1dot1dot1dot1.cloudflare-dns.com/dns-query
     - tls://dns.cloudflare-gateway.com:853
     - https://dns.cloudflare-gateway.com/dns-query
-    - tls://1.1.1.1:853#国外代理
-    - https://1.1.1.1/dns-query#国外代理
-    - tls://1.0.0.1:853#国外代理
-    - https://1.0.0.1/dns-query#国外代理
-    - tls://[2606:4700:4700::1001]:853#国外代理
-    - https://[2606:4700:4700::1001]/dns-query#国外代理
-    - tls://[2606:4700:4700::1111]:853#国外代理
-    - https://[2606:4700:4700::1111]/dns-query#国外代理
+    - tls://1.1.1.1:853
+    - https://1.1.1.1/dns-query
+    - tls://1.0.0.1:853
+    - https://1.0.0.1/dns-query
+    - tls://[2606:4700:4700::1001]:853
+    - https://[2606:4700:4700::1001]/dns-query
+    - tls://[2606:4700:4700::1111]:853
+    - https://[2606:4700:4700::1111]/dns-query
     - https://162.159.36.1/dns-query
     - https://162.159.46.1/dns-query
     - https://119dot29dot29dot29.cloudflare-dns.com/dns-query
     - https://rubyfish.cn.cloudflare-dns.com/dns-query
     - tls://dns.google:853
     - https://dns.google/dns-query
-    - tls://8.8.8.8:853#国外代理
-    - https://8.8.8.8/dns-query#国外代理
-    - tls://8.8.4.4:853#国外代理
-    - https://8.8.4.4/dns-query#国外代理
-    - tls://[2001:4860:4860::8844]:853#国外代理
-    - https://[2001:4860:4860::8844]/dns-query#国外代理
-    - tls://[2001:4860:4860::8888]:853#国外代理
-    - https://[2001:4860:4860::8888]/dns-query#国外代理
-    - https://dns-google.heinu.cf/dns-query#国外代理
-    - https://dns-google.heinu.ga/dns-query#国外代理
+    - tls://8.8.8.8:853
+    - https://8.8.8.8/dns-query
+    - tls://8.8.4.4:853
+    - https://8.8.4.4/dns-query
+    - tls://[2001:4860:4860::8844]:853
+    - https://[2001:4860:4860::8844]/dns-query
+    - tls://[2001:4860:4860::8888]:853
+    - https://[2001:4860:4860::8888]/dns-query
+    - https://dns-google.heinu.cf/dns-query
+    - https://dns-google.heinu.ga/dns-query
   default-nameserver: 
     - 103.20.188.35
     - 103.20.188.35
@@ -8051,7 +8052,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 3
-      lazy: true
+      lazy: false
       Accept: ["*/*"]
       Connection: ["keep-alive"]
       expected-status: 204
@@ -8072,7 +8073,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 3
-      lazy: true
+      lazy: false
       Accept: ["*/*"]
       Connection: ["keep-alive"]
       expected-status: 204
@@ -8093,7 +8094,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 3
-      lazy: true
+      lazy: false
       Accept: ["*/*"]
       Connection: ["keep-alive"]
       expected-status: 204
@@ -8114,7 +8115,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 3
-      lazy: true
+      lazy: false
       Accept: ["*/*"]
       Connection: ["keep-alive"]
       expected-status: 204
@@ -8135,7 +8136,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 3
-      lazy: true
+      lazy: false
       Accept: ["*/*"]
       Connection: ["keep-alive"]
       expected-status: 204
@@ -8156,7 +8157,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 3
-      lazy: true
+      lazy: false
       Accept: ["*/*"]
       Connection: ["keep-alive"]
       expected-status: 204
@@ -8177,7 +8178,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 3
-      lazy: true
+      lazy: false
       Accept: ["*/*"]
       Connection: ["keep-alive"]
       expected-status: 204
@@ -8198,7 +8199,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 3
-      lazy: true
+      lazy: false
       Accept: ["*/*"]
       Connection: ["keep-alive"]
       expected-status: 204
@@ -8219,7 +8220,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 3
-      lazy: true
+      lazy: false
       Accept: ["*/*"]
       Connection: ["keep-alive"]
       expected-status: 204
@@ -8240,7 +8241,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 3
-      lazy: true
+      lazy: false
       Accept: ["*/*"]
       Connection: ["keep-alive"]
       expected-status: 204
@@ -8261,7 +8262,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 3
-      lazy: true
+      lazy: false
       Accept: ["*/*"]
       Connection: ["keep-alive"]
       expected-status: 204
@@ -8282,7 +8283,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 3
-      lazy: true
+      lazy: false
       Accept: ["*/*"]
       Connection: ["keep-alive"]
       expected-status: 204
@@ -8303,7 +8304,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 3
-      lazy: true
+      lazy: false
       Accept: ["*/*"]
       Connection: ["keep-alive"]
       expected-status: 204
@@ -8324,7 +8325,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 3
-      lazy: true
+      lazy: false
       Accept: ["*/*"]
       Connection: ["keep-alive"]
       expected-status: 204
@@ -8345,7 +8346,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 3
-      lazy: true
+      lazy: false
       Accept: ["*/*"]
       Connection: ["keep-alive"]
       expected-status: 204
@@ -8366,7 +8367,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
       timeout: 3
-      lazy: true
+      lazy: false
       Accept: ["*/*"]
       Connection: ["keep-alive"]
       expected-status: 204
@@ -8384,10 +8385,10 @@ proxy-providers:
     path: ./hamrah/provider73.yaml
     health-check:
       enable: true
-      url: https://www.gstatic.com/generate_204
+      url: http://www.gstatic.com/generate_204
       interval: 300
       timeout: 3
-      lazy: true
+      lazy: false
       Accept: ["*/*"]
       Connection: ["keep-alive"]
       expected-status: 204
@@ -8418,9 +8419,9 @@ proxy-groups:
   - name: Master
     type: select
     include-all-providers: true
-    exclude-type: Trojan
-    filter: "(?i)(美国|\\bUS\\b|🇺🇸|United\\s*States)"
+#    filter: "(?i)(美国|\\bUS\\b|🇺🇸|United\\s*States)"
     icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png"
+    lazy: false
     proxies:
       
       - fallback
@@ -8429,20 +8430,22 @@ proxy-groups:
     type: url-test
     icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png"
     include-all-providers: true
-    url: "https://www.gstatic.com/generate_204"
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Trojan|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    url: http://www.gstatic.com/generate_204
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     interval: 380
     tolerance: 80
-    lazy: true
+    hidden: true
+    lazy: false
     exclude-filter: "(?i)(官网|公告|通知|维护|订阅|防失联|最新网址|备用|客服|工单|联系|反馈|教程|使用说明|购买|续费|充值|返利|推荐|优惠|福利|活动|推广|代理商|机场|节点池|测速|解锁|说明|规则|TG|电报|Master|频道|群|讨论组|t\\.me/|流量|剩余|用量|到期|过期|续期|重置|重设|下次|距离|套餐|账单|有效期|时间|日期|定期|下方|地址|更新|\\bURL\\b|URL@|vpn|👆|👇|👉|⬇|⬆|✈|🛫|🛬|📢|🔗|\\s{4,})"
     
   - name: fallback
     type: fallback
-    url: https://www.gstatic.com/generate_204
+    url: http://www.gstatic.com/generate_204
     interval: 300
     hidden: true
+    lazy: false
     include-all-providers: true
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Trojan|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
     
   - name: iran
