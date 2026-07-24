@@ -1,7 +1,7 @@
 ipv6: false
-udp: false
+udp: true
 udp-idle-timeout: 300
-unified-delay: false
+unified-delay: true
 tcp-concurrent: true
 find-process-mode: always
 
@@ -8275,7 +8275,7 @@ proxy-providers:
       
   provider53:
     type: "http"
- #   url: "https://obeapi.s3.ap-east-1.amazonaws.com/vpn/sub-clash.yaml"
+    url: "https://obeapi.s3.ap-east-1.amazonaws.com/vpn/sub-clash.yaml"
     interval: "3600"
     path: ./hamrah/provider53.yaml
     health-check:
