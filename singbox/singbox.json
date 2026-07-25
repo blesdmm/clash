@@ -61,24 +61,27 @@
   },
   "inbounds": [
     {
-      "type": "tun",
-      "address": "172.19.0.1/30",
-      "auto_route": true,
-      "strict_route": true,
-      "endpoint_independent_nat": true
-    },
-    {
-      "type": "socks",
-      "tag": "socks-in",
-      "listen": "127.0.0.1",
-      "listen_port": 2333
-    },
-    {
-      "type": "mixed",
-      "tag": "mixed-in",
-      "listen": "127.0.0.1",
-      "listen_port": 2334
-    }
+            "address": [
+                "172.19.0.1/30"
+            ],
+            "auto_route": true,
+            "endpoint_independent_nat": true,
+            "mtu": 9000,
+            "strict_route": true,
+            "type": "tun"
+        },
+        {
+            "listen": "127.0.0.1",
+            "listen_port": 2333,
+            "tag": "socks-in",
+            "type": "socks"
+        },
+        {
+            "listen": "127.0.0.1",
+            "listen_port": 2334,
+            "tag": "mixed-in",
+            "type": "mixed"
+        }
   ],
   "outbounds": [
     {
