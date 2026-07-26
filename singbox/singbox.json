@@ -1,18 +1,40 @@
 {
-  "$schema": "https://raw.githubusercontent.com/xmdhs/sing-box-generate-schema/refs/heads/master/schema.generated.json",
-  "log": {},
+  "log": {
+    "level": "info",
+    "timestamp": true
+  },
   "dns": {
     "servers": [
       {
-        "type": "udp",
-        "tag": "remote",
-        "detour": "select",
-        "server": "8.8.8.8"
+        "type": "local",
+        "tag": "local"
       },
       {
-        "type": "udp",
-        "tag": "local",
-        "server": "1.1.1.1"
+        "type": "hosts",
+        "tag": "hosts",
+        "predefined": {
+          "dns.alidns.com": [
+            "223.5.5.5",
+            "223.6.6.6"
+          ],
+          "dns.google": [
+            "8.8.8.8",
+            "8.8.4.4"
+          ]
+        }
+      },
+      {
+        "type": "https",
+        "tag": "alidns",
+        "domain_resolver": "hosts",
+        "server": "dns.alidns.com"
+      },
+      {
+        "type": "https",
+        "tag": "ggdns",
+        "detour": "Proxy",
+        "domain_resolver": "hosts",
+        "server": "dns.google"
       },
       {
         "type": "fakeip",
@@ -22,71 +44,64 @@
     ],
     "rules": [
       {
-        "rule_set": [
-          "AdGuardSDNSFilter",
-          "chrome-doh"
-        ],
-        "action": "predefined"
+        "clash_mode": "direct",
+        "server": "local"
       },
       {
-        "query_type": "HTTPS",
-        "action": "predefined"
+        "clash_mode": "global",
+        "server": "ggdns"
       },
       {
         "query_type": [
           "A",
           "AAAA"
         ],
-        "server": "fakeip",
-        "rewrite_ttl": 1
-      },
-      {
-        "clash_mode": "global",
-        "server": "remote"
-      },
-      {
-        "clash_mode": "direct",
-        "server": "local"
+        "server": "fakeip"
       },
       {
         "rule_set": "geosite-cn",
         "server": "local"
       },
       {
-        "rule_set": "ext-cn-domain",
-        "server": "local"
+        "action": "evaluate",
+        "server": "alidns"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "match_response": true,
+        "action": "respond"
       }
     ],
+    "final": "ggdns",
     "strategy": "prefer_ipv4"
   },
   "inbounds": [
     {
-            "address": [
-                "172.19.0.1/30"
-            ],
-            "auto_route": true,
-            "endpoint_independent_nat": true,
-            "mtu": 9000,
-            "strict_route": true,
-            "type": "tun"
-        },
-        {
-            "listen": "127.0.0.1",
-            "listen_port": 2333,
-            "tag": "socks-in",
-            "type": "socks"
-        },
-        {
-            "listen": "127.0.0.1",
-            "listen_port": 2334,
-            "tag": "mixed-in",
-            "type": "mixed"
+      "type": "tun",
+      "tag": "tun-in",
+      "address": "172.19.0.0/30",
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "system",
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 7890
         }
+      }
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
+    }
   ],
   "outbounds": [
     {
       "type": "selector",
-      "tag": "select",
+      "tag": "Proxy",
       "outbounds": [
         "urltest",
         "dcx_1",
@@ -4765,7 +4780,7 @@
       },
       {
         "clash_mode": "global",
-        "outbound": "select"
+        "outbound": "Proxy"
       },
       {
         "ip_is_private": true,
@@ -4797,38 +4812,32 @@
       },
       {
         "type": "remote",
-        "tag": "chrome-doh",
-        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json",
-        "download_detour": "direct"
-      },
-      {
-        "type": "remote",
         "tag": "ext-cn-domain",
         "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/rule-set/geosite-ir.srs",
         "download_detour": "direct"
       }
     ],
-    "final": "select",
+    "final": "Proxy",
     "find_process": true,
-    "auto_detect_interface": true,
-    "default_domain_resolver": "local",
+    "auto_detect_interface": true
   },
   "experimental": {
     "cache_file": {
-      "enabled": true,
-      "store_dns": true,
-      "store_fakeip": true
+      "enabled": true
     },
     "clash_api": {
       "external_controller": "127.0.0.1:9090",
       "external_ui": "/dashboard",
       "external_ui_download_url": "https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip",
       "external_ui_download_detour": "direct",
-      "default_mode": "rule",
+      "default_mode": "Enhanced",
       "access_control_allow_origin": [
         "http://127.0.0.1",
         "http://yacd.haishan.me",
-        "tauri://localhost",
+        "localhost",
+        "https://d.metacubex.one",
+        "https://metacubexd.pages.dev",
+        "https://metacubex.github.io/metacubexd",
         "http://tauri.localhost",
         "https://yacd.metacubex.one",
         "https://metacubex.github.io",
