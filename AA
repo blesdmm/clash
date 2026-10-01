@@ -3,8 +3,8 @@ proxy-groups:
     type: url-test
     url: https://www.google.com/
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Rocket.png
-  #  disable-udp: true
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|Vmess|Vless|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Ssh|http|socks5
+    include-all: true
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Trojan|Relay|Ssh
  #   interval: 300
 #    timeout: 500
 #    max-failed-times: 400
@@ -85,8 +85,6 @@ find-process-mode: always
 external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
 unified-delay: false
 tcp-concurrent: true
-global-client-fingerprint: random
-geodata-mode: true
 geo-auto-update: true
 geo-update-interval: 24
 geox-url:
@@ -94,7 +92,7 @@ geox-url:
   GeoSite: https://raw.githubusercontent.com/Chocolate4U/Iran-v2ray-rules/release/geosite.dat
   mmdb: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/geoip.metadb
   ANS: https://raw.githubusercontent.com/Chocolate4U/Iran-v2ray-rules/geolite2/GeoLite2-ASN.mmdb
-global-ua: chrome
+
 profile:
   store-selected: true
   store-fake-ip: true
@@ -136,7 +134,6 @@ sniffer:
     - '+.apple.com'
     - '*.baidu.com'
   force-domain:
-    - '+'
     - '+.google.com'
   port-whitelist:
     - 80
@@ -159,30 +156,6 @@ dns:
     - 'localhost.ptlogin2.qq.com'
     - '*.msftncsi.com'
     - '*.msftconnecttest.com'
-  nameserver-policy:
-    #   'www.baidu.com': '114.114.114.114'
-    #   '+.internal.crop.com': '10.0.0.1'
-#    "geosite:category-games@cn,category-companies@cn":
-    "geosite:ir":
-      - tls://dns.tuna.tsinghua.edu.cn:8853
-      - https://dns.tuna.tsinghua.edu.cn:8443/dns-query
-      - tls://dns.alidns.com:853
-      - https://dns.alidns.com/dns-query
-      - tls://dns.pub:853
-      - https://dns.pub/dns-query
-      - tls://dns.ipv6dns.com:853
-      - https://dns.ipv6dns.com/dns-query
-#    "www.baidu.com,+.google.cn": [223.5.5.5, https://dns.alidns.com/dns-query]
-    # "rule-set:global,dns": 8.8.8.8
-#    "+.playbattlegrounds.com": "https://doh.pub/dns-query"
-#    "+.battleye.com": "https://doh.pub/dns-query"
-#    "+.pubgbluehole.com": "https://doh.pub/dns-query"
-#    "+.pubg.com": "https://doh.pub/dns-query"
-#    "+.vivox.com": "https://doh.pub/dns-query"
-#    "+.akamaihd.net": "https://doh.pub/dns-query"
-#    "+.steampowered.com": "https://doh.pub/dns-query"
-#    "+.steamserver.net": "https://doh.pub/dns-query"
-#    "+.qq.com": "https://doh.pub/dns-query"
   default-nameserver:
     - tls://101.6.6.6:8853
     - tcp://101.6.6.6:8443/dns-query
@@ -496,11 +469,11 @@ dns:
     - https://193.19.108.2/dns-query
     - https://doh.opendns.com/dns-query
   fallback-filter:
-    geoip: true
+    geoip: false
     geoip-code: ir
     geosite:                         
-      - social
-      - nsfw
+   #   - social
+   #   - nsfw
     ipcidr:
      - 0.0.0.0/8
      - 10.0.0.0/8
@@ -1307,7 +1280,7 @@ rules:
   - IP-CIDR6,fe80::/10,🎯 Direct,no-resolve
   - IP-CIDR6,fd00::/8,🎯 Direct,no-resolve
   - GEOIP,private,🎯 Direct,no-resolve
-  - GEOSITE,category-ads-all,REJECT
+#  - GEOSITE,category-ads-all,REJECT
 #  - GEOIP,telegram,PROXY
  # - GEOIP,openai,PROXY
 #  - GEOIP,facebook,PROXY
