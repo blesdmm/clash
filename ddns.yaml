@@ -8415,7 +8415,6 @@ rule-providers:
     interval: 86400
 
 proxy-groups:
-
   - name: Master
     type: select
     include-all: true
@@ -8423,7 +8422,6 @@ proxy-groups:
     icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png"
     lazy: false
     proxies:
-      
       - fallback
       - Auto
   - name: Auto
@@ -8437,7 +8435,7 @@ proxy-groups:
     hidden: true
     lazy: false
     exclude-filter: "(?i)(官网|公告|通知|维护|订阅|防失联|最新网址|备用|客服|工单|联系|反馈|教程|使用说明|购买|续费|充值|返利|推荐|优惠|福利|活动|推广|代理商|机场|节点池|测速|解锁|说明|规则|TG|电报|Master|频道|群|讨论组|t\\.me/|流量|剩余|用量|到期|过期|续期|重置|重设|下次|距离|套餐|账单|有效期|时间|日期|定期|下方|地址|更新|\\bURL\\b|URL@|vpn|👆|👇|👉|⬇|⬆|✈|🛫|🛬|📢|🔗|\\s{4,})"
-    
+
   - name: fallback
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -8447,11 +8445,12 @@ proxy-groups:
     include-all: true
     exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Relay|Selector|Fallback|URLTest|LoadBalance|Trojan
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
-    
+
   - name: iran
     type: select
     icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google.png"
     proxies: [DIRECT, Auto, Master]
+
 
 proxies:
   - {"name":"defaultName_1","type":"socks5","server":"104.168.249.36","port":1080,"username":"test123","password":"test123"}
