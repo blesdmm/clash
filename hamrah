@@ -139,8 +139,8 @@ dns:
     geoip: true
     geoip-code: ir
     geosite:                         
-      - social
-      - nsfw
+   #   - social
+     # - nsfw
     ipcidr:
      - 0.0.0.0/8
      - 10.0.0.0/8
@@ -518,6 +518,6 @@ rules :
   - GEOIP,ir,🎯 Direct
   - GEOIP,private,🎯 Direct,no-resolve
   - GEOSITE,category-ads-all,REJECT
-  - GEOSITE,category-ir,🎯 Direct,no-resolve
-  - GEOSITE,ir,🎯 Direct
+#  - GEOSITE,category-ir,🎯 Direct,no-resolve
+ # - GEOSITE,ir,🎯 Direct
   - MATCH,PROXY
