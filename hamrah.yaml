@@ -134,7 +134,7 @@ tun:
 proxy-providers:
   provider:
     type: http
-    url: https://raw.githubusercontent.com/proxifly/free-proxy-list/refs/heads/main/proxies/countries/US/data.txt
+    url: https://raw.githubusercontent.com/ssrsub/ssr/master/clash.yaml  #https://raw.githubusercontent.com/proxifly/free-proxy-list/refs/heads/main/proxies/countries/US/data.txt
     path: hamrah/proxies/provider.yaml
     interval: 
     health-check: {enable: true,url: "https://www.gstatic.com/generate_204",interval: 300}
@@ -184,7 +184,7 @@ proxy-providers:
       smux: {enabled: true, protocol: h2mux, max-connections: 4, min-streams: 8, statistic: false, only-tcp: false, padding: true}
   provider5:
     type: http
-    url: https://raw.githubusercontent.com/abbasdvd3/clash/refs/heads/main/v2ray/HTTP
+    url: https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector_Py/refs/heads/main/sub/Mix/mix.txt
     path: hamrah/proxies/provider5.yaml
     interval: 
     health-check: {enable: true,url: "https://www.gstatic.com/generate_204",interval: 300}
@@ -211,14 +211,13 @@ proxies:
   type: dns
 - name: rematch
   type: rematch
-  target-rematch-name: rematch social
+  target-rematch-name: PROXY
 
 proxy-groups:
   - name: PROXY
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Proxy.png
     exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Trojan|Relay
-    include-all: true
     default-selected: fallback
     exclude: ir|🇮🇷|tr|🇹🇷|gb|🇬🇧|🇷🇴|ro|ES|🇫🇷|🇪🇸
     proxies:
@@ -228,7 +227,15 @@ proxy-groups:
       - "url-🇺🇸"
       - "back+🇺🇸"
       - "rematch social"
+      - "select"
       
+  - name: select
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Proxy.png
+    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Trojan|Relay|rematch
+    include-all: true
+    proxies:
+    
   - name: Auto
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -278,8 +285,10 @@ proxy-groups:
   - name: back+🇺🇸
     type: fallback
     url: https://www.gstatic.com/generate_204
-    use:
-      - "provider5"
+    include-all: true
+    filter: "美国|USA|美國|us|US|United States|美|🇺🇸|US|USA|SJC|JFK|LAX|ORD|ATL|DFW|SFO|MIA|SEA|IAD"
+#    use:
+ #     - "provider5"
     interval: 500
     tolerance: 5
     hidden: false
