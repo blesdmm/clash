@@ -5,7 +5,7 @@ redir-port: 9797
 tproxy-port: 9898
 mode: rule
 allow-lan: true
-unified-delay: false
+unified-delay: true
 bind-address: '*'
 log-level: debug
 ipv6: true
@@ -56,9 +56,7 @@ proxy-groups:
   - name: PROXY
     type: select
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Rocket.png
-    include-all-providers: true
     exclude-type: Reject|Trojan
-    filter: "(?i)(美国|\\bUS\\b|🇺🇸|United\\s*States)"
     proxies:
       - 🟢Auto🟢
       - 🟡fallback🟡
@@ -68,11 +66,18 @@ proxy-groups:
       - 🟢Vmess🟢
       - 🟢Vless🟢
       - 🟢Hysteria|Hysteria2🟢
-      
+      - select
+
+  - name: select
+    type: select
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Rocket.png
+    include-all-providers: true
+    exclude-type: Reject|Trojan
+    proxies:
+
   - name: 🟢Auto🟢
     type: url-test
     hidden: true
-    exclude-filter: "(?i)(英国|\\bUK\\b|🇬🇧|United\\s*Kingdom)"
     exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Trojan|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     include-all-providers: true
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Auto.png
@@ -80,7 +85,6 @@ proxy-groups:
   - name: 🟡fallback🟡
     type: fallback
     hidden: true
-    exclude-filter: "(?i)(英国|\\bUK\\b|🇬🇧|United\\s*Kingdom)"
     exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Trojan|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     include-all-providers: true
     icon: http://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png
@@ -88,7 +92,6 @@ proxy-groups:
   - name: 🔴load-balance🔴
     type: load-balance
     hidden: true
-    exclude-filter: "(?i)(英国|\\bUK\\b|🇬🇧|United\\s*Kingdom)"
     exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Trojan|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh
     include-all-providers: true
     icon: http://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png
@@ -96,7 +99,6 @@ proxy-groups:
   - name: 🟢Vmess🟢
     type: url-test
     hidden: true
-    exclude-filter: "(?i)(英国|\\bUK\\b|🇬🇧|United\\s*Kingdom)"
     exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|http|Vless|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|socks5
     include-all-providers: true
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png      
@@ -104,7 +106,6 @@ proxy-groups:
   - name: 🟢Vless🟢
     type: url-test
     hidden: true
-    exclude-filter: "(?i)(英国|\\bUK\\b|🇬🇧|United\\s*Kingdom)"
     exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|http|Vmess|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|socks5
     include-all-providers: true
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png  
@@ -112,7 +113,6 @@ proxy-groups:
   - name: 🟢Hysteria|Hysteria2🟢
     type: url-test
     hidden: true
-    exclude-filter: "(?i)(英国|\\bUK\\b|🇬🇧|United\\s*Kingdom)"
     exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|ShadowsocksR|Snell|http|Vless|Trojan|Vmess|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|socks5
     include-all-providers: true
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
@@ -120,7 +120,6 @@ proxy-groups:
   - name: 🟢Shadowsocks🟢
     type: url-test
     hidden: true
-    exclude-filter: "(?i)(英国|\\bUK\\b|🇬🇧|United\\s*Kingdom)"
     exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Vmess|ShadowsocksR|Snell|http|Vless|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|socks5
     include-all-providers: true
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
@@ -128,7 +127,6 @@ proxy-groups:
   - name: 🟢ShadowsocksR🟢
     type: url-test
     hidden: true
-    exclude-filter: "(?i)(英国|\\bUK\\b|🇬🇧|United\\s*Kingdom)"
     exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Shadowsocks|Vmess|Snell|http|Vless|Trojan|Hysteria|Hysteria2|WireGuard|Mieru|AnyTLS|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|socks5
     include-all-providers: true
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png

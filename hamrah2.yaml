@@ -2,7 +2,6 @@ proxy-groups:
   - name: PROXY
     type: select
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Rocket.png
-    include-all: true
     exclude-type: Reject|Pass|Compatible|RejectDrop|Dns|Trojan
   #  exclude-filter: "(?i)(英国|\\bUK\\b|🇬🇧|HongKong|HK|香港|Singapore|SG|新加坡Taiwan|TW|台湾|Germany|Deutsch|DE|德国|United\\s*Kingdom)"
     proxies:
@@ -10,6 +9,15 @@ proxy-groups:
       - 🟡fallback🟡
       - 🔴load-balance🔴
       - 🟢US Node🟢
+      - ✨select✨
+      
+  - name: ✨select✨
+    type: select
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Rocket.png
+    include-all: true
+    exclude-type: Reject|Pass|Compatible|RejectDrop|Dns|Trojan
+  #  exclude-filter: "(?i)(英国|\\bUK\\b|🇬🇧|HongKong|HK|香港|Singapore|SG|新加坡Taiwan|TW|台湾|Germany|Deutsch|DE|德国|United\\s*Kingdom)"
+    proxies:
 
   - name: 🟢Auto🟢
     type: url-test
@@ -79,7 +87,7 @@ external-controller: 127.0.0.1:9090
 external-ui: dashboard
 external-controller-tls: 127.0.0.1:9091
 external-ui-url: "https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip"
-unified-delay: false
+unified-delay: true
 tcp-concurrent: true
 
 profile:

@@ -11,7 +11,7 @@ external-controller: 0.0.0.0:9090
 external-ui: ./dashboard
 external-controller-tls: 0.0.0.0:9091
 external-ui-url: "https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip"
-unified-delay: false
+unified-delay: true
 tcp-concurrent: true
 profile:
   store-selected: true
@@ -19,8 +19,8 @@ profile:
 dns:
   enable: true
   prefer-h3: false
-  listen: 0.0.0.0:1053
-  ipv6: false
+  listen: 0.0.0.0:53
+  ipv6: true
   ipv6-timeout: 300
   respect-rules: true
   enhanced-mode: fake-ip
@@ -68,7 +68,13 @@ proxy-groups:
       - Geo-UK
       - Geo-DE
       - Geo-CN
-      
+      - select
+
+  - name: select
+    type: select
+    include-all-providers: true
+    proxies:
+
   - name: Auto
     type: fallback
     include-all-providers: true
