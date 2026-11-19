@@ -118,17 +118,52 @@ proxy-groups:
   - name: PROXY
     type: select
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Rocket.png
+    url: 'https://www.gstatic.com/generate_204'
+    interval: 300
+    lazy: true
+    empty-fallback: COMPATIBLE
+    timeout: 5000
+    max-failed-times: 5
     disable-udp: true
+    interface-name: en0
+    routing-mark: 11451
+    include-all: false
+    include-all-proxies: false
+    include-all-providers: false
+    exclude-filter: "美|日"
+    exclude-type: "Direct|Reject|RejectDrop|Compatible|Pass|PassRule|Rematch|Dns|Relay|Smart|Snell|Trojan|Sudoku|Masque|TrustTunnel|OpenVPN|Tailscale|ZeroTier|EasyTier|GostRelay"
+    expected-status: 204
     proxies:
       - 🟢Auto🟢
       - 🟡fallback🟡
       - 🔴load-balance🔴
       - 🟢http🟢
+      - 🟢Selector🟢
       
+  - name: 🟢Selector🟢
+    type: select
+    url: 'https://www.gstatic.com/generate_204'
+    interval: 300
+    lazy: true
+    empty-fallback: COMPATIBLE
+    timeout: 5000
+    max-failed-times: 5
+    disable-udp: true
+    interface-name: en0
+    routing-mark: 11451
+    include-all: false
+    include-all-proxies: false
+    include-all-providers: false
+    exclude-filter: "美|日"
+    exclude-type: "Direct|Reject|RejectDrop|Compatible|Pass|PassRule|Rematch|Dns|Relay|Selector|Fallback|URLTest|LoadBalance|Smart|Snell|Trojan|Sudoku|Masque|TrustTunnel|OpenVPN|Tailscale|ZeroTier|EasyTier|GostRelay"
+    expected-status: 204
+    hidden: false
+    icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Auto.png
+          
   - name: 🟢Auto🟢
     type: url-test
     url: https://www.gstatic.com/generate_204
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|Trojan
+    exclude-type: "Direct|Reject|RejectDrop|Compatible|Pass|PassRule|Rematch|Dns|Relay|Selector|Fallback|URLTest|LoadBalance|Smart|Snell|Trojan|Sudoku|Masque|TrustTunnel|OpenVPN|Tailscale|ZeroTier|EasyTier|GostRelay"
     include-all: true
     disable-udp: true
     interval: 1300
@@ -144,7 +179,7 @@ proxy-groups:
   - name: 🟡fallback🟡
     type: fallback
     url: https://www.gstatic.com/generate_204
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Sudoku|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|Trojan
+    exclude-type: "Direct|Reject|RejectDrop|Compatible|Pass|PassRule|Rematch|Dns|Relay|Selector|Fallback|URLTest|LoadBalance|Smart|Snell|Trojan|Sudoku|Masque|TrustTunnel|OpenVPN|Tailscale|ZeroTier|EasyTier|GostRelay"
     filter: "🇺🇸|US|America|United.*?States"
     exclude-filter: "(?i)(英国|\\bUK\\b|🇬🇧|United\\s*Kingdom)"
     include-all: true
@@ -159,7 +194,7 @@ proxy-groups:
   - name: 🔴load-balance🔴
     type: load-balance
     url: https://www.gstatic.com/generate_204
-    exclude-type: Direct|Reject|Pass|Compatible|RejectDrop|Dns|Relay|Selector|Fallback|URLTest|LoadBalance|Ssh|Trojan
+    exclude-type: "Direct|Reject|RejectDrop|Compatible|Pass|PassRule|Rematch|Dns|Relay|Selector|Fallback|URLTest|LoadBalance|Smart|Snell|Trojan|Sudoku|Masque|TrustTunnel|OpenVPN|Tailscale|ZeroTier|EasyTier|GostRelay"
     filter: "🇺🇸|US|America|United.*?States"
     exclude-filter: "(?i)(英国|\\bUK\\b|🇬🇧|\\s*Kingdom)"
     include-all: true
@@ -173,15 +208,21 @@ proxy-groups:
     
   - name: 🟢http🟢
     type: url-test
-    url: https://www.gstatic.com/generate_204
-    exclude-type: Direct, Reject, RejectDrop, Compatible, Pass, PassRule, Rematch, Dns, Relay, Selector, Fallback, URLTest, LoadBalance, Smart, Shadowsocks, ShadowsocksR, Snell, Vmess, Vless, Trojan, Hysteria, Hysteria2, WireGuard, Tuic, Ssh, Mieru, AnyTLS, Sudoku, Masque, TrustTunnel, ShadowQuic, OpenVPN, Tailscale, ZeroTier, EasyTier, GostRelay
-    include-all: true
-    disable-udp: true
-    interval: 100
-    tolerance: 10
-    timeout: 500
-    max-failed-times: 4
+    url: 'https://www.gstatic.com/generate_204'
+    interval: 300
     lazy: true
+    empty-fallback: COMPATIBLE
+    timeout: 5000
+    max-failed-times: 5
+    disable-udp: true
+    interface-name: en0
+    routing-mark: 11451
+    include-all: false
+    include-all-proxies: false
+    include-all-providers: false
+    exclude-filter: "美|日"
+    exclude-type: "Direct|Reject|RejectDrop|Compatible|Pass|PassRule|Rematch|Dns|Relay|Selector|Fallback|URLTest|LoadBalance|Smart|Shadowsocks|ShadowsocksR|Snell|Vmess|Vless|Trojan|Hysteria|Hysteria2|WireGuard|Tuic|Ssh|Mieru|AnyTLS|Sudoku|Masque|TrustTunnel|ShadowQuic|OpenVPN|Tailscale|ZeroTier|EasyTier|GostRelay"
+    expected-status: 204
     hidden: false
     icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Auto.png
     
