@@ -1,15 +1,16 @@
-
+# 端口
 port: 7892
 socks-port: 7893
 mixed-port: 1080
 redir-port: 7891
 tproxy-port: 1536
 
+# 全局配置
 mode: rule
 udp: true
 ipv6: false
 tcp-concurrent: true
-unified-delay: true
+unified-delay: false
 find-process-mode: off
 geodata-loader: memconservative
 geosite-matcher: succinct
@@ -19,19 +20,23 @@ etag-support: true
 # 日志
 log-level: error
 
+# 局域网配置
 allow-lan: true
 bind-address: "*"
 
+# TCP连接保持活跃探测，修改此项以减少移动设备耗电问题
+# 移动设备：true，否则：false
 disable-keep-alive: true
 keep-alive-interval: 60
 keep-alive-idle: 600
 
 # 外部控制 (API)
 external-controller: 127.0.0.1:9090
-secret: "0000"
+secret: "telegram@ksc666"
 external-ui: "./Web/zashboard"
 external-ui-url: "https://github.com/Zephyruso/zashboard/releases/latest/download/dist-no-fonts.zip"
 
+# 缓存
 profile:
   store-selected: true
   store-fake-ip: true
@@ -125,16 +130,18 @@ dns:
 
 proxies:
 
-  - {name: 🌐 DNS劫持, type: dns}
-  - {name: 🇨🇳 直连, type: direct, udp: true}
+  - {name: 🌐 DNS⛑, type: dns}
+  - {name: IRAN💩, type: direct, udp: true}
   
 # 锚点
-p: &p {type: http, interval: 86400, proxy: "SubUpdate", exclude-filter: "(?i)Russia", exclude-type: "http|ss", health-check: {enable: true, url: "https://www.gstatic.com/generate_204", interval: 1800, timeout: 3000, lazy: true}}
-pr: &pr {type: select, proxies: [香港-自动选择, 香港-故障转移, 香港-负载均衡, 香港-手动选择, 台湾-自动选择, 台湾-故障转移, 台湾-负载均衡, 台湾-手动选择, 日本-自动选择, 日本-故障转移, 日本-负载均衡, 日本-手动选择, 韩国-自动选择, 韩国-故障转移, 韩国-负载均衡, 韩国-手动选择, 新加坡-自动选择, 新加坡-故障转移, 新加坡-负载均衡, 新加坡-手动选择, 英国-自动选择, 英国-故障转移, 英国-负载均衡, 英国-手动选择, 美国-自动选择, 美国-故障转移, 美国-负载均衡, 美国-手动选择, 其他-自动选择, 其他-故障转移, 其他-负载均衡, 其他-手动选择, 全部-自动选择, 全部-故障转移, 全部-负载均衡, 全部-手动选择, 神秘大国, Block]}
+p: &p {type: http, interval: 86400, proxy: "SubUpdate", exclude-filter: "(?i)Russia", exclude-type: "Trojan|ss", health-check: {enable: true, url: "https://www.gstatic.com/generate_204", interval: 1800, timeout: 3000, lazy: true}}
+pr: &pr {type: select, proxies: [hk-url-test, hk-fallback, hk-load-balance, hk-select, tw-url-test, tw-fallback, tw-load-balance, tw-select, jp-url-test, jp-fallback, jp-load-balance, jp-select, kr-url-test, kr-fallback, kr-load-balance, kr-select, sg-url-test, sg-fallback, sg-load-balance, sg-select, UK-url-test, UK-fallback, UK-load-balance, UK-select, us-url-test, us-fallback, us-load-balance, us-select, grup-url-test, grup-fallback, grup-load-balance, grup-select, all-test, all-fallback, all-balance, all-select, ایران, Block]}
 check: &check {url: "https://www.gstatic.com/generate_204", interval: 600, timeout: 3000, lazy: true, max-failed-times: 3, hidden: true}
 smux: &smux {udp: true, tfo: true, mptcp: true, ip-version: ipv4-prefer, client-fingerprint: chrome, smux: {enabled: true, protocol: h2mux, max-connections: 6, min-streams: 3, max-streams: 6, statistic: false, only-tcp: false, padding: true}}
 
 proxy-providers:
+  # 以下是自用的几个机场推荐，复制 url: “官网” 注册后把自己的订阅链接替换进去即可
+  # 如果你有更多机场订阅，按照相同格式 一行一个 添加即可，无需额外配置
   #   机场名: {<<: *p, url: "订阅地址", path: .路径与文件名, override: {复写 在节点名前面加上机场名，用以区分多个机场}}
   
   Miaona: {<<: *p, url: "https://raw.githubusercontent.com/ssrsub/ssr/master/clash.yaml", path: ./proxy_providers/Miaona.yaml, override: {<<: *smux, additional-prefix: "Miaona｜"}}
@@ -169,45 +176,45 @@ proxy-groups:
   - {name: Global, <<: *pr, icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/global.svg}
   - {name: Block, type: select, proxies: [REJECT-DROP, REJECT, PASS], icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/adguard.svg}
   - {name: Final, <<: *pr, icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/Final_2.svg}
-  - {name: 神秘大国, type: select, proxies: [🇨🇳 直连, 全部-手动选择, Block], default-selected: 🇨🇳 直连, icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/china.svg}
+  - {name: ایران, type: select, proxies: [IRAN💩, all-select, Block], default-selected: IRAN💩, icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/china.svg}
   
   # 地区筛选
-  - {name: 香港-手动选择, type: select, include-all-providers: true, filter: "(?i)港|hk|hong ?kong", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/hk.svg}
-  - {name: 香港-自动选择, type: url-test, include-all-providers: true, <<: *check, tolerance: 10, filter: "(?i)港|hk|hong ?kong", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/hk.svg}
-  - {name: 香港-故障转移, type: fallback, include-all-providers: true, <<: *check, filter: "(?i)港|hk|hong ?kong", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/hk.svg}
-  - {name: 香港-负载均衡, type: load-balance, strategy: consistent-hashing, include-all-providers: true, <<: *check, filter: "(?i)港|hk|hong ?kong", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/hk.svg}
-  - {name: 台湾-手动选择, type: select, include-all-providers: true, filter: "(?i)台|tw|tai ?wan|tai ?pei", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/tw.svg}
-  - {name: 台湾-自动选择, type: url-test, include-all-providers: true, <<: *check, tolerance: 10, filter: "(?i)台|tw|tai ?wan|tai ?pei", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/tw.svg}
-  - {name: 台湾-故障转移, type: fallback, include-all-providers: true, <<: *check, filter: "(?i)台|tw|tai ?wan|tai ?pei", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/tw.svg}
-  - {name: 台湾-负载均衡, type: load-balance, strategy: consistent-hashing, include-all-providers: true, <<: *check, filter: "(?i)台|tw|tai ?wan|tai ?pei", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/tw.svg}
-  - {name: 日本-手动选择, type: select, include-all-providers: true, filter: "(?i)日本|jp|japan|nippon", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/jp.svg}
-  - {name: 日本-自动选择, type: url-test, include-all-providers: true, <<: *check, tolerance: 10, filter: "(?i)日本|jp|japan|nippon", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/jp.svg}
-  - {name: 日本-故障转移, type: fallback, include-all-providers: true, <<: *check, filter: "(?i)日本|jp|japan|nippon", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/jp.svg}
-  - {name: 日本-负载均衡, type: load-balance, strategy: consistent-hashing, include-all-providers: true, <<: *check, filter: "(?i)日本|jp|japan|nippon", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/jp.svg}
-  - {name: 韩国-手动选择, type: select, include-all-providers: true, filter: "(?i)韩|kr|korea", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/kr.svg}
-  - {name: 韩国-自动选择, type: url-test, include-all-providers: true, <<: *check, tolerance: 10, filter: "(?i)韩|kr|korea", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/kr.svg}
-  - {name: 韩国-故障转移, type: fallback, include-all-providers: true, <<: *check, filter: "(?i)韩|kr|korea", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/kr.svg}
-  - {name: 韩国-负载均衡, type: load-balance, strategy: consistent-hashing, include-all-providers: true, <<: *check, filter: "(?i)韩|kr|korea", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/kr.svg}
-  - {name: 新加坡-手动选择, type: select, include-all-providers: true, filter: "(?i)新加坡|sg|singapore|狮城", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/sg.svg}
-  - {name: 新加坡-自动选择, type: url-test, include-all-providers: true, <<: *check, tolerance: 10, filter: "(?i)新加坡|sg|singapore|狮城", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/sg.svg}
-  - {name: 新加坡-故障转移, type: fallback, include-all-providers: true, <<: *check, filter: "(?i)新加坡|sg|singapore|狮城", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/sg.svg}
-  - {name: 新加坡-负载均衡, type: load-balance, strategy: consistent-hashing, include-all-providers: true, <<: *check, filter: "(?i)新加坡|sg|singapore|狮城", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/sg.svg}
-  - {name: 英国-手动选择, type: select, include-all-providers: true, filter: "(?i)UK|United ?Kingdom|英国|伦敦|London", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/UK.svg}
-  - {name: 英国-自动选择, type: url-test, include-all-providers: true, <<: *check, tolerance: 10, filter: "(?i)UK|United ?Kingdom|英国|伦敦|London", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/UK.svg}
-  - {name: 英国-故障转移, type: fallback, include-all-providers: true, <<: *check, filter: "(?i)UK|United ?Kingdom|英国|伦敦|London", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/UK.svg}
-  - {name: 英国-负载均衡, type: load-balance, strategy: consistent-hashing, include-all-providers: true, <<: *check, filter: "(?i)UK|United ?Kingdom|英国|伦敦|London", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/UK.svg}
-  - {name: 美国-手动选择, type: select, include-all-providers: true, filter: "(?i)美|us|united ?states", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/us.svg}
-  - {name: 美国-自动选择, type: url-test, include-all-providers: true, <<: *check, tolerance: 10, filter: "(?i)美|us|united ?states", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/us.svg}
-  - {name: 美国-故障转移, type: fallback, include-all-providers: true, <<: *check, filter: "(?i)美|us|united ?states", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/us.svg}
-  - {name: 美国-负载均衡, type: load-balance, strategy: consistent-hashing, include-all-providers: true, <<: *check, filter: "(?i)美|us|united ?states", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/us.svg}
-  - {name: 其他-手动选择, type: select, include-all-providers: true, exclude-filter: "(?i)港|hk|hong ?kong|台|tw|tai ?wan|tai ?pei|韩|kr|korea|日本|jp|japan|nippon|新加坡|sg|singapore|狮城|UK|United ?Kingdom|英国|伦敦|London|美|us|united ?states", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/other.svg}
-  - {name: 其他-自动选择, type: url-test, include-all-providers: true, <<: *check, tolerance: 10, exclude-filter: "(?i)港|hk|hong ?kong|台|tw|tai ?wan|tai ?pei|韩|kr|korea|日本|jp|japan|nippon|新加坡|sg|singapore|狮城|UK|United ?Kingdom|英国|伦敦|London|美|us|united ?states", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/other.svg}
-  - {name: 其他-故障转移, type: fallback, include-all-providers: true, <<: *check, exclude-filter: "(?i)港|hk|hong ?kong|台|tw|tai ?wan|tai ?pei|韩|kr|korea|日本|jp|japan|nippon|新加坡|sg|singapore|狮城|UK|United ?Kingdom|英国|伦敦|London|美|us|united ?states", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/other.svg}
-  - {name: 其他-负载均衡, type: load-balance, strategy: consistent-hashing, include-all-providers: true, <<: *check, exclude-filter: "(?i)港|hk|hong ?kong|台|tw|tai ?wan|tai ?pei|韩|kr|korea|日本|jp|japan|nippon|新加坡|sg|singapore|狮城|UK|United ?Kingdom|英国|伦敦|London|美|us|united ?states", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/other.svg}
-  - {name: 全部-手动选择, type: select, include-all-providers: true, icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/all.svg}
-  - {name: 全部-自动选择, type: url-test, include-all-providers: true, <<: *check, tolerance: 10, icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/all.svg}
-  - {name: 全部-故障转移, type: fallback, include-all-providers: true, <<: *check, icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/all.svg}
-  - {name: 全部-负载均衡, type: load-balance, strategy: consistent-hashing, include-all-providers: true, <<: *check, icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/all.svg}
+  - {name: hk-select, type: select, include-all-providers: true, filter: "(?i)港|hk|hong ?kong", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/hk.svg}
+  - {name: hk-url-test, type: url-test, include-all-providers: true, <<: *check, tolerance: 10, filter: "(?i)港|hk|hong ?kong", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/hk.svg}
+  - {name: hk-fallback, type: fallback, include-all-providers: true, <<: *check, filter: "(?i)港|hk|hong ?kong", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/hk.svg}
+  - {name: hk-load-balance, type: load-balance, strategy: consistent-hashing, include-all-providers: true, <<: *check, filter: "(?i)港|hk|hong ?kong", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/hk.svg}
+  - {name: tw-select, type: select, include-all-providers: true, filter: "(?i)台|tw|tai ?wan|tai ?pei", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/tw.svg}
+  - {name: tw-url-test, type: url-test, include-all-providers: true, <<: *check, tolerance: 10, filter: "(?i)台|tw|tai ?wan|tai ?pei", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/tw.svg}
+  - {name: tw-fallback, type: fallback, include-all-providers: true, <<: *check, filter: "(?i)台|tw|tai ?wan|tai ?pei", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/tw.svg}
+  - {name: tw-load-balance, type: load-balance, strategy: consistent-hashing, include-all-providers: true, <<: *check, filter: "(?i)台|tw|tai ?wan|tai ?pei", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/tw.svg}
+  - {name: jp-select, type: select, include-all-providers: true, filter: "(?i)日本|jp|japan|nippon", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/jp.svg}
+  - {name: jp-url-test, type: url-test, include-all-providers: true, <<: *check, tolerance: 10, filter: "(?i)日本|jp|japan|nippon", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/jp.svg}
+  - {name: jp-fallback, type: fallback, include-all-providers: true, <<: *check, filter: "(?i)日本|jp|japan|nippon", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/jp.svg}
+  - {name: jp-load-balance, type: load-balance, strategy: consistent-hashing, include-all-providers: true, <<: *check, filter: "(?i)日本|jp|japan|nippon", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/jp.svg}
+  - {name: kr-select, type: select, include-all-providers: true, filter: "(?i)韩|kr|korea", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/kr.svg}
+  - {name: kr-url-test, type: url-test, include-all-providers: true, <<: *check, tolerance: 10, filter: "(?i)韩|kr|korea", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/kr.svg}
+  - {name: kr-fallback, type: fallback, include-all-providers: true, <<: *check, filter: "(?i)韩|kr|korea", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/kr.svg}
+  - {name: kr-load-balance, type: load-balance, strategy: consistent-hashing, include-all-providers: true, <<: *check, filter: "(?i)韩|kr|korea", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/kr.svg}
+  - {name: sg-select, type: select, include-all-providers: true, filter: "(?i)新加坡|sg|singapore|狮城", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/sg.svg}
+  - {name: sg-url-test, type: url-test, include-all-providers: true, <<: *check, tolerance: 10, filter: "(?i)新加坡|sg|singapore|狮城", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/sg.svg}
+  - {name: sg-fallback, type: fallback, include-all-providers: true, <<: *check, filter: "(?i)新加坡|sg|singapore|狮城", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/sg.svg}
+  - {name: sg-load-balance, type: load-balance, strategy: consistent-hashing, include-all-providers: true, <<: *check, filter: "(?i)新加坡|sg|singapore|狮城", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/sg.svg}
+  - {name: UK-select, type: select, include-all-providers: true, filter: "(?i)UK|United ?Kingdom|英国|伦敦|London", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/UK.svg}
+  - {name: UK-url-test, type: url-test, include-all-providers: true, <<: *check, tolerance: 10, filter: "(?i)UK|United ?Kingdom|英国|伦敦|London", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/UK.svg}
+  - {name: UK-fallback, type: fallback, include-all-providers: true, <<: *check, filter: "(?i)UK|United ?Kingdom|英国|伦敦|London", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/UK.svg}
+  - {name: UK-load-balance, type: load-balance, strategy: consistent-hashing, include-all-providers: true, <<: *check, filter: "(?i)UK|United ?Kingdom|英国|伦敦|London", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/UK.svg}
+  - {name: us-select, type: select, include-all-providers: true, filter: "(?i)美|us|united ?states", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/us.svg}
+  - {name: us-url-test, type: url-test, include-all-providers: true, <<: *check, tolerance: 10, filter: "(?i)美|us|united ?states", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/us.svg}
+  - {name: us-fallback, type: fallback, include-all-providers: true, <<: *check, filter: "(?i)美|us|united ?states", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/us.svg}
+  - {name: us-load-balance, type: load-balance, strategy: consistent-hashing, include-all-providers: true, <<: *check, filter: "(?i)美|us|united ?states", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/us.svg}
+  - {name: grup-select, type: select, include-all-providers: true, exclude-filter: "(?i)港|hk|hong ?kong|台|tw|tai ?wan|tai ?pei|韩|kr|korea|日本|jp|japan|nippon|新加坡|sg|singapore|狮城|UK|United ?Kingdom|英国|伦敦|London|美|us|united ?states", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/other.svg}
+  - {name: grup-url-test, type: url-test, include-all-providers: true, <<: *check, tolerance: 10, exclude-filter: "(?i)港|hk|hong ?kong|台|tw|tai ?wan|tai ?pei|韩|kr|korea|日本|jp|japan|nippon|新加坡|sg|singapore|狮城|UK|United ?Kingdom|英国|伦敦|London|美|us|united ?states", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/other.svg}
+  - {name: grup-fallback, type: fallback, include-all-providers: true, <<: *check, exclude-filter: "(?i)港|hk|hong ?kong|台|tw|tai ?wan|tai ?pei|韩|kr|korea|日本|jp|japan|nippon|新加坡|sg|singapore|狮城|UK|United ?Kingdom|英国|伦敦|London|美|us|united ?states", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/other.svg}
+  - {name: grup-load-balance, type: load-balance, strategy: consistent-hashing, include-all-providers: true, <<: *check, exclude-filter: "(?i)港|hk|hong ?kong|台|tw|tai ?wan|tai ?pei|韩|kr|korea|日本|jp|japan|nippon|新加坡|sg|singapore|狮城|UK|United ?Kingdom|英国|伦敦|London|美|us|united ?states", icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/other.svg}
+  - {name: all-select, type: select, include-all-providers: true, icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/all.svg}
+  - {name: all-test, type: url-test, include-all-providers: true, <<: *check, tolerance: 10, icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/all.svg}
+  - {name: all-fallback, type: fallback, include-all-providers: true, <<: *check, icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/all.svg}
+  - {name: all-balance, type: load-balance, strategy: consistent-hashing, include-all-providers: true, <<: *check, icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/all.svg}
 
 rule-anchor:
 
@@ -256,13 +263,14 @@ rule-providers:
   
 rules:
   - AND,((RULE-SET,geolocation-!cn),(DST-PORT,443),(NETWORK,UDP)),Block
-  - DST-PORT,53,🌐 DNS劫持
-  - RULE-SET,private,🇨🇳 直连
+  - DST-PORT,53,🌐 DNS⛑
+  - RULE-SET,private,IRAN💩
   - RULE-SET,httpdns,Block
   - RULE-SET,ads,Block
   - RULE-SET,AWAvenue,Block
   - RULE-SET,anti-AD,Block
   
+  # 域名分流
   - RULE-SET,googlefcm,Google FCM
   - RULE-SET,telegram,Telegram
   - RULE-SET,github,Github
@@ -282,14 +290,16 @@ rules:
   - RULE-SET,facebook,Facebook
   - RULE-SET,speedtest,Speedtest
   - RULE-SET,geolocation-!cn,Global
-  - RULE-SET,cn,神秘大国
+  - RULE-SET,cn,ایران
   
-  - RULE-SET,private_ip,🇨🇳 直连,no-resolve
+  # IP分流
+  - RULE-SET,private_ip,IRAN💩,no-resolve
   - RULE-SET,telegram_ip,Telegram
   - RULE-SET,google_ip,Google
   - RULE-SET,apple_ip,Apple
   - RULE-SET,twitter_ip,Twitter
   - RULE-SET,facebook_ip,Facebook
-  - RULE-SET,cn_ip,神秘大国
+  - RULE-SET,cn_ip,ایران
   
+  # 兜底规则
   - MATCH,Final
